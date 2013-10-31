@@ -1,0 +1,2 @@
+Mejoras 1.2
+1.-Se implementa rutina de error en llamadas a páginas web
