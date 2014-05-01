@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script src="correo.js" language="javascript" type="text/javascript">
+         <!--
+           //Se importa el fichero externo en un script propio.
+         //-->
+      </script>
+
+      <script language="javascript">
+         <!--
+
+         //Se crea el método correo()
+//en base a la función del mismo nombre.
+         String.prototype.correo = correo;
+
+         var cadena = prompt ("Teclee un e-mail","");
+         cadena=cadena.toLowerCase();
+
+         //Se comprueba la cadena.
+         if (cadena.correo())
+         {
+            alert ("El e-mail es correcto");
+         } else {
+            alert ("El e-mail NO es correcto");
+         }
+         
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

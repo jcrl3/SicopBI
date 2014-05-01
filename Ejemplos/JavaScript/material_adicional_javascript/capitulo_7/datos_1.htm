@@ -1,0 +1,73 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            var cadenaDatos = navigator.userAgent.toLowerCase();
+            var ie = "Microsoft Internet Explorer";
+            var nn = "Netscape Navigator";
+            var op = "Opera";
+            var navegador;
+            var version;
+            var sistema;
+
+            if (cadenaDatos.indexOf ("opera") != -1)
+            {
+               navegador = op;
+            } else if (cadenaDatos.indexOf ("msie") != -1) {
+               navegador = ie;
+            } else {
+               navegador = nn;
+            }
+
+            if (navegador == ie)
+            {
+               var posicion = cadenaDatos.indexOf ("msie") + 5;
+               version = cadenaDatos.substr (posicion, 3);
+            } else if (navegador == nn) {
+               var posicion = cadenaDatos.indexOf ("netscape") + 9;
+               version = cadenaDatos.substr (posicion);
+            } else {
+               var posicion = cadenaDatos.indexOf ("opera") + 6;
+               version = cadenaDatos.substr (posicion, 3);
+            }
+
+            if ((cadenaDatos.indexOf("windows 3.1") != -1) || (cadenaDatos.indexOf("win16") != -1) || (cadenaDatos.indexOf("16bit") != -1) || (cadenaDatos.indexOf("16-bit") != -1))
+            {
+               sistema = "Windows 3.1 o 3.11";
+            } else if ((cadenaDatos.indexOf ("windows 95") != -1) || (cadenaDatos.indexOf ("win95") != -1)) {
+               sistema = "Windows 95";
+            } else if ((cadenaDatos.indexOf ("win 9x 4.90") != -1) || (cadenaDatos.indexOf ("windows me") != -1)) {
+               sistema = "Windows Me";
+            } else if ((cadenaDatos.indexOf ("windows 98") != -1) || (cadenaDatos.indexOf ("win98") != -1)) {
+               sistema = "Windows 98";
+            } else if ((cadenaDatos.indexOf ("windows nt 5.1") != -1) || (cadenaDatos.indexOf ("winnt 5.1") != -1)) {
+               sistema = "Windows XP";
+            } else if ((cadenaDatos.indexOf ("windows nt 5.0") != -1) || (cadenaDatos.indexOf ("winnt 5.0") != -1)) {
+               sistema = "Windows 2000";
+            } else if ((cadenaDatos.indexOf ("windows nt") != -1) || (cadenaDatos.indexOf ("winnt") != -1)) {
+               sistema = "Windows NT";
+            } else if ((cadenaDatos.indexOf ("mac") != -1) && ((cadenaDatos.indexOf ("68000") != -1) || (cadenaDatos.indexOf ("68k") != -1))) {
+               sistema = "Mac 68K";
+            } else if ((cadenaDatos.indexOf ("mac") != -1) && ((cadenaDatos.indexOf ("powerpc") != -1) || (cadenaDatos.indexOf ("ppc") != -1))) {
+               sistema = "Mac Power PC";
+            } else if (cadenaDatos.indexOf ("linux") != -1) {
+               sistema = "Linux";
+            } else {
+               sistema = "Otro sistema operativo";
+            }
+
+            document.write ("<h1>Informe de entorno</h1><br>");
+            document.write ("El navegador detectado es: " + navegador + "<br>");
+            document.write ("La versi&oacute;n del navegador es: " + version + "<br>");
+            document.write ("El sistema operativo encontrado es: " + sistema + "<br>");
+            document.write ("Fin de informe de entorno.");
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

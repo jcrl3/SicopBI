@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript
+      </title>
+                      
+      <script language="JavaScript">
+         <!--
+
+// Esta función recupera el valor de la cookie si existe.
+//Si la cookie no existe, se considera la visita número 1.
+            function leerCookie()
+            {
+               variableCookie = unescape(document.cookie);
+               if (variableCookie)
+               {
+                  posicionSigno = variableCookie.indexOf ("=");
+                  cuenta = parseInt(variableCookie.substring (posicionSigno + 1));
+               } else {
+                  cuenta = 1;
+               }
+               return cuenta;
+            }
+
+            function comprobarCookie()
+            {
+// Se lee la cookie
+               var numeroVisitas = leerCookie()
+
+// Se muestra su valor y se incrementa
+               mostrarVisitas.value = numeroVisitas;
+               numeroVisitas ++;
+
+// Se graba la cookie con el nuevo valor
+               document.cookie="conteo=" + numeroVisitas;
+
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onload="comprobarCookie();">
+      <b>
+         Bienvenido. Esta es su visita n&uacute;mero
+      </b>
+      &nbsp;
+      <input type="text" name="mostrarVisitas" size="4" maxlength="4">
+      <br>
+   </body>
+</html>

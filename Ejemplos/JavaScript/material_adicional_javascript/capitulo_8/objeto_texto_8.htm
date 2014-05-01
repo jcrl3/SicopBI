@@ -1,0 +1,83 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function preparar()
+            {
+               e1.style.textDecoration = "none";
+               e2.style.textDecoration = "none";
+               e3.style.textDecoration = "none";
+               e4.style.textDecoration = "none";
+
+               e1.style.color = "#FF0000";
+               e2.style.color = "#FF0000";
+               e3.style.color = "#FF0000";
+               e4.style.color = "#FF0000";
+            }
+
+            function activar(objeto)
+            {
+               eval(objeto).style.color = "#FFFFFF";
+               eval(objeto).style.backgroundColor = "#FF0000";
+            }
+
+            function desactivar(objeto)
+            {
+               eval(objeto).style.color = "#FF0000";
+               eval(objeto).style.backgroundColor = "#FFFFFF";
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="preparar();">
+      <table border=0 width=300>
+         <tr>
+            <td>
+               <font face="Arial">
+                  <a href="http://www.ra-ma.es">
+                     <h1 id="e1" onMouseOver="activar('e1');" onMouseOut="desactivar('e1');">
+                        EDITORIAL RA-MA
+                     </h1>
+                  </a>
+               </font>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <font face="Arial">
+                  <a href="http://www.todoligues.com">
+                     <h1 id="e2" onMouseOver="activar('e2');" onMouseOut="desactivar('e2');">
+                        TODOLIGUES
+                     </h1>
+                  </a>
+               </font>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <font face="Arial">
+                  <a href="http://www.google.com">
+                     <h1 id="e3" onMouseOver="activar('e3');" onMouseOut="desactivar('e3');">
+                        GOOGLE
+                     </h1>
+                  </a>
+               </font>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <font face="Arial">
+                  <a href="http://www.microsoft.com">
+                     <h1 id="e4" onMouseOver="activar('e4');" onMouseOut="desactivar('e4');">
+                        MICROSOFT
+                     </h1>
+                  </a>
+               </font>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

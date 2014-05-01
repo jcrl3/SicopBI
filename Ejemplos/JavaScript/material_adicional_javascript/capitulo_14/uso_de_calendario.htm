@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Uso de calendario</title>
+		<link rel="stylesheet" type="text/css" media="all" href="calendario/calendar.css" />
+		<script type="text/javascript" src="calendario/calendar.js"></script>
+	</head>
+
+	<body>
+		<form action="destino en el servidor.php" method="post" id="mi_formulario">
+			Fecha de ingreso en la empresa:
+			<input name="fecha_de_alta" type="text" class="camposDeTexto" id="fecha_de_alta" value="" size="16" readonly="readonly" />
+			<script language="JavaScript" type="text/javascript">
+			new tcal ({
+// form name
+			'formname': 'mi_formulario',
+// input name
+			'controlname': 'fecha_de_alta'
+			});
+			</script>
+		</form>
+	</body>
+</html>

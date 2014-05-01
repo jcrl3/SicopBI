@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            nueva_ventana = null;
+
+            function comprobar ()
+            {
+               if (nueva_ventana == null)
+               {
+                  alert ("No se ha creado la ventana adicional");
+               } else if (nueva_ventana.closed) {
+                  alert ("La ventana adicional ha sido cerrada.");
+               } else {
+                  alert ("La nueva ventana está abierta");
+               }
+            }
+
+            function crear()
+            {
+               nueva_ventana = window.open("texto_de_secundaria_3.htm", "nueva_ventana","width=400, height=300, left=200, top=150, resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no");
+            }
+
+            function cerrar()
+            {
+               nueva_ventana.close();
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <center>
+         Aqu&iacute; vamos a ver como comprobar
+         <br>
+         el estado de una ventana secundaria.
+         <br>
+         1) Pulse el bot&oacute;n de comprobar para ver que la ventana no se ha creado.
+         <br>
+         2) Pulse el bot&oacute;n de crear la ventana.
+         <br>
+         3) Vuelva a pulsar el bot&oacute;n de comprobar para ver que la ventana existe y est&aacute; abierta (incluso si no la ve, por estar en segundo plano).
+         <br>
+         4) Pulse el bot&oacute;n de cerrar la ventana.
+         <br>
+         5) Vuelva a pulsar el bot&oacute;n de comprobar para ver que la ventana existe como objeto pero est&aacute; cerrada.
+         <br><br>
+
+         <button onClick = "comprobar();">
+            Comprobar
+         </button>
+         <br>
+
+         <button onClick = "crear();">
+            Crear la ventana
+         </button>
+         <br>
+
+         <button onClick = "cerrar()">
+            Cerrar la ventana
+         </button>
+      </center>        
+   </body>
+</html>

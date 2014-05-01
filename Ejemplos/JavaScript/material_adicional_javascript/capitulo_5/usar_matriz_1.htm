@@ -1,0 +1,32 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+         var nombres = new Array(); //Creamos la matriz.
+         var indice; //Creamos una variable para controlar el índice de la matriz.
+
+         /* El siguiente bucle pide los nombres de las personas y los guarda en la matriz.
+         Mire la explicación del libro, para entender como funciona.*/
+         for (indice = 0; indice <= 5; indice ++)
+         {
+            nombres[indice] = prompt ("Introduzca el nombre de la persona " + (indice+1), "");
+         }
+
+         /* El siguiente bucle muestra los nombres de las personas guardados en la matriz.
+         Mire la explicación del libro, para entender como funciona.*/
+         for (indice = 0; indice <= 5; indice ++)
+         {
+            document.write ("La persona número " + (indice+1) + " se llama " + nombres[indice] + "<br>");
+         }
+
+
+         
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            var fallo = false; //Usamos esta variable
+//para detreminar si se produce un error.
+
+            do //Se ejecutará mientras no haya una dirección válida.
+            {
+               fallo=false; //Se resetea el indicador de fallo.
+
+               // Se pide por teclado un email.
+               correo = prompt("Introduzca su correo electrónico.","");
+
+               /* Si el usuario pulsa el botón cancelar, la variable
+recibe el valor null (nulo). En ese caso no funcionarían las
+comprobaciones posteriores, así que le ponemos un valor erroneo
+para que se pueda determinar el fallo. */
+               if (correo == null) correo = "ERROR";
+
+               //Se determina la posición del signo @.
+               primera = correo.indexOf("@");
+               ultima = correo.lastIndexOf("@");
+
+               //Se verifica si no existe ninguna arroba.
+               if (primera == -1) fallo = true;
+
+               //Se verifica si hay más de una arroba.
+               if (primera != ultima) fallo = true;
+
+               //Se verifica si la arroba está
+//al principio o al final de la cadena.
+               if (primera == 0 || ultima == correo.length-1) fallo = true;
+
+               // La variable buscar se empleará para localizar la
+//posición de cada punto en la cadena
+               buscar = 0;
+
+//Lo primero que hacemos es determinar si hay algun punto.
+//Si no lo hay, ya no nos vale la dirección.
+               posicion_punto = correo.indexOf(".");
+               if (posicion_punto == -1) fallo = true;
+
+               //A continuación se determina si los puntos no están
+//en posiciones indebidas, es decir, al pincipio o al final de la
+//cadena o junto a la arroba.
+               do
+               {
+                  posicion_punto = correo.indexOf(".",buscar);
+                  if (posicion_punto==0 || posicion_punto==correo.length-1 || posicion_punto==primera+1 || posicion_punto==primera-1) fallo = true;
+                  buscar = posicion_punto + 1;
+               } while (posicion_punto != -1);
+
+               //Por último, se verifica si se ha producido algún fallo.
+               if (fallo)
+               {
+                  alert ("La dirección introducida es incorrecta.");
+               }
+            } while (fallo); //Si ha habido algún fallo se repite el proceso.
+
+            document.write ("La dirección " + correo + " es correcta.");
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

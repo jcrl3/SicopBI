@@ -1,0 +1,75 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function reducir()
+            {
+               if (tabla1.border > 1)
+               {
+                  tabla1.border -= 1;
+               }
+            }
+
+            function aumentar()
+            {
+               if (tabla1.border < 10)
+               {
+                  tabla1.border = parseInt(tabla1.border)+1;
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+
+      <table id="tabla1" width=300 border=2 cellspacing=0 cellpadding=0>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+      </table>
+
+      <br>
+      <button onClick="reducir();">
+         Reducir el borde.
+      </button>
+      <button onClick="aumentar();">
+         Aumentar el borde.
+      </button>
+
+   </body>
+</html>

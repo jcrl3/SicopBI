@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+
+            //Entramos en un bucle que nos
+//pedirá una expresión y una cadena.
+            do
+            {
+
+               expresion_2 = new RegExp (prompt("Introduzca una expresión",""));
+               cadena = prompt ("Cadena","");
+
+               //Comprobamos si la cadena coincide.
+               if (expresion_2.test(cadena))
+               {
+                  alert("Coincide");
+               } else {
+                  alert ("NO coincide");
+               }
+
+            //se sale del bucle al pulsar
+//cancelar en el prompt.
+            } while (cadena != null);
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

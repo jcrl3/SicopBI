@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            if (location.search)
+            {
+
+               document.write ("El valor de la propiedad search es " + location.search + "<br>");
+
+               var imagen = location.search.substring(1);
+
+               if (imagen.indexOf("/") != -1)
+               {
+                  var nombre = imagen.substr(imagen.lastIndexOf("/")+1);
+               } else {
+                  var nombre = imagen;
+               }
+
+               document.write ("<center><h1>P&aacute;gina de la imagen ");
+               document.write (nombre + "</h1>");
+               document.write ("<img src = " + imagen + ">");
+               document.write ("</center>");
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

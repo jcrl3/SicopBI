@@ -1,0 +1,69 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript" type="text/javascript">
+         <!--
+            provincias = new Array ("Álava","Albacete","Alicante","Almería","Ávila","Badajoz","Baleares","Barcelona","Burgos","Cáceres","Cádiz","Castellón","Ciudad Real","Córdoba","Coruña","Cuenca","Girona","Granada","Guadalajara","Guipuzcoa","Huelva","Huesca","Jaén","León","Lleida","Rioja","Lugo","Madrid","Málaga","Murcia","Navarra","Orense","Asturias","Palencia","Las Palmas","Pontevedra","Salamanca","Tenerife","Cantabria","Segovia","Sevilla","Soria","Tarragona","Teruel","Toledo","Valencia","Valladolid","Vizcaya","Zamora","Zaragoza","Ceuta","Melilla");
+
+            function comprobarCP()
+            {
+               codigoTecleado=formulario.cp.value;
+               if (codigoTecleado.length >0)
+               {
+                  ultima=codigoTecleado.substr(codigoTecleado.length-1,1);
+                  if (ultima<"0" || ultima>"9")
+                  {
+                     formulario.cp.value=codigoTecleado.substr(0,codigoTecleado.length-1);
+                  }
+               }
+            }
+
+            function ponerProvincia()
+            {
+               codigoTecleado=formulario.cp.value;
+               if (codigoTecleado.length <5)
+               {
+                  alert("El código postal debe tener cinco cifras.");
+                  formulario.provincia.value="";
+                  formulario.cp.value = "";
+                  formulario.cp.focus();
+                  return;
+               }
+
+               indicativo=parseInt(codigoTecleado.substr(0,2))-1;
+               if (indicativo<0 || indicativo>51)
+               {
+                  alert("El código postal no es correcto");
+                  formulario.provincia.value="";
+                  formulario.cp.value = "";
+                  formulario.cp.focus();
+                  return;
+               }
+
+               formulario.provincia.value=provincias[indicativo];
+               formulario.enviar.focus();
+            }
+
+            function volver()
+            {
+               formulario.cp.focus();
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <form name="formulario">
+         Teclee su c&oacute;digo postal:
+         <input type="text" name ="cp" size=5 maxlength=5 onKeyUp="comprobarCP();" onBlur="ponerProvincia();">
+         <br>
+         Su provincia es:
+         <input type="text" name="provincia" onFocus="volver();">
+         <br>
+         <input type="submit" name="enviar" value="Enviar">
+         <input type="reset" name="reset" value="Borrar">
+      </form>
+   </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function iniciar()
+            {
+               totalFilas=0;
+               nodoTabla = document.getElementById ("tabla1");
+            }
+
+            function agregar()
+            {
+               if (totalFilas<10)
+               {
+                  totalFilas += 1;
+                  nodoFila = document.createElement ("tr");
+                  nodoTabla.appendChild (nodoFila);
+                  for (celdas=0; celdas<=2; celdas++)
+                  {
+                     nodoCelda = document.createElement ("td");
+                     nodoFila.appendChild(nodoCelda);
+                     valorTexto = document.createTextNode ("Fila " + totalFilas + " Celda " + (celdas+1));
+                     nodoCelda.appendChild (valorTexto);
+                  }
+               }
+            }
+
+            function eliminar()
+            {
+               if (totalFilas>0)
+               {
+                  nodoTabla.removeChild(nodoTabla.lastChild);
+                  totalFilas -= 1;
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <table align="center" width="450" border="2">
+         <tbody id="tabla1">
+         </tbody>
+      </table>
+
+      <br>
+
+      <form>
+         <input type="button" value="Agregar fila" onClick="agregar();">
+         <input type="button" value="Eliminar fila" onClick="eliminar();">
+      </form>
+   </body>
+</html>

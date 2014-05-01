@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Disclaimer">
+            <connections>
+                <outlet property="textoLegal" destination="4" id="slG-Cg-Dnn"/>
+                <outlet property="view" destination="2" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="4">
+                    <rect key="frame" x="20" y="7" width="500" height="555"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.3540145985" green="0.64598540149999994" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <mutableString key="text">SICOP CONSULTING en nombre del distribuidor que cuenta con las licencias y derechos de uso correspondiente de su sistemas de administración de relación con prospectos y clientes mantendrá en confidencialidad la información proporcionada por usted al ingreso de esta aplicación, así mismo le comentamos que los datos ingresados serán consultados única y exclusivamente por el grupo de profesionales del Distribuidor durante su proceso de compra del vehículo y de propiedad del mismo.
+
+SICOP CONSULTING SA DE CV, con domicilio en Avenida Santa Fe 495 16-02 Cruz Manca C.P. 05349, D.F., le avisa que, de conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, sus datos personales, los cuales pueden incluir datos sensibles, referidos en los documentos requisitados por usted, los que se obtengan y aquellos que generamos, con motivo de la gestión de su proceso de compra de un vehículo y de propiedad del mismo, se tratarán confidenciales. 
+
+Sus datos personales no serán transferidos a terceros para fines distintos a los antes mencionados, salvaguardando la privacidad de los mismos.
+
+El ejercicio de los derechos de acceso, rectificación, cancelación y oposición, podrá efectuarse por escrito en el domicilio antes mencionado, de acuerdo al precitado ordenamiento.
+
+La revocación del consentimiento sobre el tratamiento de sus datos personales, cuando resulte procedente, podrá solicitarlo por escrito en el domicilio de esta entidad o simplemente eliminando esta aplicación de su dispositivo.</mutableString>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                </textView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SicopEventos 1.0 es una aplicaciòn desarrollada por SICOP Consulting, S.A. de C.V." lineBreakMode="tailTruncation" minimumFontSize="10" id="5">
+                    <rect key="frame" x="20" y="536" width="481" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.3540145985" green="0.64598540149999994" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.3540145985" green="0.64598540149999994" blue="1" alpha="1" colorSpace="deviceRGB"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+            <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,411 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function contarCasillas()
+            {
+               var totalCasillas = 0;
+               for (contador=0; contador<24; contador ++)
+               {
+                  if (f1.elements[contador].checked)
+                  {
+                     totalCasillas += 1;
+                  }
+               }
+
+               if (totalCasillas<1 || totalCasillas>4)
+               {
+                  alert ("Seleccione entre 1 y 4 opciones.");
+                  return false;
+               } else {
+                  return true;
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+
+
+      <form name="f1" method="post" action="mailto:correo@servidor.com" onSubmit="return contarCasillas();">
+         <table width="500" border="0" cellspacing="0" cellpadding="0">
+
+            <tr align="center">
+               <td colspan="6" height="40">
+                  <font face="Tahoma, Verdana, Arial">
+                     <b>
+                        INDIQUE SUS AFICIONES&nbsp;
+                        <font color="#FF0000">
+                           (m&iacute;nimo una; m&aacute;ximo cuatro)
+                        </font>
+                     </b>
+                  </font>
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Coches
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb1" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        M&uacute;sica cl&aacute;sica
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb13" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Motos
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb2" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        M&uacute;sica electr&oacute;nica
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb14" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        F&uacute;tbol
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb3" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        M&uacute;sica rock
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb15" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Voleyball
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb4" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        M&uacute;sica pop
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb16" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Tenis
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb5" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        M&uacute;sica experimental
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb17" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Baloncesto
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb6" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Ciencias
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb18" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Cocinar
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb7" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Inform&aacute;tica
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb19" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Leer
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb8" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        TV sat&eacute;lite
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb20" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Cine
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb9" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Videojuegos
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb21" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Teatro
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center"> 
+                  <input type="checkbox" name="cb10" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Pol&iacute;tica
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb22" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Viajar
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb11" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2"> 
+                        Juergas nocturnas
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb23" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Deportes de agua
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb12" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+               <td width="180">
+                  <b>
+                     <font face="Tahoma, Verdana, Arial" size="2">
+                        Ciencias ocultas
+                     </font>
+                  </b>
+               </td>
+               <td width="30" align="center">
+                  <input type="checkbox" name="cb24" value="SI">
+               </td>
+               <td width="40">
+                  &nbsp;
+               </td>
+            </tr>
+
+            <tr align="center">
+               <td colspan="3" height="60">
+                  <input type="submit" name="Mandar" value="Enviar">
+               </td>
+               <td colspan="3" height="60">
+                  <input type="reset" name="Borrar" value="Restablecer">
+               </td>
+            </tr>
+         </table>
+      </form>
+
+   </body>
+</html>

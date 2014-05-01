@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function Coche (marca, modelo, precio)
+            {
+               this.marca = marca;
+               this.modelo = modelo;
+               this.precio = precio;
+
+            }
+
+            function sumarIva()
+            {
+               return Math.round(this.precio * 1.18);
+            }
+
+            Coche.prototype.sumarIva = sumarIva;
+
+            var coche1 = new Coche ("Renault", "Laguna", 1800);
+            var coche2 = new Coche ("Ford", "Mondeo", 2300);
+            var coche3 = new Coche ("Mercedes", "600", 8500);
+            var coche4 = new Coche ("Seat", "Cordoba", 3000);
+            var cadena;
+
+            cadena = "El coche " + coche1.marca + " " + coche1.modelo + " vale " + coche1.precio + " euros. Con IVA son "  + coche1.sumarIva();
+            document.write (cadena + "<br>");
+            cadena = "El coche " + coche2.marca + " " + coche2.modelo + " vale " + coche2.precio + " euros. Con IVA son " + coche2.sumarIva();
+            document.write (cadena + "<br>");
+            cadena = "El coche " + coche3.marca + " " + coche3.modelo + " vale " + coche3.precio + " euros. Con IVA son " + coche3.sumarIva();
+            document.write (cadena + "<br>");
+            cadena = "El coche " + coche4.marca + " " + coche4.modelo + " vale " + coche4.precio + " euros. Con IVA son " + coche4.sumarIva();
+            document.write (cadena + "<br>");
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

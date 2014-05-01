@@ -1,0 +1,96 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function mostrarNombre()
+            {
+               alert ("El nombre del usuario es " + formulario.nombre_usuario.value);
+            }
+
+            function pedirOpinion()
+            {
+               formulario.opinion.value = "Su opinión nos importa.";
+            }
+
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <h1>
+         P&aacute;gina con un formulario
+      </h1>
+
+      <br>
+      <form name="formulario" enctype="multipart/form-data">
+
+         Teclee su nombre:&nbsp;
+         <input type="text" name="nombre_usuario" size=20 maxlength=50 onBlur="mostrarNombre();">
+         <br>
+
+         Teclee su clave:&nbsp;
+         <input type="password" name="clave" size=10 maxlength=25>
+         <br>
+
+         Opine sobre mi p&aacute;gina:
+         <br>
+         <textarea name="opinion" cols=50 rows=5 wrap="virtual" onFocus="pedirOpinion();">
+         </textarea>
+         <br>
+
+         <input type="hidden" name="escondido" value="oculto">
+
+         Indique si es mayor de edad:
+         <input type="checkbox" name="adulto" value="si" checked>
+         <br>
+
+         Sexo: Masculino
+         <input type="radio" name="sexo" value="m" checked>
+         &nbsp;&nbsp;&nbsp;Femenino
+         <input type="radio" name="sexo" value="f">
+         <br>
+
+         Sueldo anual: 10000 &euro;
+         <input type="radio" name="sueldo" value="10" checked>
+         &nbsp;&nbsp; de 10000 a 20000 &euro;
+         <input type="radio" name="sueldo" value="1020">
+         &nbsp;&nbsp; mas de 20000 &euro;
+         <input type="radio" name="sueldo" value="20">
+         <br>
+
+         Env&iacute;e un fichero:
+         <input type="file" name="archivo" size="30" maxlength="100">
+         <br>
+
+         Indique su provincia:
+         <select name="provincia">
+            <option value="1">Madrid</option>
+            <option value="2">Barcelona</option>
+            <option value="3">Toledo</option>
+            <option value="4">Canarias</option>
+            <option value="5">Zaragoza</option>
+            <option value="6">Otras</option>
+         </select>
+
+         &nbsp;&nbsp;&nbsp;Indique su Hobbie:
+         <select name="pasatiempo" size=3 multiple>
+            <option value="1">Chat</option>
+            <option value="2">Juegos</option>
+            <option value="3">Arte</option>
+            <option value="4">Cine</option>
+            <option value="5">Poes&iacute;a</option>
+            <option value="6">Otros</option>
+         </select>
+         <br>
+
+         <input type="submit" name="mandar" value="Enviar">
+
+         &nbsp;&nbsp;
+         <input type="reset" name="borrado" value="Borrar">
+
+      </form>
+   </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+         var ancho=150, alto=150; //Se determina el ancho y el alto iniciales de la ventana.
+         var anchoDisponible=screen.availWidth, altoDisponible=screen.availHeight; //Se determina el espacio disponible en la pantalla.
+
+         // En las líneas siguientes se calcula la posición inicial de la ventana.
+         // Para ello, se resta el tamaño inicial del tamaño disponible, y se divide por dos.
+         var izquierda=(anchoDisponible-150)/2;
+         var superior=(altoDisponible-150)/2;
+
+         var ciclos; // Numero de veces que se repetirá el bucle que gestiona la ventana.
+
+         // En las líneas siguientes se coloca la ventana en su posición y tamaño originales.
+         window.moveTo(izquierda, superior);
+         window.resizeTo(ancho, alto);
+
+         for (ciclos=150; ciclos<=altoDisponible; ciclos ++)
+         {
+            ancho=ciclos;
+            alto=ciclos;
+
+            // A continuación se redimensiona la ventana.
+            izquierda = (anchoDisponible-ancho)/2;
+            superior = (altoDisponible-alto)/2;
+
+            // A continuación se reposiciona la ventana.
+            window.moveTo(izquierda, superior);
+            window.resizeTo (ancho,alto);
+         }
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

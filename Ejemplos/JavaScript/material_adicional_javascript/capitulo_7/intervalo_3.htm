@@ -1,0 +1,38 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            var texto = new Array ("M","I"," ","P","A","G","I","N","A");
+            var cadena = " ";
+            var indice = 0;
+
+            function escribir()
+            {
+               if (cadena != " MI PAGINA")
+               {
+                  cadena += texto[indice];
+                  indice ++;
+               } else {
+                  cadena = " ";
+                  indice = 0;
+               }
+               status = cadena;
+               return true;
+            }
+
+            function intervalo()
+            {
+               periodo = setInterval("escribir()",200);
+               return true;
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad = "intervalo();">
+   </body>
+</html>

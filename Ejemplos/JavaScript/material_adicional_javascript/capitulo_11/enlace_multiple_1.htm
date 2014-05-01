@@ -1,0 +1,46 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function iniciar()
+            {
+               destino.selectedIndex = 0;
+            }
+
+            function cambiar()
+            {
+               document.links[0].href = destino.options[destino.selectedIndex].value;
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <select name="destino" onChange="cambiar();">
+         <option value="javascript:void(0)" default>
+            ELIJA UN DESTINO
+         </option>
+         <option value="http://www.langoria.com" default>
+            Estaci&oacute;n Estelar Langoria
+         </option>
+         <option value="http://www.microsoft.com">
+            Microsoft
+         </option>
+         <option value="http://www.macromedia.com">
+            Macromedia
+         </option>
+         <option value="http://www.ra-ma.es">
+            Editorial Ra-Ma
+         </option>
+         <option value="http://www.google.com">
+            Google
+         </option>
+      </select>
+
+      <a href="javascript:void(0)">
+         Ir
+      </a>
+   </body>
+</html>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886CC0FE184A54CD0021D5E6 /* la foto 2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 886CC0FD184A54CD0021D5E6 /* la foto 2.PNG */; };
+		886CC102184A58F00021D5E6 /* ViewControllerCotiza.m in Sources */ = {isa = PBXBuildFile; fileRef = 886CC100184A58F00021D5E6 /* ViewControllerCotiza.m */; };
+		886CC103184A58F00021D5E6 /* ViewControllerCotiza.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886CC101184A58F00021D5E6 /* ViewControllerCotiza.xib */; };
+		886CC105184A59AB0021D5E6 /* la foto 3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 886CC104184A59AB0021D5E6 /* la foto 3.PNG */; };
+		886CC107184A60E40021D5E6 /* la foto 4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 886CC106184A60E40021D5E6 /* la foto 4.PNG */; };
+		886CC109184A637E0021D5E6 /* la foto 5.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 886CC108184A637E0021D5E6 /* la foto 5.PNG */; };
+		886CC10B184A66F40021D5E6 /* Boton.png in Resources */ = {isa = PBXBuildFile; fileRef = 886CC10A184A66F40021D5E6 /* Boton.png */; };
 		887DE6AD17D9155600032AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DE6AC17D9155600032AD0 /* UIKit.framework */; };
 		887DE6AF17D9155600032AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DE6AE17D9155600032AD0 /* Foundation.framework */; };
 		887DE6B117D9155600032AD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DE6B017D9155600032AD0 /* CoreGraphics.framework */; };
@@ -21,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		886CC0FD184A54CD0021D5E6 /* la foto 2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "la foto 2.PNG"; sourceTree = "<group>"; };
+		886CC0FF184A58F00021D5E6 /* ViewControllerCotiza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCotiza.h; sourceTree = "<group>"; };
+		886CC100184A58F00021D5E6 /* ViewControllerCotiza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCotiza.m; sourceTree = "<group>"; };
+		886CC101184A58F00021D5E6 /* ViewControllerCotiza.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerCotiza.xib; sourceTree = "<group>"; };
+		886CC104184A59AB0021D5E6 /* la foto 3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "la foto 3.PNG"; sourceTree = "<group>"; };
+		886CC106184A60E40021D5E6 /* la foto 4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "la foto 4.PNG"; sourceTree = "<group>"; };
+		886CC108184A637E0021D5E6 /* la foto 5.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "la foto 5.PNG"; sourceTree = "<group>"; };
+		886CC10A184A66F40021D5E6 /* Boton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boton.png; sourceTree = "<group>"; };
 		887DE6A917D9155600032AD0 /* nipikDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nipikDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887DE6AC17D9155600032AD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		887DE6AE17D9155600032AD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,6 +71,9 @@
 		887DE6A017D9155600032AD0 = {
 			isa = PBXGroup;
 			children = (
+				886CC0FF184A58F00021D5E6 /* ViewControllerCotiza.h */,
+				886CC100184A58F00021D5E6 /* ViewControllerCotiza.m */,
+				886CC101184A58F00021D5E6 /* ViewControllerCotiza.xib */,
 				887DE6B217D9155600032AD0 /* nipikDemo */,
 				887DE6AB17D9155600032AD0 /* Frameworks */,
 				887DE6AA17D9155600032AD0 /* Products */,
@@ -96,6 +114,11 @@
 		887DE6B317D9155600032AD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				886CC10A184A66F40021D5E6 /* Boton.png */,
+				886CC106184A60E40021D5E6 /* la foto 4.PNG */,
+				886CC108184A637E0021D5E6 /* la foto 5.PNG */,
+				886CC104184A59AB0021D5E6 /* la foto 3.PNG */,
+				886CC0FD184A54CD0021D5E6 /* la foto 2.PNG */,
 				887DE6B417D9155600032AD0 /* nipikDemo-Info.plist */,
 				887DE6B517D9155600032AD0 /* InfoPlist.strings */,
 				887DE6B817D9155600032AD0 /* main.m */,
@@ -158,8 +181,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886CC109184A637E0021D5E6 /* la foto 5.PNG in Resources */,
+				886CC105184A59AB0021D5E6 /* la foto 3.PNG in Resources */,
 				887DE6B717D9155600032AD0 /* InfoPlist.strings in Resources */,
+				886CC0FE184A54CD0021D5E6 /* la foto 2.PNG in Resources */,
 				887DE6BF17D9155600032AD0 /* Default.png in Resources */,
+				886CC10B184A66F40021D5E6 /* Boton.png in Resources */,
+				886CC107184A60E40021D5E6 /* la foto 4.PNG in Resources */,
+				886CC103184A58F00021D5E6 /* ViewControllerCotiza.xib in Resources */,
 				887DE6C117D9155600032AD0 /* Default@2x.png in Resources */,
 				887DE6C317D9155600032AD0 /* Default-568h@2x.png in Resources */,
 				887DE6C917D9155600032AD0 /* ViewController.xib in Resources */,
@@ -175,6 +204,7 @@
 			files = (
 				887DE6B917D9155600032AD0 /* main.m in Sources */,
 				887DE6BD17D9155600032AD0 /* AppDelegate.m in Sources */,
+				886CC102184A58F00021D5E6 /* ViewControllerCotiza.m in Sources */,
 				887DE6C617D9155600032AD0 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +328,7 @@
 				887DE6CE17D9155600032AD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

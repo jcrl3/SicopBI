@@ -1,0 +1,89 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function borraFila()
+            {
+               if (tabla1.rows(2))
+               {
+                  tabla1.deleteRow(2);
+               } else {
+                  alert ("La fila especificada no existe.");
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+
+      <table id="tabla1" width=450 border=2 cellspacing=0 cellpadding=0>
+         <tr height=50>
+            <td width=150 align="center">
+               Fila 1, Celda A
+            </td>
+            <td width=150 align="center">
+               Fila 1, Celda B
+            </td>
+            <td width=150 align="center">
+               Fila 1, Celda C
+            </td>
+         </tr>
+         <tr height=50>
+            <td width=150 align="center">
+               Fila 2, Celda A
+            </td>
+            <td width=150 align="center">
+               Fila 2, Celda B
+            </td>
+            <td width=150 align="center">
+               Fila 2, Celda C
+            </td>
+         </tr>
+         <tr height=50>
+            <td width=150 align="center">
+               Fila 3, Celda A
+            </td>
+            <td width=150 align="center">
+               Fila 3, Celda B
+            </td>
+            <td width=150 align="center">
+               Fila 3, Celda C
+            </td>
+         </tr>
+         <tr height=50>
+            <td width=150 align="center">
+               Fila 4, Celda A
+            </td>
+            <td width=150 align="center">
+               Fila 4, Celda B
+            </td>
+            <td width=150 align="center">
+               Fila 4, Celda C
+            </td>
+         </tr>
+         <tr height=50>
+            <td width=150 align="center">
+               Fila 5, Celda A
+            </td>
+            <td width=150 align="center">
+               Fila 5, Celda B
+            </td>
+            <td width=150 align="center">
+               Fila 5, Celda C
+            </td>
+         </tr>
+      </table>
+
+      <br>
+      <button onClick="borraFila();">
+         Borrar la tercera fila (n&uacute;mero 2).
+      </button>
+      <br>
+
+   </body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+   <head>
+      <title>
+         Página con JavaScript
+      </title>
+
+      <script language="JavaScript">
+         <!--
+
+            function comprobar(formulario)
+            {
+
+               var expresion = formulario.patron.value
+    
+               var indicadores = formulario.banderas.options[formulario.banderas.selectedIndex].value
+    
+               var expresion_1 = new RegExp(expresion, indicadores)
+    
+               if(expresion_1.test(formulario.test_string.value))
+               {
+                  alert("Hay coincidencia.")
+               } else {
+                  alert("NO hay coincidencia.") 
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+
+   <body>
+      <form>
+         <b>
+            Introduzca la expresi¬oacute;n y los indicadores:
+         </b>
+         <br>
+         <input type="text" name="patron">
+         <select name="banderas">
+            <option value="" selected>Ninguno</option>
+            <option value="i">i</option>
+            <option value="g">g</option>
+            <option value="ig">ig</option>
+         </select>
+         <br>
+         <b>
+            Introduzca la cadena a comprobar:
+         </b>
+         <br>
+         <input type="text" name="test_string">
+         <input type="button" value="Comprobar cadena" onClick="comprobar(this.form)">
+      </form>
+   </body>
+</html>

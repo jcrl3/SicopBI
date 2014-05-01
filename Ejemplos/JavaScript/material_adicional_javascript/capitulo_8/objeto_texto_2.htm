@@ -1,0 +1,27 @@
+<html>
+   <head>
+      <title>P&aacute;gina con Javascript.</title>
+                     
+      <script language="javascript">
+         <!--
+
+            var matrizColores = new Array ("#000000","#FF0000","#00FF00","#0000FF","#FFFF00","#00FFFF","#FF00FF","#999999","#FF99FF","#66FF99");
+
+            function cambiar()
+            {
+               numero = parseInt(Math.random()*10);
+               t1.style.color = matrizColores[numero];
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <h1 id="t1" onMouseOver="cambiar();" onMouseOut="cambiar();">
+          Esto es un texto que cambia de color al pasar el mouse por encima.
+      </h1>
+      <h1>
+         Esto es un texto que NO cambia de color.
+      </h1>
+   </body>
+</html>

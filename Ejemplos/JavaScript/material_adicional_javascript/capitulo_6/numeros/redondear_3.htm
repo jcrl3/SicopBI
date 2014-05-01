@@ -1,0 +1,46 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            var precio=0;
+
+            do
+            {
+               precio = prompt ("Introduzca un precio (con varios decimales)","");
+            } while (isNaN(precio));
+
+            precio *= 100;
+            precio = Math.round(precio);
+            precio /= 100;
+            precioCadena = Math.abs(precio).toString();
+
+            if (precioCadena.indexOf(".") == -1)
+            {
+               precioCadena += ".00";
+/* Si no existe punto decimal (se trata de un número entero)
+se añade a la cadena la secuencia ".00" */
+
+            } else {
+
+// Vamos a determinar la parte decimal.
+               decimales = precioCadena.substr(precioCadena.indexOf("."));
+               if (decimales.length == 2)
+               {
+                  precioCadena += "0";
+/* Si solo existe un decimal, se añade a la cadena
+el caracter "0" */
+               }
+            }
+
+            precioCadena = precioCadena.replace (/\./,",");
+            alert ("El precio redondeado es " + precioCadena)
+         
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

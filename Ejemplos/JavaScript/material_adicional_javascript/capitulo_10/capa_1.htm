@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function cambiar ()
+            {
+               if (Capa1.style.visibility == "hidden")
+               {
+                  Capa1.style.visibility = "visible";
+               } else {
+                  Capa1.style.visibility = "hidden";
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <span id="Capa1" style="position:absolute; left:250px; top:130px; width:200px; height:50px; z-index:1; background-color: #33FFFF; border: 1px none #000000; visibility: hidden">
+         <font face="Arial" color="#FF0000">
+            <b>
+               Contenido de la capa.
+            </b>
+         </font>
+      </span>
+
+      <button onClick="cambiar();">
+         Mostrar / Ocultar
+      </button>
+   </body>
+</html>

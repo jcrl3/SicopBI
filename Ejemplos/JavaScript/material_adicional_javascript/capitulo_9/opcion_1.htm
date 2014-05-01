@@ -1,0 +1,128 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function evaluacion()
+            {
+               resultado1 = "ninguna";
+               resultado2 = "ninguna";
+
+               for (contador=0; contador<formulario.grupo1.length; contador++)
+               {
+                  if (formulario.grupo1[contador].checked)
+                  {
+                     resultado1 = String.fromCharCode(contador+65);
+                  }
+               }
+
+               for (contador=0; contador<formulario.grupo2.length; contador++)
+               {
+                  if (formulario.grupo2[contador].checked)
+                  {
+                     resultado2 = String.fromCharCode(contador+65);
+                  }
+               }
+
+               formulario.res1.value = "La opción activada es " + resultado1;
+               formulario.res2.value = "La opción activada es " + resultado2;
+
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <form name="formulario">
+         <table width="300" border="0" cellspacing="0" cellpadding="4">
+            <tr>
+               <td colspan="2">
+                  Grupo 1
+               </td>
+               <td colspan="2">
+                  Grupo 2
+               </td>
+            </tr>
+            <tr>
+               <td width="80">
+                  Opci&oacute;n A
+               </td>
+               <td width="70" align="center"> 
+                  <input type="radio" name="grupo1" value="A">
+               </td>
+               <td width="80">
+                  Opci&oacute;n A
+               </td>
+               <td width="70" align="center"> 
+                  <input type="radio" name="grupo2" value="A">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  Opci&oacute;n B
+               </td>
+               <td align="center"> 
+                  <input type="radio" name="grupo1" value="B">
+               </td>
+               <td>
+                  Opci&oacute;n B
+               </td>
+               <td align="center"> 
+                  <input type="radio" name="grupo2" value="B">
+               </td>
+            </tr>
+            <tr>
+               <td width="95">
+                  Opci&oacute;n C
+               </td>
+               <td align="center"> 
+                  <input type="radio" name="grupo1" value="C">
+               </td>
+               <td>
+                  Opci&oacute;n C
+               </td>
+               <td align="center"> 
+                  <input type="radio" name="grupo2" value="C">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  Opci&oacute;n D
+               </td>
+               <td align="center"> 
+                  <input type="radio" name="grupo1" value="D">
+               </td>
+               <td colspan="2">
+                  &nbsp;
+               </td>
+            </tr>
+            <tr>
+               <td colspan="4">
+                  &nbsp;
+               </td>
+            </tr>
+            <tr align="center">
+               <td colspan="4"> 
+                  <input type="button" name="evaluar" value="Comprobar estado" onClick="evaluacion();">
+               </td>
+            </tr>
+            <tr>
+               <td colspan="4">
+                  &nbsp;
+               </td>
+            </tr>
+            <tr align="center">
+               <td colspan="4"> 
+                  <input type="text" name="res1" size="30" disabled>
+               </td>
+            </tr>
+            <tr align="center">
+               <td colspan="4"> 
+                  <input type="text" name="res2" size="30" disabled>
+               </td>
+            </tr>
+         </table>
+      </form>
+   </body>
+</html>

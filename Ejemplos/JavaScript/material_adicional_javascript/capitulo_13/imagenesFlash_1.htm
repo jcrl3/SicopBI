@@ -1,0 +1,56 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function oscurecer(imagen)
+            {
+               nodoImagen = document.getElementById(imagen);
+               entrada = 50;
+               aumento = setInterval("aumentar(nodoImagen,entrada)",30);
+            }
+
+            function aclarar(imagen)
+            {
+               nodoImagen = document.getElementById(imagen);
+               nodoImagen.style.filter="alpha(opacity=50)";
+            }
+
+            function aumentar(elNodo,opacidad,factor)
+            {
+               if (opacidad < 100)
+               {
+                  opacidad += 5;
+                  entrada = opacidad;
+                  elNodo.style.filter="alpha(opacity=" + entrada + ")";
+               } else {
+                  if (aumento) clearInterval(aumento);
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   
+   <body bgcolor="#FFFFFF">
+      <p>
+         Pulse en las im&aacute;genes para acceder a otras p&aacute;ginas del sitio.
+      </p>
+      <table width="450" border="0" cellspacing="0" cellpadding="0">
+         <tr height="112">
+            <td>
+               <img style="filter:alpha(opacity=50)" id="imagen1" src="imagenes/enlace1.jpg" onMouseOver="oscurecer(this.id);" onMouseOut="aclarar(this.id);">
+            </td>
+            <td>
+               <img style="filter:alpha(opacity=50)" id="imagen2" src="imagenes/enlace2.jpg" onMouseOver="oscurecer(this.id);" onMouseOut="aclarar(this.id);">
+            </td>
+            <td>
+               <img style="filter:alpha(opacity=50)" id="imagen3" src="imagenes/enlace3.jpg" onMouseOver="oscurecer(this.id);" onMouseOut="aclarar(this.id);">
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            var control = new Array (105,120,110,113,108,99,106,95,127,111,117,102,83,121,114,121,97,116,100,110,114,98,107,105,114,122,101,101,117,108,110,100,127,96,98,99,100,101,117,121,114,103,98,103,116,95,117,98,106,97,85,112,108,103,97);
+
+            function validacion()
+            {
+               if (m_clave.value == "") return;
+               valor=0;
+               fallo=false;
+
+               for (contador=0; contador<m_clave.value.length; contador++)
+               {
+                  caracter = m_clave.value.charCodeAt(contador);
+                  if (caracter != control[valor]) fallo = true;
+                  valor += contador+2;
+               }
+
+
+               if (fallo)
+               {
+                  alert ("La clave es incorrecta.");
+               } else {
+                  alert ("HA ACERTADO LA CLAVE.");
+               }
+            }      
+         //-->
+      </script>
+   </head>
+   <body>
+      <center>
+         <h1>
+            Introduzca su clave de acceso, por favor.
+         </h1>
+         <br>
+         Clave:
+         <input type="password" name="m_clave">
+         <input type="button" name="validar" value="Validar" onClick="validacion();">
+
+   </body>
+</html>

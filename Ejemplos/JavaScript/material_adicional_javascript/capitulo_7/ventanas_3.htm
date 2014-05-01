@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+         window.moveTo (0,0);
+         window.resizeTo (200, 200);
+
+         var ancho, alto;
+
+         // Se produce el escalado vertical.
+         for (alto=200; alto<=screen.availHeight; alto++)
+         {
+            window.resizeTo (200,alto);
+         }
+
+         // Se produce el escalado horizontal.
+         // Este escalado se produce más deprisa.
+         for (ancho=200; ancho<=screen.availWidth; ancho+=5)
+         {
+            window.resizeTo (ancho,alto);
+         }
+         //-->
+      </script>
+   </head>
+   <body>
+      <h1>
+         Esta ventana se halla correctamente colocada y dimensionada.
+      </h1>
+   </body>
+</html>

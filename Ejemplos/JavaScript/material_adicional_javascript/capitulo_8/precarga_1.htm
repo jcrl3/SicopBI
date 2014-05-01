@@ -1,0 +1,32 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            var sustitucion = new Image(300,197);
+            sustitucion.src = "imagenes/espacio.gif";
+
+            var original = new Image(300,197);
+            original.src = "imagenes/iceberg.gif";
+
+            function cambiar()
+            {
+               document.images["hielo"].src = sustitucion.src;
+               document.images["hielo"].width = sustitucion.width;
+               document.images["hielo"].height = sustitucion.height;
+            }
+
+            function restaurar()
+            {
+               document.images["hielo"].src = original.src;
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <img name="hielo" src="imagenes/iceberg.gif" onMouseOver="cambiar();" onMouseOut="restaurar();">
+   </body>
+</html>

@@ -13,12 +13,22 @@
 @end
 
 @implementation ViewController
+@synthesize imagen;
+@synthesize btnSicop;
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    /*
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"la foto 2.PNG"]];
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+    [backgroundImage release];
+    */
     
+    btnSicop.hidden=YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,19 +42,45 @@
     return;
 }
 -(IBAction) muestraVideos:(id)sender{
-      [self muestraAlerta:@"Mostrando videos"];
-        return;
+    btnSicop.hidden=YES;
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"la foto 4.PNG"]];
+    [self.view addSubview:backgroundImage];
+    // [self.view sendSubviewToBack:backgroundImage];
+    [self.view bringSubviewToFront:backgroundImage];
+    [backgroundImage release];
+
 }
 -(IBAction) muestraCotizaciones:(id)sender{
-     [self muestraAlerta:@"Cotizar"];
-        return;
+ // [self muestraAlerta:@"Cotizar"];
+  /*
+    ViewControllerCotiza *menu= [[ViewControllerCotiza alloc]   initWithNibName:@"ViewControllerCotiza" bundle:nil];
+    [[self navigationController] pushViewController:menu   animated:YES];
+    [menu release];
+*/
+    btnSicop.hidden=NO;
+
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"la foto 3.PNG"]];
+    [self.view addSubview:backgroundImage];
+   // [self.view sendSubviewToBack:backgroundImage];
+    [self.view bringSubviewToFront:backgroundImage];
+    [self.view bringSubviewToFront:btnSicop];
+    [backgroundImage release];
+
+//    imagen sendSubviewToBack:UI
+
+    
 }
 -(IBAction) retornaSicop:(id)sender{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sicoprecepcion://"]];
 }
 -(IBAction) checklistEntrega:(id)sender{
-     [self muestraAlerta:@"Checklist de entrega"];
-        return;
+    btnSicop.hidden=YES;
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"la foto 5.PNG"]];
+    [self.view addSubview:backgroundImage];
+    // [self.view sendSubviewToBack:backgroundImage];
+    [self.view bringSubviewToFront:backgroundImage];
+    [backgroundImage release];
+    
 }
 
 

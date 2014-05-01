@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            var matrizImagenes = new Array();
+            matrizImagenes[0] = "imagenes/cero.gif";
+            matrizImagenes[1] = "imagenes/uno.gif";
+            matrizImagenes[2] = "imagenes/dos.gif";
+            matrizImagenes[3] = "imagenes/tres.gif";
+            matrizImagenes[4] = "imagenes/cuatro.gif";
+            matrizImagenes[5] = "imagenes/cinco.gif";
+            matrizImagenes[6] = "imagenes/seis.gif";
+            matrizImagenes[7] = "imagenes/siete.gif";
+            matrizImagenes[8] = "imagenes/ocho.gif";
+            matrizImagenes[9] = "imagenes/nueve.gif";
+
+            var indice = 0;
+
+            function mas()
+            {
+               indice += 1;
+               if (indice > 9)
+               {
+                  indice = 0;
+               }
+               document.images["numero"].src = matrizImagenes[indice];
+            }
+
+            function menos()
+            {
+               indice -= 1;
+               if (indice < 0)
+               {
+                  indice = 9;
+               }
+               document.images["numero"].src = matrizImagenes[indice];
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <center>
+         <table width=200 border=0 cellpadding=3>
+            <tr height=100 align="center">
+               <td colspan=2>
+                  <img name="numero" src="imagenes/cero.gif">
+               </td>
+            </tr>
+            <tr height=100 align="center">
+               <td width=100>
+                  <button onClick="menos();">
+                     -
+                  </button>
+               </td>
+               <td width=100>
+                  <button onClick="mas();">
+                     +
+                  </button>
+               </td>
+            </tr>
+         </table>
+      </center>
+   </body>
+</html>

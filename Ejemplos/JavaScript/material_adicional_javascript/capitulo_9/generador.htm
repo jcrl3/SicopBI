@@ -1,0 +1,49 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+             function generar()
+             {
+                cadena="";
+                for(contadore=0;contadore<f1.s1.options.length;contadore++)
+                {
+                   texto = "";
+                   posicion = f1.s1.options[contadore].text.length;
+                   for (contadori=0;contadori<f1.s1.options[contadore].text.length;contadori++)
+                   {
+                      letra=f1.s1.options[contadore].text.substr(contadori,1);
+                      if (letra==",")
+                      {
+                         posicion=contadori;
+                      }
+                   }
+                   texto=f1.s1.options[contadore].text.substr(0,posicion);
+                   cadena += "\"" + texto + "\", ";
+
+                   f1.lista.value += cadena;
+                }
+             }
+
+
+         //-->
+      </script>
+   </head>
+   <body>
+      <form name="f1">
+         <select name="s1"  size="20" multiple>
+
+
+
+
+
+
+         </select>
+         <input type="button" value="Generar" onClick="generar();">
+         <textarea name="lista" cols=30 rows=10 wrap="virtual">
+         </textarea>
+      </form>
+   </body>
+</html>

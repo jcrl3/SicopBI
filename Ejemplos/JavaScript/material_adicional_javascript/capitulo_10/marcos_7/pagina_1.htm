@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function mostrarNombres()
+            {
+               var nombre = "El nombre del marco actual es ";
+               nombre += top.frames[0].name + "\n";
+               nombre += "El nombre del marco padre es ";
+               nombre += top.name + "\n";
+               nombre += "El nombre del marco de abajo es ";
+               nombre += top.frames[1].name + "\n";
+               nombre += "El nombre del marco de abajo a la izquierda es ";
+               nombre += top.frames[1].frames[0].name + "\n";
+               nombre += "El nombre del marco de abajo a la derecha es ";
+               nombre += top.frames[1].frames[1].name + "\n";
+
+               alert (nombre);
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <center>
+         <h1>
+            Esta es la p&aacute;gina pagina_1.htm
+         </h1>
+         <button onClick="mostrarNombres();">
+            Pulsar para ver los nombres de los marcos
+         </button>
+      </center>
+   </body>
+</html>

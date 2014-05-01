@@ -1,0 +1,25 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function redireccionar()
+            {
+               var navegador = navigator.userAgent;
+               if (navegador.indexOf("MSIE") != -1)
+               {
+                  location.href = "pagina_explorer.htm";
+               } else {
+                  location.href = "pagina_otro.htm";
+               }
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="redireccionar();">
+   </body>
+</html>

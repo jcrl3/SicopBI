@@ -1,0 +1,102 @@
+<html>
+
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function crearNodos()
+            {
+//Identificamos el nodo del párrafo de texto
+               nodoParrafo = document.getElementById("texto1");
+
+//Identificamos los nodos de los
+//campos del formulario.
+               nodoFuentes = document.getElementById("listaDeFuentes");
+               nodoColores = document.getElementById("listaDeColores");
+               nodoTamanos = document.getElementById("listaDeTamanos");
+               nodoUnidades = document.getElementById("listaDeUnidades");
+            }
+
+            function establecer()
+            {
+               //Establecemos los valores de las propiedades
+               //del objeto style del párrafo.
+               with (nodoParrafo.style)
+               {
+                  fontFamily = nodoFuentes[nodoFuentes.selectedIndex].value;
+                  color = nodoColores[nodoColores.selectedIndex].value;
+                  fontSize = nodoTamanos[nodoTamanos.selectedIndex].value + nodoUnidades[nodoUnidades.selectedIndex].value;
+               }
+            }
+         //-->
+      </script>
+   </head>
+
+   <body onLoad="crearNodos();">
+      <p id="texto1" style="font-size:10px; font-family:Times New Roman; font-color:#000000">
+         Esto es un texto
+      </p>
+
+      <form>
+         <table width="450" border="1" cellpadding="5">
+            <tr>
+               <th colspan="4">
+                  Establezca las propiedades del texto
+               </th>
+            </tr>
+            <tr>
+               <td width="150">
+                  Tipograf&iacute;a:
+               </td>
+               <td width="150">
+                  Color:
+               </td>
+               <td colspan="2">
+                  Tama&ntilde;o:
+               </td>
+            </tr>
+            <tr align="center" valign="top">
+               <td height="125"> 
+                  <select size="6" id="listaDeFuentes" onChange="establecer();">
+                     <option value="Times New Roman" selected>Times</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Tahoma">Tahoma</option>
+                     <option value="Comic sans MS">Comic</option>
+                     <option value="Verdana">Verdana</option>
+                     <option value="Courier">Courier</option>
+                  </select>
+               </td>
+               <td>
+                  <select size="6" id="listaDeColores" onChange="establecer();">
+                     <option value="#000000" selected>Negro</option>
+                     <option value="#FF0000">Rojo</option>
+                     <option value="#00FF00">Verde</option>
+                     <option value="#0000FF">Azul</option>
+                     <option value="#FFFF00">Amarillo</option>
+                     <option value="#FF00FF">Malva</option>
+                  </select>
+               </td>
+               <td width="75">
+                  <select size="6" id="listaDeTamanos" onChange="establecer();">
+                     <option value="10" selected>10</option>
+                     <option value="15">15</option>
+                     <option value="20">20</option>
+                     <option value="25">25</option>
+                     <option value="30">30</option>
+                     <option value="35">35</option>
+                  </select>
+               </td>
+               <td width="75">
+                  <select id="listaDeUnidades" onChange="establecer();">
+                     <option value="pt" selected>Puntos</option>
+                     <option value="px">P&iacute;xeles</option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+      </form>
+
+   </body>
+</html>

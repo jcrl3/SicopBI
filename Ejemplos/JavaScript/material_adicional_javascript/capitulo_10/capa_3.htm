@@ -1,0 +1,67 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            contador = 0;
+            centrado = false;
+            window.moveTo(0,0);
+            window.resizeTo (screen.availWidth, screen.availHeight);
+
+            function iniciar()
+            {
+               Capa1.style.visibility = "visible";
+               desplazamiento = setInterval(mover,1);
+            }
+
+            function mover()
+            {
+               contador += 20;
+               if (contador < (screen.availWidth/2)-140)
+               {
+                  Capa1.style.left = contador+"px";
+               } else {
+                  cierre = setTimeout (cerrar,3000);
+                  centrado = true;
+               }
+            }
+
+            function cerrar()
+            {
+               Capa1.style.visibility = "hidden";
+               clearInterval (desplazamiento);
+               if (centrado) clearTimeout (cierre);
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <h1>
+         <center>
+            Este es el cuerpo principal de la p&aacute;gina
+         </center>
+      </h1>
+
+      <span id="Capa1" style="position:absolute; left:0px; top:130px; width:280px; height:100px; z-index:1; background-color: #00FFFF; layer-background-color: #00FFFF; border: 1px none #000000; visibility: hidden; overflow: auto"> 
+         <p>
+            <font face="Tahoma, Verdana, Arial">
+               <b>
+                  Esto es una capa con un banner publicitario.
+               </b>
+            </font>
+         </p>
+
+         <p>
+            <center>
+               <button onClick="cerrar();">
+                  Cerrar esto
+               </button>
+            </center>
+         </p>
+      </span>
+
+   </body>
+</html>

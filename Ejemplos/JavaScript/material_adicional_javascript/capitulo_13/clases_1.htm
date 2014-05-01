@@ -1,0 +1,54 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+
+      <style type="text/css">
+         .estilo1 {font-family:Times New Roman; color:#000000; font_size:20px; background-color:#FF9999; text-decoration:none}
+         .estilo2 {font-family:Arial; color:#00FF00; font_size:30px; background-color:#FF00FF; text-decoration:none}
+         .estilo3 {font-family:Comic sans MS; color:#0000FF; font_size:20px; background-color:#FFFF00; text-decoration:overline}
+         .estilo4 {font-family:Tahoma; color:#FF0000; font_size:25px; background-color:#00FF00; text-decoration:underline}
+      </style>
+
+      <script language="javascript">
+         <!--
+            function crearNodo()
+            {
+               nodoCuerpo = document.getElementById("principal");
+            }
+
+            function cambiar(estilo)
+            {
+               nodoCuerpo.className = estilo;
+            }
+         //-->
+      </script>
+   </head>
+
+   <body id="principal" class="estilo1" onLoad="crearNodo();">
+      <p>
+         Esto es un p&aacute;rrafo de texto.
+      </p>
+      <form>
+         <p>
+            Seleccione su estilo favorito.
+         </p>
+         <p>
+            Estilo 1:
+            <input type="radio" name="elegir" value="estilo1" checked onClick="cambiar(this.value);">
+         </p>
+         <p>
+            Estilo 2:
+            <input type="radio" name="elegir" value="estilo2" onClick="cambiar(this.value);">
+         </p>
+         <p>
+            Estilo 3:
+            <input type="radio" name="elegir" value="estilo3" onClick="cambiar(this.value);">
+         </p>
+         <p>
+            Estilo 4:
+            <input type="radio" name="elegir" value="estilo4" onClick="cambiar(this.value);">
+         </p>
+   </body>
+</html>

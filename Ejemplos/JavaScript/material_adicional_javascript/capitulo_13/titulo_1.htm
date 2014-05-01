@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function crearNodo()
+            {
+               nodoTitulo = document.getElementById("titulo");
+            }
+
+            function cambiar()
+            {
+               document.title = nodoTitulo.value;
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="crearNodo();">
+      <form>
+         Introduzca el t&iacute;tulo que quiere ver en la p&aacute;gina y pulse el bot&oacute;n.
+         <br>
+         <input type="text" size=50 maxlength=50 id="titulo">
+         <input type="button" value="Validar" onClick="cambiar();">
+      </form>
+   </body>
+</html>

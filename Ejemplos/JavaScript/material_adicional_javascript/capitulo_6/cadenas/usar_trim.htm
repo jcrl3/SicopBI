@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script src="trim.js" language="javascript" type="text/javascript">
+         <!--
+           //Se importa el fichero externo en un script propio.
+         //-->
+      </script>
+
+      <script language="javascript">
+         <!--
+
+         //Se crea el método trim()
+//en base a la función del mismo nombre.
+         String.prototype.trim = trim;
+
+         var cadena = prompt ("Teclee una cadena","");
+         var lados = prompt ("Indique el extremo (i/d/a).","");
+
+         cadena = cadena.trim(lados);
+
+         alert ("La cadena recortada es \"" + cadena + "\"");
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

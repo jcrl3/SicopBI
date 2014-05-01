@@ -1,0 +1,219 @@
+<html>
+   <head>
+      <title>
+         Página con Javascript
+      </title>
+
+      <script language="JavaScript">
+         <!--
+
+            window.moveTo(0,0);
+            window.resizeTo(screen.availWidth, screen.availHeight);
+
+            function convertirAHexa(valor)
+            {
+               cadena = (valor.toString(16)).toUpperCase();
+               if (cadena.length<2) cadena="0"+cadena;
+               return cadena;
+            }
+
+            function cambiar(objeto,accion)
+            {
+               if (accion == ">>")
+               {
+                  if (parseInt(objeto.value)<255)
+                  {
+                     if (document.all.rango[0].checked)
+                     {
+                        objeto.value = parseInt(objeto.value)+1;
+                     } else {
+                        decimalSeguro = (parseInt(parseInt(objeto.value)/51)+1)*51;
+                        if (decimalSeguro!=parseInt(objeto.value))
+                        {
+                           objeto.value = decimalSeguro;
+                        } else {
+                           if (decimalSeguro<255)
+                           {
+                              decimalSeguro += 51;
+                              objeto.value = decimalSeguro;
+                           }
+                        }
+                     }
+                  }
+               } else {
+                  if (parseInt(objeto.value)>0)
+                  {
+                     if (document.all.rango[0].checked)
+                     {
+                        objeto.value = parseInt(objeto.value)-1;
+                     } else {
+                        decimalSeguro = parseInt(parseInt(objeto.value)/51)*51;
+                        if (decimalSeguro!=parseInt(objeto.value))
+                        {
+                           objeto.value = decimalSeguro;
+                        } else {
+                           if (decimalSeguro>0)
+                           {
+                              decimalSeguro -= 51;
+                              objeto.value = decimalSeguro;
+                           }
+                        }
+                     }
+                  }
+               }
+               document.all.rojohexa.value = convertirAHexa(parseInt(document.all.rojodecimal.value));
+               document.all.verdehexa.value = convertirAHexa(parseInt(document.all.verdedecimal.value));
+               document.all.azulhexa.value = convertirAHexa(parseInt(document.all.azuldecimal.value));
+               cadenaColor = "#".concat(document.all.rojohexa.value);
+               cadenaColor = cadenaColor.concat(document.all.verdehexa.value);
+               cadenaColor = cadenaColor.concat(document.all.azulhexa.value);
+               document.bgColor = cadenaColor;
+            }
+
+         //-->
+      </script>
+   </head>
+
+   <body bgcolor="#000000" text="#0000FF">
+      <table width="336" border="10" cellpadding="4" cellspacing="0">
+
+         <tr align="center" bgcolor="#CCCCCC">
+            <td colspan="8" height="100"> 
+               <p>
+                  <font face="Tahoma, Verdana, Arial">
+                     <b>
+                        Test de colores para documentos web.
+                     </b>
+                  </font>
+                  <br>
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     Para comprobar colores que puede usar en sus p&aacute;ginas, pulse los botones y observe el color de fondo de este documento.
+                     <br>
+                  </font>
+               </p>
+            </td>
+         </tr>
+
+         <tr align="center">
+            <td colspan="2" bgcolor="#FF0000" height="33">
+               <b>
+                  <font face="Tahoma, Verdana, Arial">
+                     ROJO
+                  </font>
+               </b>
+            </td>
+            <td width="1" bgcolor="#CCCCCC" height="33">
+               &nbsp;
+            </td>
+            <td bgcolor="#00FF00" colspan="2" height="33">
+               <b>
+                  <font face="Tahoma, Verdana, Arial">
+                     VERDE
+                  </font>
+               </b>
+            </td>
+            <td width="1" bgcolor="#CCCCCC" height="33">
+               &nbsp;
+            </td>
+            <td colspan="2" bgcolor="#0000FF" height="33">
+               <b>
+                  <font face="Tahoma, Verdana, Arial" color="#FFFF00">
+                     AZUL
+                  </font>
+               </b>
+            </td>
+         </tr>
+
+         <tr align="center">
+            <td height="59" width="40" bgcolor="#FF0000">
+               <font face="Tahoma, Verdana, Arial">
+                  Hex
+                  <input type="text" name="rojohexa" size="5" maxlength="2" value="00" disabled>
+               </font>
+            </td>
+            <td height="59" width="40" bgcolor="#FF0000">
+               <font face="Tahoma, Verdana, Arial">
+                  Dec
+                     <input type="text" name="rojodecimal" size="5" maxlength="3" value="0" disabled>
+               </font>
+            </td>
+            <td height="59" width="1" bgcolor="#CCCCCC">
+               &nbsp;
+            </td>
+            <td height="59" width="38" bgcolor="#00FF00">
+               <font face="Tahoma, Verdana, Arial">
+                  Hex
+                  <input type="text" name="verdehexa" size="5" maxlength="2" value="00" disabled>
+               </font>
+            </td>
+            <td height="59" width="41" bgcolor="#00FF00">
+               <font face="Tahoma, Verdana, Arial">
+                  Dec
+                  <input type="text" name="verdedecimal" size="5" maxlength="3" value="0" disabled>
+               </font>
+            </td>
+            <td height="59" width="1" bgcolor="#CCCCCC">
+               &nbsp;
+            </td>
+            <td height="59" width="45" bgcolor="#0000FF">
+               <font face="Tahoma, Verdana, Arial" color="#FFFF00">
+                  Hex
+                  <input type="text" name="azulhexa" size="5" maxlength="2" value="00" disabled>
+               </font>
+            </td>
+            <td height="59" width="48" bgcolor="#0000FF">
+               <font face="Tahoma, Verdana, Arial" color="#FFFF00">
+                  Dec
+                  <input type="text" name="azuldecimal" size="5" maxlength="3" value="0" disabled>
+               </font>
+            </td>
+         </tr>
+
+         <tr align="center">
+            <td height="35" align="right" width="40" bgcolor="#FF0000"> 
+               <input type="button" name="rojomenos" value="&lt;&lt;" onClick="cambiar(document.all.rojodecimal,this.value);">
+            </td>
+            <td height="35" align="left" width="40" bgcolor="#FF0000"> &nbsp; 
+               <input type="button" name="rojomas" value="&gt;&gt;" onClick="cambiar(document.all.rojodecimal,this.value);">
+            </td>
+            <td height="35" align="right" width="1" bgcolor="#CCCCCC">
+               &nbsp;
+            </td>
+            <td height="35" align="right" width="38" bgcolor="#00FF00"> 
+               <input type="button" name="verdemenos" value="&lt;&lt;" onClick="cambiar(document.all.verdedecimal,this.value);">
+            </td>
+            <td height="35" align="left" width="41" bgcolor="#00FF00">
+               &nbsp;
+               <input type="button" name="verdemas" value="&gt;&gt;" onClick="cambiar(document.all.verdedecimal,this.value);">
+            </td>
+            <td height="35" align="left" width="1" bgcolor="#CCCCCC">
+               &nbsp;
+            </td>
+            <td height="35" align="right" width="45" bgcolor="#0000FF"> 
+               <input type="button" name="azulmenos" value="&lt;&lt;" onClick="cambiar(document.all.azuldecimal,this.value);">
+            </td>
+            <td height="35" align="left" width="48" bgcolor="#0000FF">
+               &nbsp;
+               <input type="button" name="azulmas" value="&gt;&gt;" onClick="cambiar(document.all.azuldecimal,this.value);">
+            </td>
+         </tr>
+
+         <tr bgcolor="#FFFFFF">
+            <td colspan="8" height="25">
+               Todos los colores
+               &nbsp;
+               <input type="radio" name="rango" value="completo" checked>
+            </td>
+         </tr>
+
+         <tr bgcolor="#FFFFFF">
+            <td colspan="8" height="21">
+               Colores seguros para la web
+               &nbsp;
+               <input type="radio" name="rango" value="seguro">
+            </td>
+         </tr>
+
+      </table>
+   </body>
+</html>

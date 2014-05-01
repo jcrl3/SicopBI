@@ -1,0 +1,70 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            contador = 0;
+            centrado = false;
+            window.moveTo(0,0);
+            window.resizeTo (screen.availWidth, screen.availHeight);
+
+            function iniciar()
+            {
+               crecimiento = setInterval(mover,10);
+            }
+
+            function mover()
+            {
+               contador += 2;
+               if (contador <= 140)
+               {
+                  menor = 140-contador;
+                  mayor = 140+contador;
+                  Capa1.style.clip = "rect(" + menor + " " + mayor +" "+ mayor +" " + menor + ")";
+               } else {
+                  cierre = setTimeout (cerrar,5000);
+                  centrado = true;
+               }
+            }
+
+            function cerrar()
+            {
+               Capa1.style.visibility = "hidden";
+               clearInterval (crecimiento);
+               if (centrado) clearTimeout (cierre);
+            }
+
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <h1>
+         Esto es el contenido normal de la p&aacute;gina.
+      </h1>
+      Sobre los contenidos se despliega una capa que podr&iacute;a tener,
+      <br>
+      por ejemplo, un banner publicitario.
+
+      <span id="Capa1" style="position:absolute; left:10px; top:10px; width:280px; height:280px; background-color: #66FFFF; layer-background-color: #66FFFF; clip: rect(140 140 140 140); visibility: visible; overflow: auto">
+         <p>
+            Esto es una capa con un recorte.<br>
+            Sólo se ve la parte de los contenidos <br>
+            que coincide con la zona recortada.<br>
+            El resto es invisible. Eso afecta a texto,<br>
+            im&aacute;genes, botones <br>
+            y cualquier otro tipo de contenidos.
+         </p>
+         <center>
+            <img src="imagenes/disco.gif">
+            <br>
+            <button onClick="cerrar();">
+               Cerrar esto
+            </button>
+         </center>
+      </span>
+   </body>
+</html>

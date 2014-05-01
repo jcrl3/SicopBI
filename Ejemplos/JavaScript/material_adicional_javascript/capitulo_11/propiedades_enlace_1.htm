@@ -1,0 +1,173 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function iniciar()
+            {
+               document.all.destino.selectedIndex = 0;
+            }
+
+            function cambiar()
+            {
+               document.links[0].href = document.all.destino.options[document.all.destino.selectedIndex].value;
+
+               document.all.pHash.value = document.links[0].hash;
+               document.all.pHost.value = document.links[0].host;
+               document.all.pHostname.value = document.links[0].hostname;
+               document.all.pHref.value = document.links[0].href;
+               document.all.pInnerhtml.value = document.links[0].innerHTML;
+               document.all.pPathname.value = document.links[0].pathname;
+               document.all.pPort.value = document.links[0].port;
+               document.all.pProtocol.value = document.links[0].protocol;
+               document.all.pSearch.value = document.links[0].search;
+               document.all.pTarget.value = document.links[0].target;
+               document.all.pText.value = document.links[0].text;
+
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <p>
+         <select name="destino" onChange="cambiar();">
+            <option value="javascript:void(0)" default>
+               ELIJA UN DESTINO
+            </option>
+            <option value="http://www.todoligues.com" default>
+               Portal de todoligues
+            </option>
+            <option value="http://www.microsoft.com">
+               Microsoft
+            </option>
+            <option value="http://www.macromedia.com">
+               Macromedia
+            </option>
+            <option value="http://www.ra-ma.es">
+               Editorial Ra-Ma
+            </option>
+            <option value="http://www.google.com">
+               Google
+            </option>
+         </select>
+
+         <a href="javascript:void(0)">
+            <b>
+               Ir
+            <b>
+         </a>
+      </p>
+
+      <table width="400" border="2" cellspacing="0" cellpadding="4">
+         <tr align="center">
+            <td colspan="2">
+               <b>
+                  PROPIEDADES DEL ENLACE
+               </b>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               <b>
+                  Propiedad
+               </b>
+            </td>
+            <td width="237">
+               <b>
+                  Valor
+               </b>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               hash
+            </td>
+            <td width="237">
+               <input type="text" name="pHash" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               host
+            </td>
+            <td width="237">
+               <input type="text" name="pHost" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               hostname
+            </td>
+            <td width="237">
+               <input type="text" name="pHostname" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               href
+            </td>
+            <td width="237">
+               <input type="text" name="pHref" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               innerHTML
+            </td>
+            <td width="237">
+               <input type="text" name="pInnerhtml" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               pathname
+            </td>
+            <td width="237">
+               <input type="text" name="pPathname" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               port
+            </td>
+            <td width="237">
+               <input type="text" name="pPort" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               protocol
+            </td>
+            <td width="237">
+               <input type="text" name="pProtocol" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               search
+            </td>
+            <td width="237">
+               <input type="text" name="pSearch" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               target
+            </td>
+            <td width="237">
+               <input type="text" name="pTarget" size="40" disabled>
+            </td>
+         </tr>
+         <tr>
+            <td width="139">
+               text
+            </td>
+            <td width="237">
+               <input type="text" name="pText" size="40" disabled>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

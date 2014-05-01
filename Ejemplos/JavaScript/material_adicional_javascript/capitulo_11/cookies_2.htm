@@ -1,0 +1,52 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript
+      </title>
+                      
+      <script language="JavaScript">
+         <!--
+
+// Esta función recupera el valor de la cookie si existe.
+            function leerCookie()
+            {
+               variableCookie = unescape(document.cookie);
+               if (variableCookie)
+               {
+                  matrizValores = variableCookie.split("; ");
+                  posicionSigno = matrizValores[0].indexOf ("=");
+                  mostrarUsuario.value = unescape(matrizValores[0].substring (posicionSigno + 1));
+                  posicionSigno = matrizValores[1].indexOf ("=");
+                  mostrarCiudad.value = unescape(matrizValores[1].substring (posicionSigno + 1));
+
+               } else {
+                  mostrarUsuario.value = "Sin definir";
+                  mostrarCiudad.value = "Sin definir";
+               }
+            }
+
+// Se graba la cookie con los nuevos valores.
+            function grabarCookie()
+            {
+               document.cookie=escape("nombre=" + mostrarUsuario.value + "; ciudad=" + mostrarCiudad.value);
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="leerCookie();">
+      <b>
+         El usuario actual es:
+      </b>
+      &nbsp;
+      <input type="text" name="mostrarUsuario">
+      <br>
+      <b>
+         Su ciudad de nacimiento es:
+      </b>
+      &nbsp;
+      <input type="text" name="mostrarCiudad">
+      <br>
+      <input type="button" value="Grabar" onClick="grabarCookie();">
+   </body>
+</html>

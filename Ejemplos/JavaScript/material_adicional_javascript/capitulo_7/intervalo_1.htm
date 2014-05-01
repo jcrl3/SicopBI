@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function intervalo()
+            {
+               status="";
+               periodo = setInterval("mostrar()",1000);
+            }
+
+            var tiempo=0;            
+
+            function mostrar()
+            {
+               tiempo +=1;
+               status = "Usted lleva " + tiempo + " segundos en esta página.";
+               return true;
+            }
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="intervalo();return true;">
+      Observe la barra de estado.
+   </body>
+</html>

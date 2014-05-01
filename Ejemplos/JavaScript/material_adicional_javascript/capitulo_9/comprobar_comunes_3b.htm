@@ -1,0 +1,48 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function conmutar()
+            {
+               if (formulario.provincia.disabled)
+               {
+                  formulario.provincia.disabled=false;
+               } else {
+                  formulario.provincia.disabled=true;
+               }
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <h1>
+         P&aacute;gina con un formulario
+      </h1>
+
+      <br>
+      <form name="formulario">
+
+         Teclee su nombre:&nbsp;
+         <input type="text" name="nombre_usuario" size=20 maxlength=50>
+         <br>
+
+         Provincia:&nbsp;
+         <input type="text" name="provincia" value="Madrid" disabled>
+         <br>
+         <br>
+
+         <input type="submit" name="mandar" value="Enviar">
+
+         &nbsp;&nbsp;
+         <input type="reset" name="borrado" value="Borrar">
+         <br>
+         <br>
+
+         <input type="button" name="cambiar" value="Habilitar/inhabilitar provincia" onClick="conmutar();">
+
+      </form>
+   </body>
+</html>

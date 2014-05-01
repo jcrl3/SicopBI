@@ -1,0 +1,181 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="JavaScript">
+         <!--
+
+             window.moveTo(0,0);
+             window.resizeTo(screen.availWidth,screen.availHeight);
+
+             function comprobarBorrado()
+             {
+                if (confirm("¿De verdad desea borrar los datos?"))
+                {
+                   return true;
+                } else {
+                   return false;
+                }
+             }
+
+         //-->
+      </script>
+   </head>
+
+   <body>
+      <table width="600" border="0" cellpadding="4" align="center">
+         <tr>
+            <td align="center"> 
+               <p>
+                  <font face="Tahoma, Verdana, Arial" size="4">
+                     <b>
+                        Utilice este formulario para contactar conmigo.
+                     </b>
+                  </font>
+               </p>
+            </td>
+         </tr>
+      </table>
+
+      <form name="datos" method="post" action="mailto:correo@servidor.com" onReset="return comprobarBorrado();">
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr>
+               <td align="right">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        Nombre:
+                     </b>
+                  </font>
+               </td>
+               <td>
+                  <input type="text" name="mnombre" size="50" maxlength="50">
+                  <font color="#FF0000">
+                     *
+                  </font>
+               </td>
+               <td align="right">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        Edad:
+                     </b>
+                  </font> 
+               </td>
+               <td>
+                  <input type="text" name="medad" size="4" maxlength="2">
+                  <font color="#FF0000">
+                     *
+                  </font>
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr>
+               <td width="83" align="right">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        E-mail:
+                     </b>
+                  </font>
+               </td>
+               <td width="595"> 
+                  <input type="text" name="mcorreo" size="50" maxlength="50">
+                  <font color="#FF0000">
+                     *
+                  </font>
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr>
+               <td width="223" align="right">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        Como ha conocido esta p&aacute;gina:
+                     </b>
+                  </font>
+               </td>
+               <td width="455"> 
+                  <select name="mconocido">
+                     <option value="enlace">
+                        Por un enlace en otra p&aacute;gina
+                     </option>
+                     <option value="amigo">
+                        Me la recomend&oacute; un amigo
+                     </option>
+                     <option value="academia">
+                        Me la recomendaron en la academia/colegio/universidad, etc.
+                     </option>
+                     <option value="libro">
+                        Lei de ella en un libro/revista
+                     </option>
+                     <option value="otro">
+                        Otro
+                     </option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" height="22" align="center">
+            <tr>
+               <td width="224" align="right" height="34">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        Especificar:
+                     </b>
+                  </font>
+               </td>
+               <td width="454" height="34"> 
+                  <input type="text" name="mespecificar" size="60" maxlength="60">
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr>
+               <td align="right" valign="top" width="224">
+                  <font face="Tahoma, Verdana, Arial" size="2">
+                     <b>
+                        Comentarios (sus opiniones, lo que espera de esta p&aacute;gina.... Lo que sea.):
+                     </b>
+                  </font>
+               </td>
+               <td width="454"> 
+                  <textarea name="mcomentarios" cols="50" rows="5" wrap="virtual"></textarea>
+                  <font color="#FF0000">
+                     *
+                  </font>
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr align="center"> 
+               <td width="172"> 
+                  <input type="submit" name="Submit" value="Enviar">
+               </td>
+               <td width="188"> 
+                  <input type="reset" name="reset" value="Borrar">
+               </td>
+            </tr>
+         </table>
+
+         <table width="700" border="0" cellpadding="4" align="center">
+            <tr>
+               <td align="center">
+                  <font face="Tahoma, Verdana, Arial" size="2" color="#FF0000">
+                     <b>
+                        Los campos marcados con asteriscos son obligatorios, a fin de poder atenderle mejor.
+                     </b>
+                  </font>
+               </td>
+            </tr>
+         </table>
+
+      </form>
+   </body>
+</html>

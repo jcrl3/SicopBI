@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            // Se crea la cadena que se mostrará en pantalla.
+            var cadena = "Esto es el principio.";
+
+            //Se comvierte esa cadena en un anclaje para
+            //enlace interno con el nombre inicio.
+            document.write (cadena.anchor("inicio") + "<br>");
+
+            //Se muestran 30 líneas de texto para simular un
+            //contenido de la página.
+            var linea = 0;
+            for (linea = 0; linea < 30; linea ++)
+            {
+               //Observe como se introducen saltos de línea
+               //en la instrucción document.write(),
+               //tal como se estudió en el capítulo 4.
+               document.write ("Esta es la l&iacute;nea " + linea + "<br>");
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+
+      <!-- Se crea un enlace interno al punto de fijación llamado inicio-->
+      <a href="#inicio">Volver al principio</a>
+   </body>
+</html>

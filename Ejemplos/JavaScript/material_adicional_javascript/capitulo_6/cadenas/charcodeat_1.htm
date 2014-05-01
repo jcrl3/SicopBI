@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            /*Se pide que se teclee una cadena.
+Si la cadena es nula, se pide de nuevo.*/
+            while (cadena ==null)
+            {
+               var cadena = prompt ("introduzca una cadena","");
+            }
+
+
+            do /*Se pide una posición cuyo carácter
+queramos identificar. Si la posición es menor que cero,
+o mayor que la longitud de la cadena menos 1, o no es
+un número, se volverá a pedir.*/
+            {
+
+               //Se pide la posición para tratarla
+//como dato numérico.
+               posicion = parseInt(prompt ("Teclee (en número) la posición que le interesa.",""));
+            } while (posicion<0 || posicion>=cadena.length || isNaN(posicion));
+
+
+            //Se muestra la cadena en la página.
+            document.write ("La cadena es " + cadena + "<br>");
+
+            //Se muestra el carácter que hay en la
+//posición solicitada.
+            document.write ("En la posici&oacute;n " + posicion + " hay el car&aacute;cter " + cadena.charAt(posicion) + "<br>");
+
+            //Se muestra el codigo ASCII.
+            document.write ("Su c&oacute;digo ASCII es " + cadena.charCodeAt(posicion));
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

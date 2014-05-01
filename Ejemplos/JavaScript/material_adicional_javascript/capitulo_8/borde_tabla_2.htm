@@ -1,0 +1,90 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            function bordeRojo()
+            {
+               tabla1.borderColor = "#FF0000";
+            }
+
+            function bordeClaroVerde()
+            {
+               tabla1.borderColorLight = "#00FF00";
+            }
+
+            function bordeOscuroAzul()
+            {
+               tabla1.borderColorDark = "#0000FF";
+            }
+
+            function reponer()
+            {
+               tabla1.borderColorLight = "";
+               tabla1.borderColorDark = "";
+               tabla1.borderColor = "";
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+
+      <table id="tabla1" width=300 border=30 cellspacing=0 cellpadding=0>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+         <tr height=100>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+            <td width=100>
+               &nbsp;
+            </td>
+         </tr>
+      </table>
+
+      <br>
+      <button onClick="bordeRojo();">
+         Poner el borde en rojo.
+      </button>
+      <br>
+      <button onClick="bordeClaroVerde();">
+         Poner el borde claro en verde.
+      </button>
+      <br>
+      <button onClick="bordeOscuroAzul();">
+         Poner el borde oscuro en azul.
+      </button>
+      <br>
+      <button onClick="reponer();">
+         Resetear los bordes.
+      </button>
+
+   </body>
+</html>

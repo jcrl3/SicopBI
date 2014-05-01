@@ -1,0 +1,101 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            window.moveTo(0,0);
+            window.resizeTo (screen.availWidth, screen.availHeight);
+
+            function iniciar()
+            {
+               movimiento = setInterval(mover,10);
+            }
+
+            function mover()
+            {
+               Capa1.style.top = document.body.scrollTop+10;
+            }
+
+            function cerrar()
+            {
+               Capa1.style.visibility = "hidden";
+               clearInterval (movimiento);
+            }
+
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <h1>
+         Esto es el contenido normal de la p&aacute;gina.
+      </h1>
+      Sobre los contenidos hay una capa que podr&iacute;a tener,
+      <br>
+      por ejemplo, un banner publicitario.
+
+      <h1>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+         <p>
+            Esto es contenido de relleno, para poder
+            <br>
+            apreciar el efecto de ascensor de la capa.
+         </p>
+      </h1>
+
+      <span id="Capa1" style="position:absolute; left:400px; top:10px; width:280px; height:280px; background-color: #66FFFF; layer-background-color: #66FFFF; visibility: visible; overflow: auto">
+         <p>
+            Esto es una capa con un banner.<br>
+         </p>
+         <center>
+            <img src="imagenes/disco.gif">
+            <br>
+            <button onClick="cerrar();">
+               Cerrar esto
+            </button>
+         </center>
+      </span>
+   </body>
+</html>

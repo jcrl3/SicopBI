@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            var fecha_1 = new Date();
+            var respuesta = prompt ("¿Quién descubrió América?","");
+            var fecha_2 = new Date();
+            var tiempo = fecha_2 - fecha_1;
+
+            if (tiempo > 999) //Si hay más de un segundo
+            {
+               var segundos = parseInt(tiempo/1000);
+               tiempo -= (segundos*1000);
+            } else {
+               var segundos = 0;
+            }
+
+            if (segundos > 59) //Si hay más de un minuto.
+            {
+               var minutos = parseInt(segundos/60);
+               segundos -= (minutos*60);
+            } else {
+               minutos = 0;
+            }
+
+            document.write ("Ha tardado " + minutos + " minutos, " + segundos + " segundos, " + tiempo + " milisegundos.");
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

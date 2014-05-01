@@ -1,0 +1,38 @@
+<html>
+   <head>
+      <title> P&aacute;gina con Javascript. </title>
+      <script language="javascript">
+         <!--
+            function mostrar()
+            {
+               mensaje.style.visibility = "visible";
+            }
+
+            function ocultar()
+            {
+               mensaje.style.visibility = "hidden";
+            }
+
+            function cambiar()
+            {
+               formulario.boton.value=formulario.nombre.value;
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <span id="mensaje" style="position:absolute; left:60px; top:130px; width:200px; height:40px; z-index:1; background-color: #3399FF; border: 1px none #000000; visibility: hidden">
+         <font face="Arial, Helvetica, sans-serif" color="#FFFF00">
+            <b>
+               Pulse el bot&oacute;n para ver su nombre en &eacute;l.
+            </b>
+         </font>
+      </span>
+      <form name="formulario">
+         Nombre de usuario:
+         <input type="text" name="nombre">
+         <br>
+         <input type="button" name="boton" value="Pulsar" onClick="cambiar();" onMouseOver="mostrar();" onMouseOut="ocultar();">
+      </form>
+   </body>
+</html>

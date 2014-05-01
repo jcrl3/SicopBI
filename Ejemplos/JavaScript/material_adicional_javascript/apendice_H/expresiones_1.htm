@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            //Se crea una expresión regular
+//mediante el correspondiente constructor.
+            var expresion_1 = new RegExp (/\d\d\d/);
+
+            //Entramos en un bucle que nos
+//pedirá una cadena.
+            do
+            {
+               cadena = prompt ("Cadena","");
+
+               //Comprobamos si la cadena coincide.
+               if (expresion_1.test(cadena))
+               {
+                  alert("Coincide");
+               } else {
+                  alert ("NO coincide");
+               }
+
+            //se sale del bucle al pulsar
+//cancelar en el prompt.
+            } while (cadena != null);
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

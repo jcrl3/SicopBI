@@ -1,0 +1,42 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            var fallo = false; //Usamos esta variable
+//para detreminar si se produce un error.
+
+            // Se pide por teclado un email.
+            var correo = prompt("Introduzca su correo electrónico.","");
+
+            //Se determina la posición del signo @.
+            var primera = correo.indexOf("@");
+            var ultima = correo.lastIndexOf("@");
+
+            //Se verifica si no existe ninguna arroba.
+            if (primera == -1) fallo = true;
+
+            //Se verifica si hay más de una arroba.
+            if (primera != ultima) fallo = true;
+
+            //Se verifica si la arroba está
+//al principio o al final de la cadena.
+            if (primera == 0 || ultima == correo.length-1) fallo = true;
+
+            //Por último, se verifica si se ha producido algún fallo.
+            if (fallo)
+            {
+               alert ("La dirección introducida es incorrecta.");
+            } else {
+               alert ("La dirección introducida parece ser correcta.");
+            }
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+         var cuentaTotal = 0, numero, ciclos;
+
+         for (ciclos = 1; ciclos <= 10; ciclos ++)
+         {
+            numero = prompt ("Introduzca un número positivo.", "");
+            numero = parseInt (numero);
+
+            if (numero < 1) break; //Si es 0 o negativo, se sale del bucle
+
+            cuentaTotal += numero; //Si llega hasta aquí, el número se suma a los que ya había.
+         }
+
+         alert ("La suma de números introducidos es " + cuentaTotal);
+
+         alert ("Se han sumado un total de " + (ciclos - 1) + " números");
+         /* En la línea anterior, la resta va entre paréntesis
+         para que se efectúe antes que la concatenación. */
+        
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

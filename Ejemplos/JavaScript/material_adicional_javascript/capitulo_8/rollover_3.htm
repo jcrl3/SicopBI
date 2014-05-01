@@ -1,0 +1,25 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function cambiar()
+            {
+               document.images["hielo"].src = "imagenes/espacio.gif";
+               document.images["hielo"].width = 300;
+               document.images["hielo"].height = 197;
+            }
+
+            function restaurar()
+            {
+               document.images["hielo"].src = "imagenes/iceberg.gif";
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <img name="hielo" src="imagenes/iceberg.gif" onMouseOver="cambiar();" onMouseOut="restaurar();">
+   </body>
+</html>

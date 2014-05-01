@@ -1,0 +1,39 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function calcular()
+            {
+               cadenaOriginal = f1.v1.value;
+               clave = f1.v2.value;
+               cadenaEncriptada = "";
+
+               for (contador=0; contador<cadenaOriginal.length; contador++)
+               {
+                  caracter = cadenaOriginal.charCodeAt(contador);
+                  cadenaEncriptada += String.fromCharCode (caracter ^ clave);
+               }
+
+               f1.resultado.value = cadenaEncriptada;
+            }
+         //-->
+      </script>
+   </head>
+   <body>
+      <form id="f1">
+         Cadena a encriptar:
+         <input type="text" id="v1">
+         <br>
+         Clave de encriptaci&oacute;n:
+         <input type="text" id="v2">
+         <br>
+         <input type="button" value="Calcular Xor" onClick="calcular();">
+         <br>
+         Cadena encriptada:
+         <input type="text" id="resultado" disabled>
+      </form>
+   </body>
+</html>

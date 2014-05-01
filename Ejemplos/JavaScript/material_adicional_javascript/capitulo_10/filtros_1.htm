@@ -1,0 +1,66 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            contador = 0;
+            centrado = false;
+            window.moveTo(0,0);
+            window.resizeTo (screen.availWidth, screen.availHeight);
+
+            function iniciar()
+            {
+               opacidad = setInterval(ver,1);
+            }
+
+            function ver()
+            {
+               contador += 4;
+               if (contador <= 100)
+               {
+                  Capa1.style.filter = "alpha(opacity=" + contador + ")";
+               } else {
+                  cierre = setTimeout (cerrar,5000);
+                  centrado = true;
+               }
+            }
+
+            function cerrar()
+            {
+               Capa1.style.visibility = "hidden";
+               clearInterval (opacidad);
+               if (centrado) clearTimeout (cierre);
+            }
+
+
+         //-->
+      </script>
+   </head>
+   <body onLoad="iniciar();">
+      <h1>
+         Esto es el contenido normal de la p&aacute;gina.
+      </h1>
+      Sobre los contenidos se despliega una capa que podr&iacute;a tener,
+      <br>
+      por ejemplo, un banner publicitario.
+
+      <span id="Capa1" style="position:absolute; left:10px; top:10px; width:280px; height:280px; background-color: #66FFFF; layer-background-color: #66FFFF; visibility: visible; overflow: auto; filter: alpha(opacity=0)">
+         <p>
+            Esto es una capa con un filtro de transparencia.<br>
+            Este afecta a texto,<br>
+            im&aacute;genes, botones <br>
+            y cualquier otro tipo de contenidos.
+         </p>
+         <center>
+            <img src="imagenes/disco.gif">
+            <br>
+            <button onClick="cerrar();">
+               Cerrar esto
+            </button>
+         </center>
+      </span>
+   </body>
+</html>

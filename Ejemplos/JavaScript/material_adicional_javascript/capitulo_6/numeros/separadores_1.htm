@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+         var numero = 87364793;
+         var numeroCadena = Math.abs(numero).toString();
+
+         if (numeroCadena.length > 3)
+         {
+            longitud = numeroCadena.length % 3;
+            while (longitud < numeroCadena.length)
+            {
+               if (longitud == 0)
+               {
+                  longitud = 3;
+               }
+               numeroCadena = numeroCadena.substr (0,longitud) + "." +numeroCadena.substr(longitud,numeroCadena.length);
+               longitud += 4;
+            }
+         }
+
+         document.write ("El valor original es: " + numero + "<br>");
+         document.write ("El valor formateado es: " + numeroCadena);
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

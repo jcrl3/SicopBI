@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function anular()
+            {
+               status = "ESTO YA NO SE BORRA.";
+               clearTimeout(demora);
+               return true;
+            }
+            function retraso()
+            {
+               status = "ESTO SE BORRA EN 6 SEGUNDOS.";
+               demora = setTimeout("borrar()",6000);
+            }
+
+            function borrar()
+            {
+               status = "";
+               return true;
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad = "retraso();">
+      Espere 6 segundos, por favor.
+      <br>
+      <button onClick="anular();">
+         Pulse aquí para anular el retraso.
+      </button>
+   </body>
+</html>

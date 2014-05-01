@@ -1,0 +1,32 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+         //Definimos una cadena.
+         var cadena = "LUNES,MARTES,MIERCOLES,JUEVES,VIERNES,SABADO,DOMINGO";
+
+         //Creamos una matriz, a partir del
+//método split() de la cadena.
+         var matriz_semana = cadena.split(",");
+
+         //Mostramos el número de elementos de la matriz.
+         document.write ("La matriz tiene " + matriz_semana.length + " elementos<br>");
+
+         //Usamos un bucle para mostrar
+//cada elemento de la matriz.
+         for (contador=0; contador<matriz_semana.length; contador++)
+         {
+            document.write ("El elemento " + contador + " es ");
+            document.write (matriz_semana[contador] + "<br>");
+         }
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

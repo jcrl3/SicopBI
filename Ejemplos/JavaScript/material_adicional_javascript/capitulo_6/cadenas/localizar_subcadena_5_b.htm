@@ -1,0 +1,56 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+
+            //Creamos la cadena donde se buscará.
+            var cadena = "Esto es una cadena de unos determinados caracteres.";
+
+            //Creamos lo que será el segundo parámetro del
+//método lastIndexOF(). Inicialmente coincide con la
+//longitud de la cadena menos uno, para empezar la
+//búsqueda al final de la cadena.
+            var buscar = cadena.length-1;
+
+//Creamos una variable donde se irá almacenando,de modo
+//secuencial, la posición de cada una de las ocurrencias
+//de la subcadena buscada.
+            var posicion;
+
+            //Mostramos la cadena en la página.
+            document.write ("La cadena es \"" + cadena + "\"<BR>");
+
+            //Entramos en un bucle, que se ejecutará
+//al menos una vez, para recorrer la cadena mientras existan
+//ocurrencias de la subcadena.
+            do
+            {
+
+               //Determinamos la posición de la última
+//ocurrencia de la subcadena, empezando la búsqueda en
+//el final de la cadena.
+               posicion = cadena.lastIndexOf("de",buscar);
+
+               // Si ha aparecido la subcadena
+               if (posicion != -1)
+               {
+
+                  //Mostramos en la página su posición.
+                  document.write ("La subcadena 'de' est&aacute; en " + posicion + "<BR>");
+
+                  //La proxima búsqueda se realizará a
+//partir del anterior caracter a donde se ha producido
+//la ocurrencia.
+                  buscar = posicion - 1;
+               }
+            } while (posicion != -1);//Fin del bucle.
+
+         //-->
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

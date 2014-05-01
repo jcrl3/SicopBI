@@ -1,0 +1,27 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function crearNodo()
+            {
+               nodoImagen = document.getElementById("imagen");
+            }
+
+            function agregar()
+            {
+               nodoImagen.setAttribute("alt","Trozo de hielo");
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="crearNodo();">
+      <img id="imagen" src="imagenes/iceberg.jpg">
+      <br>
+      <form>
+         <input type="button" value="Agregar 'alt' a la imagen" onClick="agregar();">
+      </form>
+   </body>
+</html>
