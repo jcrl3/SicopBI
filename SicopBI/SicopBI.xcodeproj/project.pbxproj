@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8845CE361BEBB847006543DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE351BEBB847006543DE /* main.m */; };
+		8845CE391BEBB847006543DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE381BEBB847006543DE /* AppDelegate.m */; };
+		8845CE3C1BEBB847006543DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE3B1BEBB847006543DE /* ViewController.m */; };
+		8845CE3F1BEBB847006543DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8845CE3D1BEBB847006543DE /* Main.storyboard */; };
+		8845CE411BEBB847006543DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8845CE401BEBB847006543DE /* Assets.xcassets */; };
+		8845CE441BEBB847006543DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8845CE421BEBB847006543DE /* LaunchScreen.storyboard */; };
+		8845CE4F1BEBB847006543DE /* SicopBITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE4E1BEBB847006543DE /* SicopBITests.m */; };
+		8845CE5A1BEBB847006543DE /* SicopBIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE591BEBB847006543DE /* SicopBIUITests.m */; };
+		8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE681BEBC841006543DE /* TablerosViewController.m */; };
+		8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */; };
+		8845CE791BEBE70E006543DE /* TableroVentasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE781BEBE70E006543DE /* TableroVentasViewController.m */; };
+		8845CE911BEBF22A006543DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE901BEBF22A006543DE /* Security.framework */; };
+		8845CE931BEBF234006543DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE921BEBF234006543DE /* QuartzCore.framework */; };
+		8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE941BEBF23E006543DE /* OpenGLES.framework */; };
+		8845CE971BEBF248006543DE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE961BEBF248006543DE /* CoreText.framework */; };
+		8845CE991BEBF25B006543DE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE981BEBF25B006543DE /* libc++.tbd */; };
+		8845CE9B1BEBF2CC006543DE /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */; };
+		8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */; };
+		8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CEA01BEC1899006543DE /* BarChartDataSource.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8845CE4B1BEBB847006543DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8845CE291BEBB847006543DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8845CE301BEBB847006543DE;
+			remoteInfo = SicopBI;
+		};
+		8845CE561BEBB847006543DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8845CE291BEBB847006543DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8845CE301BEBB847006543DE;
+			remoteInfo = SicopBI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8845CE311BEBB847006543DE /* SicopBI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SicopBI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8845CE351BEBB847006543DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8845CE371BEBB847006543DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8845CE381BEBB847006543DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8845CE3A1BEBB847006543DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8845CE3B1BEBB847006543DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8845CE3E1BEBB847006543DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8845CE401BEBB847006543DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8845CE431BEBB847006543DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8845CE451BEBB847006543DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8845CE4A1BEBB847006543DE /* SicopBITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SicopBITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8845CE4E1BEBB847006543DE /* SicopBITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SicopBITests.m; sourceTree = "<group>"; };
+		8845CE501BEBB847006543DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8845CE551BEBB847006543DE /* SicopBIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SicopBIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8845CE591BEBB847006543DE /* SicopBIUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SicopBIUITests.m; sourceTree = "<group>"; };
+		8845CE5B1BEBB847006543DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8845CE671BEBC841006543DE /* TablerosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablerosViewController.h; sourceTree = "<group>"; };
+		8845CE681BEBC841006543DE /* TablerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablerosViewController.m; sourceTree = "<group>"; };
+		8845CE6A1BEBCD33006543DE /* TableroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroTableViewCell.h; sourceTree = "<group>"; };
+		8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroTableViewCell.m; sourceTree = "<group>"; };
+		8845CE771BEBE70E006543DE /* TableroVentasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroVentasViewController.h; sourceTree = "<group>"; };
+		8845CE781BEBE70E006543DE /* TableroVentasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroVentasViewController.m; sourceTree = "<group>"; };
+		8845CE901BEBF22A006543DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8845CE921BEBF234006543DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8845CE941BEBF23E006543DE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8845CE961BEBF248006543DE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		8845CE981BEBF25B006543DE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = Library/Frameworks/ShinobiCharts.framework; sourceTree = DEVELOPER_DIR; };
+		8845CE9C1BEC13FA006543DE /* PieChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDataSource.h; sourceTree = "<group>"; };
+		8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDataSource.m; sourceTree = "<group>"; };
+		8845CE9F1BEC1899006543DE /* BarChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartDataSource.h; sourceTree = "<group>"; };
+		8845CEA01BEC1899006543DE /* BarChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartDataSource.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8845CE2E1BEBB847006543DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8845CE9B1BEBF2CC006543DE /* ShinobiCharts.framework in Frameworks */,
+				8845CE991BEBF25B006543DE /* libc++.tbd in Frameworks */,
+				8845CE971BEBF248006543DE /* CoreText.framework in Frameworks */,
+				8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */,
+				8845CE931BEBF234006543DE /* QuartzCore.framework in Frameworks */,
+				8845CE911BEBF22A006543DE /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE471BEBB847006543DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE521BEBB847006543DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8845CE281BEBB847006543DE = {
+			isa = PBXGroup;
+			children = (
+				8845CE331BEBB847006543DE /* SicopBI */,
+				8845CE761BEBE677006543DE /* Frameworks */,
+				8845CE4D1BEBB847006543DE /* SicopBITests */,
+				8845CE581BEBB847006543DE /* SicopBIUITests */,
+				8845CE321BEBB847006543DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8845CE321BEBB847006543DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE311BEBB847006543DE /* SicopBI.app */,
+				8845CE4A1BEBB847006543DE /* SicopBITests.xctest */,
+				8845CE551BEBB847006543DE /* SicopBIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8845CE331BEBB847006543DE /* SicopBI */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE371BEBB847006543DE /* AppDelegate.h */,
+				8845CE381BEBB847006543DE /* AppDelegate.m */,
+				8845CE3A1BEBB847006543DE /* ViewController.h */,
+				8845CE3B1BEBB847006543DE /* ViewController.m */,
+				8845CE3D1BEBB847006543DE /* Main.storyboard */,
+				8845CE401BEBB847006543DE /* Assets.xcassets */,
+				8845CE421BEBB847006543DE /* LaunchScreen.storyboard */,
+				8845CE451BEBB847006543DE /* Info.plist */,
+				8845CE671BEBC841006543DE /* TablerosViewController.h */,
+				8845CE681BEBC841006543DE /* TablerosViewController.m */,
+				8845CE6A1BEBCD33006543DE /* TableroTableViewCell.h */,
+				8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */,
+				8845CE771BEBE70E006543DE /* TableroVentasViewController.h */,
+				8845CE781BEBE70E006543DE /* TableroVentasViewController.m */,
+				8845CE9C1BEC13FA006543DE /* PieChartDataSource.h */,
+				8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */,
+				8845CE9F1BEC1899006543DE /* BarChartDataSource.h */,
+				8845CEA01BEC1899006543DE /* BarChartDataSource.m */,
+				8845CE341BEBB847006543DE /* Supporting Files */,
+			);
+			path = SicopBI;
+			sourceTree = "<group>";
+		};
+		8845CE341BEBB847006543DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE351BEBB847006543DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8845CE4D1BEBB847006543DE /* SicopBITests */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE4E1BEBB847006543DE /* SicopBITests.m */,
+				8845CE501BEBB847006543DE /* Info.plist */,
+			);
+			path = SicopBITests;
+			sourceTree = "<group>";
+		};
+		8845CE581BEBB847006543DE /* SicopBIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE591BEBB847006543DE /* SicopBIUITests.m */,
+				8845CE5B1BEBB847006543DE /* Info.plist */,
+			);
+			path = SicopBIUITests;
+			sourceTree = "<group>";
+		};
+		8845CE761BEBE677006543DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */,
+				8845CE981BEBF25B006543DE /* libc++.tbd */,
+				8845CE961BEBF248006543DE /* CoreText.framework */,
+				8845CE941BEBF23E006543DE /* OpenGLES.framework */,
+				8845CE921BEBF234006543DE /* QuartzCore.framework */,
+				8845CE901BEBF22A006543DE /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8845CE301BEBB847006543DE /* SicopBI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8845CE5E1BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBI" */;
+			buildPhases = (
+				8845CE2D1BEBB847006543DE /* Sources */,
+				8845CE2E1BEBB847006543DE /* Frameworks */,
+				8845CE2F1BEBB847006543DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SicopBI;
+			productName = SicopBI;
+			productReference = 8845CE311BEBB847006543DE /* SicopBI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8845CE491BEBB847006543DE /* SicopBITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8845CE611BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBITests" */;
+			buildPhases = (
+				8845CE461BEBB847006543DE /* Sources */,
+				8845CE471BEBB847006543DE /* Frameworks */,
+				8845CE481BEBB847006543DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8845CE4C1BEBB847006543DE /* PBXTargetDependency */,
+			);
+			name = SicopBITests;
+			productName = SicopBITests;
+			productReference = 8845CE4A1BEBB847006543DE /* SicopBITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8845CE541BEBB847006543DE /* SicopBIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8845CE641BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBIUITests" */;
+			buildPhases = (
+				8845CE511BEBB847006543DE /* Sources */,
+				8845CE521BEBB847006543DE /* Frameworks */,
+				8845CE531BEBB847006543DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8845CE571BEBB847006543DE /* PBXTargetDependency */,
+			);
+			name = SicopBIUITests;
+			productName = SicopBIUITests;
+			productReference = 8845CE551BEBB847006543DE /* SicopBIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8845CE291BEBB847006543DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Sicop Consulting SA De CV";
+				TargetAttributes = {
+					8845CE301BEBB847006543DE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					8845CE491BEBB847006543DE = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 8845CE301BEBB847006543DE;
+					};
+					8845CE541BEBB847006543DE = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 8845CE301BEBB847006543DE;
+					};
+				};
+			};
+			buildConfigurationList = 8845CE2C1BEBB847006543DE /* Build configuration list for PBXProject "SicopBI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8845CE281BEBB847006543DE;
+			productRefGroup = 8845CE321BEBB847006543DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8845CE301BEBB847006543DE /* SicopBI */,
+				8845CE491BEBB847006543DE /* SicopBITests */,
+				8845CE541BEBB847006543DE /* SicopBIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8845CE2F1BEBB847006543DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8845CE441BEBB847006543DE /* LaunchScreen.storyboard in Resources */,
+				8845CE411BEBB847006543DE /* Assets.xcassets in Resources */,
+				8845CE3F1BEBB847006543DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE481BEBB847006543DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE531BEBB847006543DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8845CE2D1BEBB847006543DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */,
+				8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */,
+				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
+				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,
+				8845CE391BEBB847006543DE /* AppDelegate.m in Sources */,
+				8845CE791BEBE70E006543DE /* TableroVentasViewController.m in Sources */,
+				8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */,
+				8845CE361BEBB847006543DE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE461BEBB847006543DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8845CE4F1BEBB847006543DE /* SicopBITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8845CE511BEBB847006543DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8845CE5A1BEBB847006543DE /* SicopBIUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8845CE4C1BEBB847006543DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8845CE301BEBB847006543DE /* SicopBI */;
+			targetProxy = 8845CE4B1BEBB847006543DE /* PBXContainerItemProxy */;
+		};
+		8845CE571BEBB847006543DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8845CE301BEBB847006543DE /* SicopBI */;
+			targetProxy = 8845CE561BEBB847006543DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8845CE3D1BEBB847006543DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8845CE3E1BEBB847006543DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8845CE421BEBB847006543DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8845CE431BEBB847006543DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8845CE5C1BEBB847006543DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8845CE5D1BEBB847006543DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8845CE5F1BEBB847006543DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SicopBI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8845CE601BEBB847006543DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SicopBI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8845CE621BEBB847006543DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SicopBITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopBITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SicopBI.app/SicopBI";
+			};
+			name = Debug;
+		};
+		8845CE631BEBB847006543DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SicopBITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopBITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SicopBI.app/SicopBI";
+			};
+			name = Release;
+		};
+		8845CE651BEBB847006543DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SicopBIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopBIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SicopBI;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8845CE661BEBB847006543DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SicopBIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicop.SicopBIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SicopBI;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8845CE2C1BEBB847006543DE /* Build configuration list for PBXProject "SicopBI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8845CE5C1BEBB847006543DE /* Debug */,
+				8845CE5D1BEBB847006543DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8845CE5E1BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8845CE5F1BEBB847006543DE /* Debug */,
+				8845CE601BEBB847006543DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8845CE611BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8845CE621BEBB847006543DE /* Debug */,
+				8845CE631BEBB847006543DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8845CE641BEBB847006543DE /* Build configuration list for PBXNativeTarget "SicopBIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8845CE651BEBB847006543DE /* Debug */,
+				8845CE661BEBB847006543DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8845CE291BEBB847006543DE /* Project object */;
+}
