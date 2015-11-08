@@ -208,7 +208,7 @@
                                             <outlet property="descripcionTablero" destination="t6i-le-IME" id="8Mp-Cm-63a"/>
                                             <outlet property="imagenTablero" destination="oz6-Ba-YVd" id="4ye-If-KYg"/>
                                             <outlet property="tituloTablero" destination="rBg-Mv-fii" id="Q4m-Ma-aXj"/>
-                                            <segue destination="q9A-EP-jvb" kind="show" id="wdG-Av-48l"/>
+                                            <segue destination="q9A-EP-jvb" kind="show" identifier="MuestraTablero" id="wdG-Av-48l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -222,6 +222,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fWM-34-EbR"/>
+                    <connections>
+                        <outlet property="tableView" destination="Fwr-PB-QpF" id="Ms3-l4-OcW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5io-51-z58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,10 +247,16 @@
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="QjQ-Hv-Ozk"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftSwipe" destination="wKK-ja-pjd" id="LWG-fE-gAz"/>
                         <outlet property="scrollView" destination="ID7-N5-FX7" id="msf-El-ZDY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdd-Hg-8Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="wKK-ja-pjd">
+                    <connections>
+                        <action selector="goBackSwipe:" destination="q9A-EP-jvb" id="5aa-h4-vcl"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2846" y="61"/>
         </scene>

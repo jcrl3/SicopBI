@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableroVentasViewController : UIViewController
+@interface TableroVentasViewController : UIViewController{
 
+
+}
+@property (strong, nonatomic) NSString* titleView;
 @end
