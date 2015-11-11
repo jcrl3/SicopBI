@@ -176,7 +176,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Tl8-Y8-5EN"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -187,7 +187,7 @@
                                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" adjustable="YES"/>
                                                         <bool key="isElement" value="NO"/>
                                                     </accessibility>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -233,7 +233,7 @@
         <!--Snapshot-->
         <scene sceneID="CRf-8L-CzZ">
             <objects>
-                <viewController id="q9A-EP-jvb" customClass="TableroVentasViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableroMaster" id="q9A-EP-jvb" customClass="TableroMasterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4yd-ek-Kob"/>
                         <viewControllerLayoutGuide type="bottom" id="c2J-Q1-dTL"/>
@@ -259,6 +259,63 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2846" y="61"/>
+        </scene>
+        <!--Panel Grafica-->
+        <scene sceneID="zxQ-Xl-Na4">
+            <objects>
+                <viewController storyboardIdentifier="PanelGrafica" id="WF1-MP-3Ln" customClass="PanelGrafica" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vmm-AE-Q9j"/>
+                        <viewControllerLayoutGuide type="bottom" id="KLo-zo-t9p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="gkm-kB-G1C">
+                        <rect key="frame" x="0.0" y="0.0" width="572" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SjU-Jy-yS1">
+                                <rect key="frame" x="268" y="7" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SjU-Jy-yS1" firstAttribute="centerX" secondItem="gkm-kB-G1C" secondAttribute="centerX" id="ChF-WK-H04"/>
+                            <constraint firstItem="SjU-Jy-yS1" firstAttribute="centerY" secondItem="gkm-kB-G1C" secondAttribute="centerY" id="ZU4-Q3-KKb"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="572" height="50"/>
+                    <connections>
+                        <outlet property="spin" destination="SjU-Jy-yS1" id="26R-Yb-3ML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guW-r1-oRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2846" y="501"/>
+        </scene>
+        <!--Expand Graph View Controller-->
+        <scene sceneID="ANb-QT-ceA">
+            <objects>
+                <viewController storyboardIdentifier="GraficaExpandida" id="CRN-Qr-mvT" customClass="ExpandGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VmJ-ny-27B"/>
+                        <viewControllerLayoutGuide type="bottom" id="H2F-Rk-16l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LDO-dV-Fvw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aoe-Ay-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853" y="915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CrD-OW-ltn">

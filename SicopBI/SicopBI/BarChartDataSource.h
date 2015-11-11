@@ -12,6 +12,6 @@
 
 @interface BarChartDataSource : NSObject<SChartDatasource>
 
-- initWithSales:(NSDictionary*)sales;
+- initWithData:(NSDictionary*)sales;
 
 @end

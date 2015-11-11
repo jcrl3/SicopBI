@@ -13,9 +13,9 @@
 	NSDictionary* _sales;
 }
 
-- (id)initWithSales:(NSDictionary *)sales  {
+- (id)initWithData:(NSDictionary *)dataX  {
 	if(self = [super init]) {
-		_sales = sales;
+		_sales = dataX;
 	}
 	return self;
 }
@@ -35,9 +35,19 @@
 -(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
 	SChartColumnSeries *columnSeries = [[SChartColumnSeries alloc] init];
 	columnSeries.title = index == 0 ? @"Nov" : @"2012";
-	
 	columnSeries.crosshairEnabled=YES;
 	columnSeries.selectionMode = SChartSelectionSeries;
+
+	SChartColumnSeriesStyle *styleBar = [[SChartColumnSeriesStyle alloc] init];
+	styleBar.areaColor = [UIColor colorWithRed:88.0/255
+										 green:152.0/255
+										  blue:254.0/255
+										 alpha:1.0 ];
+	
+	
+	styleBar.showAreaWithGradient= false;
+	[columnSeries setStyle:styleBar];
+	
 	return columnSeries;
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		880650AF1BEF889E005520BA /* InfoGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880650AE1BEF889E005520BA /* InfoGraphics.plist */; };
+		8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC691BF27DFB00C59412 /* PanelGrafica.m */; };
+		8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */; };
 		8845CE361BEBB847006543DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE351BEBB847006543DE /* main.m */; };
 		8845CE391BEBB847006543DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE381BEBB847006543DE /* AppDelegate.m */; };
 		8845CE3C1BEBB847006543DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE3B1BEBB847006543DE /* ViewController.m */; };
@@ -18,7 +20,7 @@
 		8845CE5A1BEBB847006543DE /* SicopBIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE591BEBB847006543DE /* SicopBIUITests.m */; };
 		8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE681BEBC841006543DE /* TablerosViewController.m */; };
 		8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */; };
-		8845CE791BEBE70E006543DE /* TableroVentasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE781BEBE70E006543DE /* TableroVentasViewController.m */; };
+		8845CE791BEBE70E006543DE /* TableroMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE781BEBE70E006543DE /* TableroMasterViewController.m */; };
 		8845CE911BEBF22A006543DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE901BEBF22A006543DE /* Security.framework */; };
 		8845CE931BEBF234006543DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE921BEBF234006543DE /* QuartzCore.framework */; };
 		8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE941BEBF23E006543DE /* OpenGLES.framework */; };
@@ -28,6 +30,8 @@
 		8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */; };
 		8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CEA01BEC1899006543DE /* BarChartDataSource.m */; };
 		88466C461BEF9EF200AF7638 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 88466C451BEF9EF200AF7638 /* Plist.m */; };
+		884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */; };
+		8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */; };
 		88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		880650AE1BEF889E005520BA /* InfoGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoGraphics.plist; sourceTree = "<group>"; };
+		8817AC681BF27DFB00C59412 /* PanelGrafica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelGrafica.h; sourceTree = "<group>"; };
+		8817AC691BF27DFB00C59412 /* PanelGrafica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelGrafica.m; sourceTree = "<group>"; };
+		8817AC6B1BF2FB5400C59412 /* ExpandGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandGraphViewController.h; sourceTree = "<group>"; };
+		8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandGraphViewController.m; sourceTree = "<group>"; };
 		8845CE311BEBB847006543DE /* SicopBI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SicopBI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8845CE351BEBB847006543DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8845CE371BEBB847006543DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,8 +78,8 @@
 		8845CE681BEBC841006543DE /* TablerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablerosViewController.m; sourceTree = "<group>"; };
 		8845CE6A1BEBCD33006543DE /* TableroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroTableViewCell.h; sourceTree = "<group>"; };
 		8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroTableViewCell.m; sourceTree = "<group>"; };
-		8845CE771BEBE70E006543DE /* TableroVentasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroVentasViewController.h; sourceTree = "<group>"; };
-		8845CE781BEBE70E006543DE /* TableroVentasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroVentasViewController.m; sourceTree = "<group>"; };
+		8845CE771BEBE70E006543DE /* TableroMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroMasterViewController.h; sourceTree = "<group>"; };
+		8845CE781BEBE70E006543DE /* TableroMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroMasterViewController.m; sourceTree = "<group>"; };
 		8845CE901BEBF22A006543DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8845CE921BEBF234006543DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8845CE941BEBF23E006543DE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -84,6 +92,10 @@
 		8845CEA01BEC1899006543DE /* BarChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartDataSource.m; sourceTree = "<group>"; };
 		88466C441BEF9EF200AF7638 /* Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
 		88466C451BEF9EF200AF7638 /* Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
+		884F776D1BEFCE5C00306B65 /* TableroIndicadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroIndicadoresViewController.h; sourceTree = "<group>"; };
+		884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroIndicadoresViewController.m; sourceTree = "<group>"; };
+		8853AEAD1BEFC5F30024E8B4 /* TableroCallCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroCallCenterViewController.h; sourceTree = "<group>"; };
+		8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroCallCenterViewController.m; sourceTree = "<group>"; };
 		88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropiedadesGraficas.h; sourceTree = "<group>"; };
 		88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropiedadesGraficas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8817AC671BF120A400C59412 /* PlistFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8845CE451BEBB847006543DE /* Info.plist */,
+				880650AE1BEF889E005520BA /* InfoGraphics.plist */,
+			);
+			name = PlistFiles;
+			sourceTree = "<group>";
+		};
 		8845CE281BEBB847006543DE = {
 			isa = PBXGroup;
 			children = (
@@ -143,30 +164,37 @@
 		8845CE331BEBB847006543DE /* SicopBI */ = {
 			isa = PBXGroup;
 			children = (
+				8845CE3D1BEBB847006543DE /* Main.storyboard */,
+				8845CE421BEBB847006543DE /* LaunchScreen.storyboard */,
+				8845CE401BEBB847006543DE /* Assets.xcassets */,
 				8845CE371BEBB847006543DE /* AppDelegate.h */,
 				8845CE381BEBB847006543DE /* AppDelegate.m */,
 				8845CE3A1BEBB847006543DE /* ViewController.h */,
 				8845CE3B1BEBB847006543DE /* ViewController.m */,
-				8845CE3D1BEBB847006543DE /* Main.storyboard */,
-				8845CE401BEBB847006543DE /* Assets.xcassets */,
-				8845CE421BEBB847006543DE /* LaunchScreen.storyboard */,
-				8845CE451BEBB847006543DE /* Info.plist */,
 				8845CE671BEBC841006543DE /* TablerosViewController.h */,
 				8845CE681BEBC841006543DE /* TablerosViewController.m */,
 				8845CE6A1BEBCD33006543DE /* TableroTableViewCell.h */,
 				8845CE6B1BEBCD33006543DE /* TableroTableViewCell.m */,
-				8845CE771BEBE70E006543DE /* TableroVentasViewController.h */,
-				8845CE781BEBE70E006543DE /* TableroVentasViewController.m */,
+				8845CE771BEBE70E006543DE /* TableroMasterViewController.h */,
+				8845CE781BEBE70E006543DE /* TableroMasterViewController.m */,
 				8845CE9C1BEC13FA006543DE /* PieChartDataSource.h */,
 				8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */,
 				8845CE9F1BEC1899006543DE /* BarChartDataSource.h */,
 				8845CEA01BEC1899006543DE /* BarChartDataSource.m */,
-				8845CE341BEBB847006543DE /* Supporting Files */,
-				880650AE1BEF889E005520BA /* InfoGraphics.plist */,
 				88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */,
 				88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */,
 				88466C441BEF9EF200AF7638 /* Plist.h */,
 				88466C451BEF9EF200AF7638 /* Plist.m */,
+				8853AEAD1BEFC5F30024E8B4 /* TableroCallCenterViewController.h */,
+				8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */,
+				884F776D1BEFCE5C00306B65 /* TableroIndicadoresViewController.h */,
+				884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */,
+				8817AC671BF120A400C59412 /* PlistFiles */,
+				8845CE341BEBB847006543DE /* Supporting Files */,
+				8817AC681BF27DFB00C59412 /* PanelGrafica.h */,
+				8817AC691BF27DFB00C59412 /* PanelGrafica.m */,
+				8817AC6B1BF2FB5400C59412 /* ExpandGraphViewController.h */,
+				8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */,
 			);
 			path = SicopBI;
 			sourceTree = "<group>";
@@ -342,12 +370,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */,
+				8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */,
 				8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */,
 				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
 				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,
+				8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */,
 				88466C461BEF9EF200AF7638 /* Plist.m in Sources */,
+				8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */,
+				884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */,
 				8845CE391BEBB847006543DE /* AppDelegate.m in Sources */,
-				8845CE791BEBE70E006543DE /* TableroVentasViewController.m in Sources */,
+				8845CE791BEBE70E006543DE /* TableroMasterViewController.m in Sources */,
 				88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */,
 				8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */,
 				8845CE361BEBB847006543DE /* main.m in Sources */,

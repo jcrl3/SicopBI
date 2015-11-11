@@ -7,7 +7,9 @@
 //
 
 #import "TablerosViewController.h"
-#import "TableroVentasViewController.h"
+#import "TableroMasterViewController.h"
+#import "TableroCallCenterViewController.h"
+#import "TableroIndicadoresViewController.h"
 
 @interface TablerosViewController ()
 
@@ -63,7 +65,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+
 }
 
 #pragma mark -
@@ -93,14 +95,42 @@
 }
 
 
-#pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	NSIndexPath *selectedRowIndex=[self.tableView indexPathForCell:sender];
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+	NSIndexPath *selectedRowIndex=[self.tableView indexPathForSelectedRow];
+   /*
+	//	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+	TableroIndicadoresViewController *tableroIndicadores;
+	TableroCallCenterViewController *tableroCallCenter;
+	*/
+	
 	if ([segue.identifier isEqualToString:@"MuestraTablero"]){
 		NSString* titleNextView = [listaTableros objectAtIndex:[selectedRowIndex row]];
-		//TableroVentasViewController *tablero = [segue destinationViewController];
-		TableroVentasViewController *tablero = [segue destinationViewController];
+		TableroMasterViewController *tablero = [segue destinationViewController];
+
+      /*
+		switch ([selectedRowIndex row]){
+			case 0:
+				[TableroMasterViewController setClassForStoryBoard:@"TableroIndicadoresViewController"];
+				 tableroIndicadores = (TableroIndicadoresViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"TableroMaster"];
+				tableroIndicadores.titleView = titleNextView;
+				//[self presentViewController:tableroIndicadores animated:NO completion:^{}];
+			    [[self navigationController] presentViewController:tableroIndicadores animated:YES completion:nil];
+				break;
+			
+			case 1:
+			
+				[TableroMasterViewController setClassForStoryBoard:@"TableroCallCenterViewController"];
+				 tableroCallCenter = (TableroCallCenterViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"TableroMaster"];
+				tableroCallCenter.titleView = titleNextView;
+				
+				[[self navigationController] presentViewController:tableroCallCenter animated:YES completion:nil];
+				break;
+		}*/
+	
 		tablero.titleView = titleNextView;
 	}
 

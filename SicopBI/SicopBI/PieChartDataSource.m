@@ -13,7 +13,7 @@
     NSDictionary* _ejecutivos;
 }
 
-- (id)initWithSales:(NSDictionary *)ejecutivos displayYear:(NSString *)year {
+- (id)initWithData:(NSDictionary *)ejecutivos displayYear:(NSString *)year {
     if(self = [super init]) {
         _ejecutivos = ejecutivos;
         _displayYear = year;
