@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	self.chart.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y+20.0, self.view.bounds.size.width, self.view.bounds.size.height-20.0);
+	self.chart.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y+50.0, self.view.bounds.size.width, self.view.bounds.size.height-30.0);
 	
 	//agregramos el botón que cierra el view
-	UIButton* expandButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-27.0, 7.0, 24.0, 24.0)];
+	/*UIButton* expandButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-27.0, 7.0, 24.0, 24.0)];
 	[expandButton addTarget:self
 			   action:@selector(closeView:)
 		   forControlEvents:UIControlEventTouchUpInside];
@@ -31,20 +31,74 @@
 	[expandButton setTintColor:[UIColor blueColor]];
 	[expandButton setImage:[UIImage imageNamed:@"Close"] forState:UIControlStateNormal];
 
-	[self.chart addSubview:expandButton];
+	[self.chart addSubview:expandButton];*/
 	[self.view addSubview:self.chart];
 	[chart redrawChart];
 	
 }
 
-
-- (void)closeView:(id)sender {
+- (IBAction)CloseView:(id)sender {
 	[self dismissViewControllerAnimated: YES completion:nil];
+
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)sendGraph:(id)sender {
+	
+	//NSArray *actions ={@"2",@"1",nil};
+	
+	NSString *textToShare = chart.title;
+	UIImage *image = [TakePhoto TakePhotoFromUIView:(UIView*)chart];
+ 
+	NSArray *objectsToShare = @[textToShare, image];
+ 
+	
+	UIActivityViewController *ac =
+	[[UIActivityViewController alloc] initWithActivityItems:objectsToShare
+									  applicationActivities:nil];
+	
+	NSArray *activities = @[UIActivityTypeAirDrop,
+							UIActivityTypeAssignToContact,
+							UIActivityTypeOpenInIBooks,
+							UIActivityTypePostToFacebook,
+							UIActivityTypePostToFlickr,
+							UIActivityTypePostToTencentWeibo,
+							UIActivityTypePostToTwitter,
+							UIActivityTypePrint];
+	
+	ac.excludedActivityTypes=activities;
+	
+	
+	[self presentViewController:ac animated:YES
+									 completion:nil];
+	
+	/*
+	IActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+	
+	
+	activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+ 
+	[self presentViewController:activityViewController animated:YES completion:nil];
+	
+	*/
+}
+
+- (id)activityViewController:(UIActivityViewController *)activityViewController
+		 itemForActivityType:(NSString *)activityType
+{
+	if ([activityType isEqualToString:UIActivityTypePostToFacebook]) {
+		return @"Like this!";
+	} else if ([activityType isEqualToString:UIActivityTypePostToTwitter]) {
+		return @"Retweet this!";
+	} else {
+		return nil;
+	}
 }
 
 /*

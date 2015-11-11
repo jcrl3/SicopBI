@@ -301,7 +301,7 @@
         <!--Expand Graph View Controller-->
         <scene sceneID="ANb-QT-ceA">
             <objects>
-                <viewController storyboardIdentifier="GraficaExpandida" id="CRN-Qr-mvT" customClass="ExpandGraphViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GraficaExpandida" modalTransitionStyle="flipHorizontal" id="CRN-Qr-mvT" customClass="ExpandGraphViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VmJ-ny-27B"/>
                         <viewControllerLayoutGuide type="bottom" id="H2F-Rk-16l"/>
@@ -309,13 +309,40 @@
                     <view key="view" contentMode="scaleToFill" id="LDO-dV-Fvw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-Kh-5UY">
+                                <rect key="frame" x="0.0" y="9" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="Fmf-eW-MIy">
+                                        <barButtonItem key="leftBarButtonItem" image="Close" id="IUo-oJ-uWt">
+                                            <connections>
+                                                <action selector="CloseView:" destination="CRN-Qr-mvT" id="0fm-C5-6w9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Tz7-Mo-9wp">
+                                            <connections>
+                                                <action selector="sendGraph:" destination="CRN-Qr-mvT" id="X5d-jC-QnA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NBa-Kh-5UY" secondAttribute="trailing" id="MYM-Lb-kDI"/>
+                            <constraint firstItem="NBa-Kh-5UY" firstAttribute="top" secondItem="LDO-dV-Fvw" secondAttribute="top" constant="9" id="XD3-eH-kKh"/>
+                            <constraint firstItem="NBa-Kh-5UY" firstAttribute="leading" secondItem="LDO-dV-Fvw" secondAttribute="leading" id="blo-Kp-859"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aoe-Ay-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2853" y="915"/>
+            <point key="canvasLocation" x="2852" y="904"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CrD-OW-ltn">
@@ -338,6 +365,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close" width="22" height="22"/>
         <image name="ImagenTablero" width="109" height="109"/>
         <image name="SplashScreen" width="428" height="640"/>
     </resources>

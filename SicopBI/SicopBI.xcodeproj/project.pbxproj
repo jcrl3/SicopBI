@@ -32,6 +32,7 @@
 		88466C461BEF9EF200AF7638 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 88466C451BEF9EF200AF7638 /* Plist.m */; };
 		884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */; };
 		8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */; };
+		888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90831BF3CD1900D48CC2 /* TakePhoto.m */; };
 		88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroIndicadoresViewController.m; sourceTree = "<group>"; };
 		8853AEAD1BEFC5F30024E8B4 /* TableroCallCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroCallCenterViewController.h; sourceTree = "<group>"; };
 		8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroCallCenterViewController.m; sourceTree = "<group>"; };
+		888B90821BF3CD1900D48CC2 /* TakePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhoto.h; sourceTree = "<group>"; };
+		888B90831BF3CD1900D48CC2 /* TakePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhoto.m; sourceTree = "<group>"; };
 		88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropiedadesGraficas.h; sourceTree = "<group>"; };
 		88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropiedadesGraficas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +198,8 @@
 				8817AC691BF27DFB00C59412 /* PanelGrafica.m */,
 				8817AC6B1BF2FB5400C59412 /* ExpandGraphViewController.h */,
 				8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */,
+				888B90821BF3CD1900D48CC2 /* TakePhoto.h */,
+				888B90831BF3CD1900D48CC2 /* TakePhoto.m */,
 			);
 			path = SicopBI;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */,
 				8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */,
 				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
+				888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */,
 				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,
 				8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */,
 				88466C461BEF9EF200AF7638 /* Plist.m in Sources */,

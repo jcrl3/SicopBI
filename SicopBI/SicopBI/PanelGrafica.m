@@ -154,7 +154,9 @@ NSString * const PIE_CHART = @"PIE_CHART";
 	UIView *viewBtn = [vc.chart viewWithTag:1];
 	viewBtn.hidden=YES;
 	
-	[[self navigationController] presentViewController:vc animated:YES completion:nil];
+	//[[self navigationController] presentViewController:vc animated:YES completion:nil];
+//	vc.modalPresentationStyle = UIModalTransitionStyleCrossDissolve;
+	[self  presentViewController:vc animated:YES completion:nil];
 }
 
 

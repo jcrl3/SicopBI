@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiCharts/ShinobiCharts.h>
+#import "TakePhoto.h"
 
-@interface ExpandGraphViewController : UIViewController{
+@interface ExpandGraphViewController : UIViewController {
 	
 }
 @property ShinobiChart* chart;
