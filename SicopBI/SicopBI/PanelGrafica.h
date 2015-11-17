@@ -12,9 +12,14 @@
 #import "BarChartDataSource.h"
 #import "PropiedadesGraficas.h"
 #import "ExpandGraphViewController.h"
+#import "LineChartDataSource.h"
+#import "ColumnChartDataSource.h"
 
 extern NSString * const BAR_CHART;
 extern NSString * const PIE_CHART;
+extern NSString * const LINE_CHART;
+extern NSString * const COLUMN_CHART;
+
 
 @interface PanelGrafica : UIViewController <SChartDelegate>{
 	
@@ -22,12 +27,13 @@ extern NSString * const PIE_CHART;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spin;
 
 @property (strong, nonatomic) NSDictionary* dataX;
+@property (strong, nonatomic) NSMutableArray* dataXLine;
 @property (strong, nonatomic) NSString* typeOfChart;
 @property (nonatomic) BOOL hideLegend;
 @property (strong, nonatomic) NSString* titleGraph;
 @property (nonatomic) BOOL  gestDoubleTapEnabled;
-@property (strong, nonatomic) UIViewController* viewDelegate;
+@property (weak, nonatomic) id viewDelegate;
 @property (strong, nonatomic) ShinobiChart* _chart;
 
-
+//-(SChartCategoryAxis*)setDataXSeries:(NSString*) pTitle interSeriesPadding:(NSNumber*)pinterSeriesPadding;
 @end

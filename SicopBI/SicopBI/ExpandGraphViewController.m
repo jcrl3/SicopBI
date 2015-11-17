@@ -39,10 +39,7 @@
 
 - (IBAction)CloseView:(id)sender {
 	[self dismissViewControllerAnimated: YES completion:nil];
-
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,7 +51,7 @@
 	//NSArray *actions ={@"2",@"1",nil};
 	
 	NSString *textToShare = chart.title;
-	UIImage *image = [TakePhoto TakePhotoFromUIView:(UIView*)chart];
+	UIImage *image = [self chartImage];
  
 	NSArray *objectsToShare = @[textToShare, image];
  
@@ -77,16 +74,6 @@
 	
 	[self presentViewController:ac animated:YES
 									 completion:nil];
-	
-	/*
-	IActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-	
-	
-	activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
- 
-	[self presentViewController:activityViewController animated:YES completion:nil];
-	
-	*/
 }
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController
@@ -101,6 +88,13 @@
 	}
 }
 
+-(UIImage *)chartImage {
+	UIGraphicsBeginImageContextWithOptions(chart.bounds.size, NO, 0.0);
+	[chart drawViewHierarchyInRect:chart.bounds afterScreenUpdates:NO];
+	UIImage *chartImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return chartImage;
+}
 /*
 #pragma mark - Navigation
 

@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "TableroMasterViewController.h"
+#import <ShinobiCharts/ShinobiCharts.h>
 
-@interface TableroIndicadoresViewController : TableroMasterViewController
+
+@interface TableroIndicadoresViewController : TableroMasterViewController<SChartDelegate>
 
 @end

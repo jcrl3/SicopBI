@@ -8,11 +8,11 @@
 #import <Foundation/Foundation.h>
 #import "TableroMasterViewController.h"
 
-//#import <ShinobiCharts/ShinobiCharts.h>
+#import <ShinobiCharts/ShinobiCharts.h>
 //#import "BarChartDataSource.h"
 //#import "PieChartDataSource.h"
 
 
-@interface TableroCallCenterViewController : TableroMasterViewController
+@interface TableroCallCenterViewController : TableroMasterViewController <SChartDelegate>
 
 @end

@@ -33,6 +33,8 @@
 		884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */; };
 		8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */; };
 		888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90831BF3CD1900D48CC2 /* TakePhoto.m */; };
+		888B908A1BF4135200D48CC2 /* LineChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90891BF4135200D48CC2 /* LineChartDataSource.m */; };
+		888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */; };
 		88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,10 @@
 		8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroCallCenterViewController.m; sourceTree = "<group>"; };
 		888B90821BF3CD1900D48CC2 /* TakePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhoto.h; sourceTree = "<group>"; };
 		888B90831BF3CD1900D48CC2 /* TakePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhoto.m; sourceTree = "<group>"; };
+		888B90881BF4135200D48CC2 /* LineChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataSource.h; sourceTree = "<group>"; };
+		888B90891BF4135200D48CC2 /* LineChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataSource.m; sourceTree = "<group>"; };
+		888B908B1BF4150300D48CC2 /* ColumnChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnChartDataSource.h; sourceTree = "<group>"; };
+		888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnChartDataSource.m; sourceTree = "<group>"; };
 		88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropiedadesGraficas.h; sourceTree = "<group>"; };
 		88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropiedadesGraficas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +206,10 @@
 				8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */,
 				888B90821BF3CD1900D48CC2 /* TakePhoto.h */,
 				888B90831BF3CD1900D48CC2 /* TakePhoto.m */,
+				888B90881BF4135200D48CC2 /* LineChartDataSource.h */,
+				888B90891BF4135200D48CC2 /* LineChartDataSource.m */,
+				888B908B1BF4150300D48CC2 /* ColumnChartDataSource.h */,
+				888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */,
 			);
 			path = SicopBI;
 			sourceTree = "<group>";
@@ -377,6 +387,7 @@
 				8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */,
 				8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */,
 				8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */,
+				888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */,
 				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
 				888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */,
 				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,
@@ -386,6 +397,7 @@
 				884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */,
 				8845CE391BEBB847006543DE /* AppDelegate.m in Sources */,
 				8845CE791BEBE70E006543DE /* TableroMasterViewController.m in Sources */,
+				888B908A1BF4135200D48CC2 /* LineChartDataSource.m in Sources */,
 				88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */,
 				8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */,
 				8845CE361BEBB847006543DE /* main.m in Sources */,
