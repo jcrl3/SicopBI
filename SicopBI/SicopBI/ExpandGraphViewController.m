@@ -9,6 +9,7 @@
 #import "ExpandGraphViewController.h"
 
 @interface ExpandGraphViewController ()
+@property (weak, nonatomic) IBOutlet UIView *viewContainer;
 
 @end
 
@@ -18,21 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	self.chart.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y+50.0, self.view.bounds.size.width, self.view.bounds.size.height-30.0);
+	self.chart.frame = CGRectMake(self.viewContainer.bounds.origin.x+10, self.viewContainer.bounds.origin.y+10, self.viewContainer.bounds.size.width-20, self.viewContainer.bounds.size.height-20);
 	
-	//agregramos el botón que cierra el view
-	/*UIButton* expandButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-27.0, 7.0, 24.0, 24.0)];
-	[expandButton addTarget:self
-			   action:@selector(closeView:)
-		   forControlEvents:UIControlEventTouchUpInside];
-	expandButton.tag  = 1;
-	expandButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
-	expandButton.opaque=NO;
-	[expandButton setTintColor:[UIColor blueColor]];
-	[expandButton setImage:[UIImage imageNamed:@"Close"] forState:UIControlStateNormal];
-
-	[self.chart addSubview:expandButton];*/
-	[self.view addSubview:self.chart];
+	[self.viewContainer addSubview:self.chart];
 	[chart redrawChart];
 	
 }

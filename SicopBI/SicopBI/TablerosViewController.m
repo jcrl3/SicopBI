@@ -94,7 +94,24 @@
 	
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+	return 53.0;
+}
 
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	// 3. Add a label
+	UILabel* headerLabel = [[UILabel alloc] init];
+	headerLabel.frame = CGRectMake(0, 0, tableView.frame.size.width, 53);
+	headerLabel.backgroundColor = [UIColor orangeColor];
+	headerLabel.textColor = [UIColor whiteColor];
+	headerLabel.font = [UIFont fontWithName:@"Arial" size:23.0];
+	headerLabel.text = @"Snapshots";
+	headerLabel.textAlignment = NSTextAlignmentLeft;
+	
+	// 5. Finally return
+	return headerLabel;
+}
 
 #pragma mark - Navigation
 

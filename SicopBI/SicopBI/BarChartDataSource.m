@@ -10,19 +10,19 @@
 
 @implementation BarChartDataSource
 {
-	NSDictionary* _sales;
+	NSMutableArray* _sales;
 }
 
-- (id)initWithData:(NSDictionary *)dataX  {
+- (id)initWithData:(NSMutableArray *)dataX  {
 	if(self = [super init]) {
 		_sales = dataX;
 	}
 	return self;
 }
 
-- (NSDictionary*)dataForYear {
+- (NSMutableArray*)dataForYear {
 	
-	NSDictionary* salesForYear = _sales[@"NOV"];
+	NSMutableArray* salesForYear = _sales;//_sales[@"NOV"];
 	return salesForYear;
 }
 
@@ -34,7 +34,6 @@
 
 -(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
 	SChartColumnSeries *columnSeries = [[SChartColumnSeries alloc] init];
-	columnSeries.title = index == 0 ? @"Nov" : @"2012";
 	columnSeries.crosshairEnabled=YES;
 	columnSeries.selectionMode = SChartSelectionSeries;
 
@@ -42,9 +41,9 @@
 	styleBar.areaColor = [UIColor colorWithRed:88.0/255
 										 green:152.0/255
 										  blue:254.0/255
-										 alpha:1.0 ];
+										 alpha:0.95 ];
 	
-	
+
 	styleBar.showAreaWithGradient= false;
 	[columnSeries setStyle:styleBar];
 	
@@ -60,17 +59,18 @@
 }
 
 - (id<SChartData>)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex {
-	SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];
-	NSDictionary* salesForYear = [self dataForYear];
-	NSLog(@"Punto %ld",(long)dataIndex);
-	NSString* key = salesForYear.allKeys[dataIndex];
-	NSLog(@"Key %@",key);
-	datapoint.xValue = key;
-	datapoint.yValue = salesForYear[key];
-	return datapoint;
+	/*SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];
+	datapoint = _sales[dataIndex];
+	datapoint.xValue=[NSString stringWithFormat:@"%ld", (long)dataIndex+1];
+	
+	return datapoint;*/
 
+	return _sales[dataIndex];
 }
 
+- (void)supplementStyleFromStyle:(SChartTitleStyle *)style{
+	style.textColor = [UIColor greenColor];
+}
 
 
 @end

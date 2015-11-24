@@ -28,6 +28,17 @@
 
 -(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
 	SChartLineSeries *lineSeries = [[SChartLineSeries alloc] init];
+	lineSeries.crosshairEnabled=YES;
+	
+	SChartLineSeriesStyle *styleBar = [[SChartLineSeriesStyle alloc] init];
+	styleBar.lineColor = [UIColor colorWithRed:88.0/255
+										 green:152.0/255
+										  blue:254.0/255
+										 alpha:0.95 ];
+	
+	[lineSeries setStyle:styleBar];
+
+	
 	return lineSeries;
 }
 
@@ -36,17 +47,19 @@
 }
 
 - (id<SChartData>)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex {
-	
-  return _dataX[dataIndex];
 	/*
 	SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];
-	NSDictionary* salesForYear = _dataX;
-	NSLog(@"Punto %ld",(long)dataIndex);
-	NSString* key = salesForYear.allKeys[dataIndex];
-	NSLog(@"Key %@",key);
-	datapoint.xValue = key;
-	datapoint.yValue = salesForYear[key];
-	return datapoint;*/
+	datapoint = _dataX[dataIndex];
+	datapoint.xValue=[NSString stringWithFormat:@"%ld", (long)dataIndex+1];
+	*/
+	/*NSDictionary* salesForYear = [self dataForYear];
+	 NSLog(@"Punto %ld",(long)dataIndex);
+	 NSString* key = salesForYear.allKeys[dataIndex];
+	 NSLog(@"Key %@",key);
+	 datapoint.xValue = key;
+	 datapoint.yValue = salesForYear[key];*/
+	return _dataX[dataIndex];
+	
 
 }
 

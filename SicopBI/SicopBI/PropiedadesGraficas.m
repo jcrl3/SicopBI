@@ -25,6 +25,11 @@
 	return licence;
 	
 }
-
++(NSString*) getFontName{
+	NSString *fontName;
+	NSArray *dataPlist = [Plist getArrayFromPlist:@"InfoGraphics" Section:@"GraphProperties"];
+	fontName = [dataPlist objectAtIndex:0];
+	return fontName;
+}
 
 @end

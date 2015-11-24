@@ -13,6 +13,9 @@
 	PieChartDataSource* _pieChartDataSource;
 	LineChartDataSource* _lineChartDataSource;
 	ColumnChartDataSource* _columnChartDataSource;
+	NSString *fontName;
+
+
 	
 }
 
@@ -21,6 +24,11 @@
 @synthesize typeOfChart;
 @synthesize hideLegend;
 @synthesize titleGraph;
+@synthesize yTitle;
+@synthesize xTitle;
+@synthesize yFormatString;
+@synthesize xFormatString;
+@synthesize formatString;
 @synthesize gestDoubleTapEnabled;
 @synthesize _chart;
 @synthesize viewDelegate;
@@ -31,12 +39,18 @@ NSString * const PIE_CHART = @"PIE_CHART";
 NSString * const LINE_CHART = @"LINE_CHART";
 NSString * const COLUMN_CHART = @"COLUMN_CHART";
 
+NSString * const FORMAT_DATE=@"FORMAT_DATE";
+NSString * const FORMAT_NUMBER=@"FORMAT_NUMBER";
+NSString * const FORMAT_STRING=@"FORMAT_STRING";
+
 
 - (instancetype)init
 {
 	self = [super init];
 	if (self) {
-
+        self.titleGraph=@"";
+		self.yTitle=@"";
+		self.xTitle=@"";
 	}
 	return self;
 }
@@ -44,14 +58,15 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 -(void) viewDidAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
 	
-	if (typeOfChart==nil) {
-		typeOfChart=BAR_CHART;
+	if (self.typeOfChart==nil) {
+		self.typeOfChart=BAR_CHART;
+		self.yFormatString=@"%d";
 	}
 	
 	[self cofigureChart];
 	
 	if ([typeOfChart isEqualToString:BAR_CHART]){
-		_barChartDataSource = [[BarChartDataSource alloc] initWithData:dataX];
+		_barChartDataSource = [[BarChartDataSource alloc] initWithData:dataXLine];
 	   [self createBarChart];
 	}
 
@@ -70,6 +85,10 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 		[self createColumnChart];
 
 	}
+
+	//adding the chart to subview
+	//[self.view addSubview:_chart];
+	[self.viewContainer addSubview:self._chart];
 	_chart.delegate=self.viewDelegate;
 	[self.spin stopAnimating];
 
@@ -79,76 +98,69 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 #pragma mark - Configurador de las graficas
 
 -(void) cofigureChart{
+	//Set the font
+	 fontName= [PropiedadesGraficas getFontName];
+	
 	_chart = [[ShinobiChart alloc] initWithFrame:[self getFrame]];
 	_chart.licenseKey = [PropiedadesGraficas getLicence];
-	_chart.legend.hidden = self.hideLegend;
-	_chart.title = self.titleGraph;
-	_chart.gestureDoubleTapEnabled = self.gestDoubleTapEnabled;
 	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
+	_chart.animateBoxGesture=YES;
 
+	//Set area colors properties
 	_chart.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
 	_chart.canvasAreaBackgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
 	_chart.borderColor = [UIColor whiteColor];
-	_chart.plotAreaBackgroundColor = [UIColor whiteColor];
-	_chart.plotAreaBorderColor = [UIColor blueColor];
-	
+	_chart.plotAreaBackgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0]; //[UIColor whiteColor];
+	_chart.plotAreaBorderColor = [UIColor redColor];
+	_chart.borderThickness = @0.f;
 	_chart.opaque=NO;
 	
+	//Configure legends properties
+	_chart.legend.hidden = self.hideLegend;
 	_chart.legend.backgroundColor =  [UIColor whiteColor];
-
+	_chart.legend.style.font=[UIFont fontWithName:fontName size:10.f];
+	_chart.legend.style.borderColor=[UIColor clearColor];
 	_chart.titlePosition = SChartTitlePositionBottomOrLeft;
+	
+	
+	//Set the title properties
+	_chart.title = self.titleGraph;
+	_chart.titleLabel.font=[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+	_chart.titleLabel.font =  [UIFont fontWithName:fontName size:14.f];
+	_chart.titleLabel.textColor = [UIColor blackColor];
 
-	
-	//Controlamos el zoom
-	/*
-	_chart.xAxis.enableGestureZooming = YES;
-	_chart.xAxis.enableGesturePanning = YES;
-	_chart.gesturePinchAspectLock = YES;
-	_chart.xAxis.enableMomentumPanning = YES;
-	_chart.xAxis.enableMomentumZooming = YES;*/
-	
-	//agregramos el botón que expande el view
-    UIButton* expandButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-27.0, 2.0, 24.0, 24.0)];
-	[expandButton addTarget:self
-			   action:@selector(expandGraph:)
-	 forControlEvents:UIControlEventTouchUpInside];
-	expandButton.tag  = 1;
-	expandButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
-	expandButton.opaque=NO;
-	[expandButton setTintColor:[UIColor blueColor]];
-	[expandButton setImage:[UIImage imageNamed:@"Expand"] forState:UIControlStateNormal];
-	[_chart addSubview:expandButton];
+
+	//Set the gestures
+	_chart.gestureDoubleTapEnabled = self.gestDoubleTapEnabled;
+
 }
 
 -(CGRect) getFrame{
-	CGFloat margin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 20.0 : 50.0;
-	return CGRectMake(1.0, margin, self.view.bounds.size.width-3.0, self.view.bounds.size.height-margin);
+	//CGFloat margin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 20.0 : 50.0;
+	//return CGRectMake(1.0, margin, self.viewContainer.bounds.size.width-3.0, self.view.bounds.size.height-margin);
+	
+	
+	return CGRectMake(self.viewContainer.bounds.origin.x+10, self.viewContainer.bounds.origin.y+10, self.viewContainer.bounds.size.width-20, self.viewContainer.bounds.size.height-20);
+
 }
 
 #pragma mark -
 #pragma mark - Procedimientos que generan las graficas
 
 -(void)createBarChart {
-	
-	    SChartCategoryAxis* xAxis =[self setDataXSeries:@"Fecha" interSeriesPadding:@0];
-     	_chart.xAxis = xAxis;
+	NSObject *xAxis;
 
-     	SChartAxis* yAxis = [self setDataYSeries:@"" interSeriesPadding:@1.0];
-		_chart.yAxis = yAxis;
+	xAxis = [self getAxisDef];
+	[self formatDataXSeries:(SChartAxis*)xAxis title:self.title interSeriesPadding: @0];
+	_chart.xAxis = (SChartAxis*)xAxis;
 	
-		// enable gestures
-		xAxis.enableGesturePanning = YES;
-		xAxis.enableGestureZooming = YES;
-		yAxis.enableGesturePanning = YES;
-		yAxis.enableGestureZooming = YES;
-
+	SChartAxis* yAxis = [self setDataYSeries:self.yTitle interSeriesPadding:@1.0];
+	_chart.yAxis = yAxis;
 	
-		// add to the view
-		[self.view addSubview:_chart];
-		_chart.datasource = _barChartDataSource;
-		_chart.legend.placement = SChartLegendPlacementOnPlotAreaBorder;
-		
-	}
+	_chart.datasource = _barChartDataSource;
+	_chart.legend.placement = SChartLegendPlacementOnPlotAreaBorder;
+	
+}
 
 
 #pragma mark -
@@ -157,8 +169,6 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 - (void)createPieChart{
 	
 	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
-	// add to the view
-	[self.view addSubview:_chart];
 	_chart.datasource = _pieChartDataSource;
 }
 
@@ -167,21 +177,18 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 
 -(void)createColumnChart {
 	
-	SChartCategoryAxis* xAxis =[self setDataXSeries:@"Fecha" interSeriesPadding:@0];
-	_chart.xAxis = xAxis;
+	//SChartCategoryAxis* xAxis =[self setDataXSeries:self.xTitle interSeriesPadding:@0];
+   //_chart.xAxis = xAxis;
 	
-	SChartAxis* yAxis = [self setDataYSeries:@"" interSeriesPadding:@1.0];
+	NSObject *xAxis;
+	xAxis = [self getAxisDef];
+	[self formatDataXSeries:(SChartAxis*)xAxis title:self.title interSeriesPadding: @0];
+	_chart.xAxis = (SChartAxis*)xAxis;
+
+	
+	SChartAxis* yAxis = [self setDataYSeries:self.yTitle interSeriesPadding:@1.0];
 	_chart.yAxis = yAxis;
 	
-	// enable gestures
-	xAxis.enableGesturePanning = YES;
-	xAxis.enableGestureZooming = YES;
-	yAxis.enableGesturePanning = YES;
-	yAxis.enableGestureZooming = YES;
-	
-	
-	// add to the view
-	[self.view addSubview:_chart];
 	_chart.datasource = _columnChartDataSource;
 	_chart.legend.placement = SChartLegendPlacementOnPlotAreaBorder;
 	
@@ -193,8 +200,8 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 
 - (void)createLineChart{
 //	SChartDiscontinuousDateTimeAxis *xAxis = [[SChartDiscontinuousDateTimeAxis alloc] init];
-	
-	SChartDateTimeAxis *xAxis =[[SChartDateTimeAxis alloc] init];
+
+	//SChartDateTimeAxis *xAxis =[[SChartDateTimeAxis alloc] init];
 	/*
 	// a time period that defines the weekends
 	SChartRepeatedTimePeriod* weekends = [[SChartRepeatedTimePeriod alloc] initWithStart:[self dateFromString:@"01-11-2015"]
@@ -204,33 +211,67 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 
 	
 	[xAxis addExcludedRepeatedTimePeriod:weekends];*/
-	xAxis.title = @"Fecha";
-	_chart.xAxis = xAxis;
+	//SChartAxis* xAxis = [self setDataXSeries:self.xTitle interSeriesPadding:@1.0];
+	//xAxis = (SChartDateTimeAxis*)xAxis;
+
+    NSObject *xAxis;
+	xAxis = [self getAxisDef];
+	[self formatDataXSeries:(SChartAxis*)xAxis title:self.title interSeriesPadding: @0];
+	_chart.xAxis = (SChartAxis*)xAxis;
 	
-	SChartAxis* yAxis = [self setDataYSeries:@"Registros" interSeriesPadding:@1.0];
+	
+	///Set Y Axis Properties
+	SChartAxis* yAxis = [self setDataYSeries:self.yTitle interSeriesPadding:@1.0];
 	yAxis = (SChartNumberAxis*)yAxis;  //Hacemos el doowncast
 	_chart.yAxis = yAxis;
 	
-	// enable gestures
-	yAxis.enableGesturePanning = YES;
-	yAxis.enableGestureZooming = YES;
-	xAxis.enableGesturePanning = YES;
-	xAxis.enableGestureZooming = YES;
-	
-	// add to the view
-	[self.view addSubview:_chart];
 	_chart.datasource = _lineChartDataSource;
 
 }
 
 #pragma mark -
 #pragma mark - Procedimientos que establecen los valores de los ejes
+-(NSObject*) getAxisDef{
+    NSObject *xAxis;
+	if ([self.xFormatString isEqualToString:FORMAT_DATE]){
+		
+		xAxis = [[NSClassFromString(@"SChartDateTimeAxis") alloc] init];
+		((SChartDateTimeAxis*)xAxis).labelFormatString =self.formatString;
+		((SChartDateTimeAxis*)xAxis).majorTickFrequency = [[SChartDateFrequency alloc] initWithDay:3];
+		
+	}else if ([self.xFormatString isEqualToString:FORMAT_NUMBER]){
+		
+		xAxis = [[NSClassFromString(@"SChartNumberAxis") alloc] init];
+		((SChartNumberAxis*)xAxis).labelFormatString =self.formatString;
+		
+	}else{
+		xAxis = [[NSClassFromString(@"SChartCategoryAxis") alloc] init];
+	}
+ return xAxis;
+}
+
+#pragma mark -
+#pragma mark - Procedimientos que formatean los valores de los ejes
+
+-(void)formatDataXSeries:(SChartAxis*)xAxis  title:(NSString*) pTitle   interSeriesPadding:(NSNumber*)pinterSeriesPadding  {
+	xAxis.style.titleStyle.font = [UIFont fontWithName:fontName size:10.f];
+	xAxis.style.titleStyle.textColor = [UIColor blackColor];
+	xAxis.style.interSeriesPadding = @0;
+	xAxis.title = pTitle;
+	xAxis.enableGesturePanning = YES;
+	xAxis.enableGestureZooming = YES;
+}
 
 -(SChartCategoryAxis*)setDataXSeries:(NSString*) pTitle interSeriesPadding:(NSNumber*)pinterSeriesPadding  {
 	SChartCategoryAxis *xAxis = [[SChartCategoryAxis alloc] init];
+	xAxis.style.titleStyle.font = [UIFont fontWithName:fontName size:10.f];
+	xAxis.style.titleStyle.textColor = [UIColor blackColor];
 	xAxis.style.interSeriesPadding = @0;
-	xAxis.title = @"Fecha";
+	xAxis.title = pTitle;
+	xAxis.enableGesturePanning = YES;
+	xAxis.enableGestureZooming = YES;
 	
+
     return xAxis;
 }
 
@@ -238,23 +279,47 @@ NSString * const COLUMN_CHART = @"COLUMN_CHART";
 	SChartAxis *yAxis = [[SChartNumberAxis alloc] init];
 	yAxis.title = pTitle;
 	yAxis.rangePaddingHigh = pinterSeriesPadding;
+	yAxis.style.majorGridLineStyle.showMajorGridLines =YES;
+	yAxis.style.majorGridLineStyle.dashedMajorGridLines=YES;
+	yAxis.style.majorGridLineStyle.lineWidth=@1.0;
+	yAxis.style.majorGridLineStyle.lineColor = [UIColor grayColor];
+	yAxis.style.majorGridLineStyle.dashStyle= [[NSArray alloc] initWithObjects:@1.5, nil];
+	yAxis.style.titleStyle.font = [UIFont fontWithName:fontName size:10.f];
+	yAxis.style.titleStyle.textColor = [UIColor blackColor];
+	yAxis.style.majorTickStyle.labelFont = [UIFont fontWithName:fontName size:8.f];
+	yAxis.style.minorTickStyle.labelFont= [UIFont fontWithName:fontName size:8.f];
+	//yAxis.style.majorTickStyle.lineColor =  [UIColor redColor];
+	yAxis.enableGesturePanning = YES;
+	yAxis.enableGestureZooming = YES;
 	return yAxis;
-
-
 }
 
 
 #pragma mark -
 #pragma mark - Procedimiento que expande la gtrafica
 - (void)expandGraph:(id)sender {
+/*
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 	ExpandGraphViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"GraficaExpandida"];
 	vc.chart = self._chart.getChart;
 	UIView *viewBtn = [vc.chart viewWithTag:1];
 	viewBtn.hidden=YES;
 	[self  presentViewController:vc animated:YES completion:nil];
+	*/
+	
+	
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"ExpandGraph"]){
+//		NSString* titleNextView = [listaTableros objectAtIndex:[selectedRowIndex row]];
+		ExpandGraphViewController *vc = [segue destinationViewController];
+		vc.chart = self._chart.getChart;
+		UIView *viewBtn = [vc.chart viewWithTag:1];
+		viewBtn.hidden=YES;
+	}
+	
+}
 
 #pragma mark -
 #pragma mark - Formateo de fecha a partir de un string

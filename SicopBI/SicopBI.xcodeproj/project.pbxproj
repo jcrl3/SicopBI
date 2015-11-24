@@ -10,6 +10,7 @@
 		880650AF1BEF889E005520BA /* InfoGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880650AE1BEF889E005520BA /* InfoGraphics.plist */; };
 		8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC691BF27DFB00C59412 /* PanelGrafica.m */; };
 		8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */; };
+		881E02311C03ABB800BFE143 /* ResumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E02301C03ABB700BFE143 /* ResumeView.m */; };
 		8845CE361BEBB847006543DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE351BEBB847006543DE /* main.m */; };
 		8845CE391BEBB847006543DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE381BEBB847006543DE /* AppDelegate.m */; };
 		8845CE3C1BEBB847006543DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE3B1BEBB847006543DE /* ViewController.m */; };
@@ -61,6 +62,8 @@
 		8817AC691BF27DFB00C59412 /* PanelGrafica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelGrafica.m; sourceTree = "<group>"; };
 		8817AC6B1BF2FB5400C59412 /* ExpandGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandGraphViewController.h; sourceTree = "<group>"; };
 		8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandGraphViewController.m; sourceTree = "<group>"; };
+		881E022F1C03ABB700BFE143 /* ResumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeView.h; sourceTree = "<group>"; };
+		881E02301C03ABB700BFE143 /* ResumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeView.m; sourceTree = "<group>"; };
 		8845CE311BEBB847006543DE /* SicopBI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SicopBI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8845CE351BEBB847006543DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8845CE371BEBB847006543DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				888B90891BF4135200D48CC2 /* LineChartDataSource.m */,
 				888B908B1BF4150300D48CC2 /* ColumnChartDataSource.h */,
 				888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */,
+				881E022F1C03ABB700BFE143 /* ResumeView.h */,
+				881E02301C03ABB700BFE143 /* ResumeView.m */,
 			);
 			path = SicopBI;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,
 				8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */,
 				88466C461BEF9EF200AF7638 /* Plist.m in Sources */,
+				881E02311C03ABB800BFE143 /* ResumeView.m in Sources */,
 				8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */,
 				884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */,
 				8845CE391BEBB847006543DE /* AppDelegate.m in Sources */,

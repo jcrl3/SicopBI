@@ -36,7 +36,10 @@
 }
 
 - (id<SChartData>)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex {
-	
+	/*SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];
+    datapoint = _dataX[dataIndex];
+	datapoint.xValue= 	datapoint.yValue;
+	datapoint.yValue= 	datapoint.xValue;*/
 	return _dataX[dataIndex];
 	/*
 	 SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];

@@ -15,5 +15,6 @@
 }
 
 +(NSString*) getLicence;
++(NSString*) getFontName;
 
 @end
