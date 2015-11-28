@@ -1,0 +1,114 @@
+
+/* Class = "UITextField"; placeholder = "usuario@dominio"; ObjectID = "0no-MI-Phg"; */
+"0no-MI-Phg.placeholder" = "usuario@dominio";
+
+/* Class = "UILabel"; text = "55"; ObjectID = "1fF-0h-gcy"; */
+"1fF-0h-gcy.text" = "55";
+
+/* Class = "UILabel"; text = "70"; ObjectID = "2LS-J2-KfI"; */
+"2LS-J2-KfI.text" = "70";
+
+/* Class = "UILabel"; text = "Disciplina"; ObjectID = "2go-bM-JAK"; */
+"2go-bM-JAK.text" = "Disciplina";
+
+/* Class = "UILabel"; text = "10%"; ObjectID = "3Lk-vf-LFA"; */
+"3Lk-vf-LFA.text" = "10%";
+
+/* Class = "UILabel"; text = "Demostraciones"; ObjectID = "85D-wZ-xfo"; */
+"85D-wZ-xfo.text" = "Demostraciones";
+
+/* Class = "UILabel"; text = "Activos"; ObjectID = "9RD-rY-aof"; */
+"9RD-rY-aof.text" = "Activos";
+
+/* Class = "UIButton"; normalTitle = "Ingresar"; ObjectID = "C6i-Mm-6Ec"; */
+"C6i-Mm-6Ec.normalTitle" = "Ingresar";
+
+/* Class = "UILabel"; text = "Contraseña de acceso"; ObjectID = "E9i-Sk-YEi"; */
+"E9i-Sk-YEi.text" = "Contraseña de acceso";
+
+/* Class = "UITextField"; placeholder = "Contraseña"; ObjectID = "I2K-ec-IOL"; */
+"I2K-ec-IOL.placeholder" = "Contraseña";
+
+/* Class = "UINavigationItem"; title = "Snapshot"; ObjectID = "IXy-Gp-x0X"; */
+"IXy-Gp-x0X.title" = "Snapshot";
+
+/* Class = "UILabel"; text = "600"; ObjectID = "QEj-N3-1cg"; */
+"QEj-N3-1cg.text" = "600";
+
+/* Class = "UILabel"; text = "Meta"; ObjectID = "RpG-3m-OE0"; */
+"RpG-3m-OE0.text" = "Meta";
+
+/* Class = "UILabel"; text = "Usuario (EMail)"; ObjectID = "Rsy-wc-TVz"; */
+"Rsy-wc-TVz.text" = "Usuario (EMail)";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "SB2-i8-dz6"; */
+"SB2-i8-dz6.text" = "50";
+
+/* Class = "UILabel"; text = "Guardar  datos de sesión"; ObjectID = "SZi-av-0og"; */
+"SZi-av-0og.text" = "Guardar  datos de sesión";
+
+/* Class = "UILabel"; text = "10.5%"; ObjectID = "USZ-uM-aXa"; */
+"USZ-uM-aXa.text" = "10.5%";
+
+/* Class = "UILabel"; text = "10%"; ObjectID = "UWp-Db-ZVz"; */
+"UWp-Db-ZVz.text" = "10%";
+
+/* Class = "UILabel"; text = "8.5"; ObjectID = "aJX-cX-zIM"; */
+"aJX-cX-zIM.text" = "8.5";
+
+/* Class = "UILabel"; text = "Sicop Consulting S.A. de C.V."; ObjectID = "aeD-T8-dO0"; */
+"aeD-T8-dO0.text" = "Sicop Consulting S.A. de C.V.";
+
+/* Class = "UILabel"; text = "Ventas"; ObjectID = "btT-xx-oZW"; */
+"btT-xx-oZW.text" = "Ventas";
+
+/* Class = "UILabel"; text = "10%"; ObjectID = "d5h-Jl-GF6"; */
+"d5h-Jl-GF6.text" = "10%";
+
+/* Class = "UILabel"; text = ".5%"; ObjectID = "d5v-zE-MMY"; */
+"d5v-zE-MMY.text" = ".5%";
+
+/* Class = "UILabel"; text = "Mes"; ObjectID = "dK2-RN-GTE"; */
+"dK2-RN-GTE.text" = "Mes";
+
+/* Class = "UILabel"; text = "Resumen"; ObjectID = "e5X-7u-bVw"; */
+"e5X-7u-bVw.text" = "Resumen";
+
+/* Class = "UILabel"; text = "Prospectos"; ObjectID = "e9p-L1-i2w"; */
+"e9p-L1-i2w.text" = "Prospectos";
+
+/* Class = "UILabel"; text = "5%"; ObjectID = "eqV-kd-aST"; */
+"eqV-kd-aST.text" = "5%";
+
+/* Class = "UILabel"; text = "SICOP Analitycs"; ObjectID = "gkg-Ry-O0E"; */
+"gkg-Ry-O0E.text" = "SICOP Analitycs";
+
+/* Class = "UILabel"; text = "70%"; ObjectID = "hvQ-4G-LEW"; */
+"hvQ-4G-LEW.text" = "70%";
+
+/* Class = "UILabel"; text = "Cal. Cartera"; ObjectID = "i3U-wn-dEk"; */
+"i3U-wn-dEk.text" = "Cal. Cartera";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "l9U-1Y-wi0"; */
+"l9U-1Y-wi0.text" = "Score";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "ljy-UZ-wif"; */
+"ljy-UZ-wif.text" = "10";
+
+/* Class = "UILabel"; text = "500"; ObjectID = "lka-Uz-HMx"; */
+"lka-Uz-HMx.text" = "500";
+
+/* Class = "UILabel"; text = "500"; ObjectID = "pUs-JS-zFe"; */
+"pUs-JS-zFe.text" = "500";
+
+/* Class = "UILabel"; text = "Indicadores de ventas"; ObjectID = "rBg-Mv-fii"; */
+"rBg-Mv-fii.text" = "Indicadores de ventas";
+
+/* Class = "UILabel"; text = "Este tablero te permite visualizar los indiocadores de prospección y ventas, permitiendote determinar si alcanzarás tus metas"; ObjectID = "t6i-le-IME"; */
+"t6i-le-IME.text" = "Este tablero te permite visualizar los indiocadores de prospección y ventas, permitiendote determinar si alcanzarás tus metas";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "xB2-cR-EVQ"; */
+"xB2-cR-EVQ.text" = "50";
+
+/* Class = "UILabel"; text = "50%"; ObjectID = "yrj-8Q-kbH"; */
+"yrj-8Q-kbH.text" = "50%";

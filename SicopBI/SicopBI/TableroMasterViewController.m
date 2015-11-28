@@ -13,48 +13,89 @@
 @end
 
 
-
 @implementation TableroMasterViewController
 {
-	
 	NSDictionary* _sales;
 	NSDictionary* _ejecutivos;
 	NSMutableArray* _timeSeries;
+	NSArray* _datos;
 	///Views de las graficas a mostrar
 	UIViewController *childViewBar;
 	UIViewController *childViewPie;
 	UIViewController *childViewLine;
 	UIViewController *childViewColumn;
-	
 	ShinobiChart* _localchart;
 }
 
+//This variables control dates
+NSString* queryDate;
+NSString* queryYear;
+NSString* queryDay;
+NSString* queryMonth;
+
+//Manager of database
+DateManager *dateManager;
+
 //esta variable va a controlar la clase que se tiene que cargar al story board
 static NSString* classForStoryBoard;
-
 @synthesize titleView;
 @synthesize scrollView;
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - controlamos la clase que se va a utilizar para controlar el tablero que se va a mostrar
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	self.title = self.titleView;
+
+	//open database
+	self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"SicopBIDatabase.db"];
+	//Set dates
+	dateManager = [[DateManager alloc] init];
+	
+	NSLog(@"La fecha actual es %@", dateManager.getDate);
+	NSLog(@"El mes actual es %@", dateManager.getMonth);
+	NSLog(@"El dia actual es %@", dateManager.getDay);
+	NSLog(@"El año actual es %@", dateManager.getYear);
+	NSLog(@"La fecha de hace un mes %@", [dateManager addOrLessDaysToDate:-30]);
+	
+	
+	NSString *querySn= [NSString stringWithFormat:@"SELECT \
+						strftime(%s,Fecha) as Fecha, \
+						SUM(PROSPECTOS) AS TOTAL \
+						FROM \
+						KPIS \
+						WHERE \
+						IdFecha BETWEEN  5692 and  5722 \
+						GROUP BY \
+						Fecha \
+						ORDER BY  \
+						Fecha", "'%d/%m/%Y'"];
+
+	_datos = [self.dbManager loadDataFromDB:querySn];
 	
 	
 	///Aqui se necesita obtener los daatos de los servicios web
 	_sales =  @{@"NOV": @{@"1" : @5.1, @"2" : @12.1, @"3" : @8.1, @"4" : @4.1, @"5" : @6.1, @"6" : @8.1}};
-
 	_ejecutivos = @{@"NOV":@{@"Juan Carlos" : @4.0, @"Marilu" : @5.0, @"Ricardo" : @4.0, @"Yamil" : @1.0, @"German" : @1.0, @"Carlos" : @1.0}};
 	
 	self.scrollView.backgroundColor = [UIColor whiteColor];
 	[self.scrollView setContentSize:CGSizeMake(320.0, 1194.0)];
 	
-	
 	//Creamos los datos para la grafica de lineas
 	_timeSeries = [NSMutableArray new];
-	for (int a=1; (a<=14); a++) {
+	for (NSArray* dato in _datos) {
+		NSString *dateData= [dato objectAtIndex:0];
+		NSString *value =[dato objectAtIndex:1];
+		
+		SChartDataPoint* dataPoint = [SChartDataPoint new];
+		dataPoint.xValue = [self dateFromString:dateData];
+		dataPoint.yValue = [NSNumber numberWithInt:[value intValue]];
+		[_timeSeries addObject:dataPoint];
+	}
+	
+	/*
+	for (int a=0; (a<=_datos.count); a++) {
 		
 		NSString *dateData;
 		
@@ -72,7 +113,7 @@ static NSString* classForStoryBoard;
 		
 		[_timeSeries addObject:dataPoint];
 		
-	}
+	}*/
 	
 	//Creamos el panel de grafica de barras
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
