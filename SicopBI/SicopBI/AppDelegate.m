@@ -13,10 +13,14 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize dbManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	//open database
+	self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"SicopBIDatabase.db"];
+
 	return YES;
 }
 

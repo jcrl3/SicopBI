@@ -31,6 +31,8 @@
 @synthesize formatString;
 @synthesize gestDoubleTapEnabled;
 @synthesize _chart;
+@synthesize labelBottomDonut;
+@synthesize labelCenterDonut;
 @synthesize viewDelegate;
 
 
@@ -71,7 +73,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	}
 
 	if ([typeOfChart isEqualToString:PIE_CHART]){
-		_pieChartDataSource = [[PieChartDataSource alloc] initWithData:dataX displayYear:@"NOV"];
+		_pieChartDataSource = [[PieChartDataSource alloc] initWithData:dataXLine displayYear:@"NOV"];
 		[self createPieChart];
 	}
 
@@ -90,6 +92,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	//[self.view addSubview:_chart];
 	[self.viewContainer addSubview:self._chart];
 	_chart.delegate=self.viewDelegate;
+
 	[self.spin stopAnimating];
 
 }
@@ -118,17 +121,21 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	//Configure legends properties
 	_chart.legend.hidden = self.hideLegend;
 	_chart.legend.backgroundColor =  [UIColor whiteColor];
-	_chart.legend.style.font=[UIFont fontWithName:fontName size:10.f];
+	_chart.legend.style.font=[UIFont fontWithName:fontName size:8.f];
 	_chart.legend.style.borderColor=[UIColor clearColor];
 	_chart.titlePosition = SChartTitlePositionBottomOrLeft;
 	
 	
 	//Set the title properties
 	_chart.title = self.titleGraph;
-	_chart.titleLabel.font=[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+//	_chart.titleLabel.font=[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
 	_chart.titleLabel.font =  [UIFont fontWithName:fontName size:14.f];
-	_chart.titleLabel.textColor = [UIColor blackColor];
+	_chart.titleLabel.textColor = [UIColor colorWithRed:104/255
+												  green:104/255
+												   blue:104/255
+												  alpha:0.90 ];
 
+	_chart.crosshair = self.viewDelegate;;
 
 	//Set the gestures
 	_chart.gestureDoubleTapEnabled = self.gestDoubleTapEnabled;
@@ -168,6 +175,31 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 
 - (void)createPieChart{
 	
+	//Add an indication of selected OS to our donut
+	//donutLabel = [[UILabel alloc] initWithFrame:CGRectMake(160.f, 220, 220, 35)];
+	labelBottomDonut = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, _chart.bounds.size.height+10, _chart.bounds.size.width, 35)];
+	labelBottomDonut.font = [UIFont fontWithName:fontName size:12.f];
+	labelBottomDonut.textColor = [UIColor darkTextColor];
+	labelBottomDonut.backgroundColor = [UIColor clearColor];
+	labelBottomDonut.textAlignment=NSTextAlignmentCenter;
+	labelBottomDonut.text = @"";
+	labelBottomDonut.adjustsFontSizeToFitWidth = YES;
+	
+	[_chart addSubview:labelBottomDonut];
+	
+	
+	labelCenterDonut = [[UILabel alloc] initWithFrame:CGRectMake(145.0f, _chart.bounds.size.height/2+25, 50, 35)];
+	labelCenterDonut.font = [UIFont fontWithName:fontName size:14.f];
+	labelCenterDonut.textColor = [UIColor darkTextColor];
+	labelCenterDonut.backgroundColor = [UIColor clearColor];
+	labelCenterDonut.textAlignment=NSTextAlignmentCenter;
+	labelCenterDonut.text = @"";
+	labelCenterDonut.adjustsFontSizeToFitWidth = YES;
+	
+	[_chart addSubview:labelCenterDonut];
+	
+	
+
 	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
 	_chart.datasource = _pieChartDataSource;
 }
@@ -315,6 +347,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 //		NSString* titleNextView = [listaTableros objectAtIndex:[selectedRowIndex row]];
 		ExpandGraphViewController *vc = [segue destinationViewController];
 		vc.chart = self._chart.getChart;
+		vc.data = [self.dataXLine copy];
 		UIView *viewBtn = [vc.chart viewWithTag:1];
 		viewBtn.hidden=YES;
 	}

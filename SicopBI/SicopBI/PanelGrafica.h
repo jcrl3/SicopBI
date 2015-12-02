@@ -31,8 +31,9 @@ extern NSString * const FORMAT_STRING;
 	
 }
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spin;
-@property (weak, nonatomic) IBOutlet UIView *viewContainer;
-
+@property (weak, nonatomic)	IBOutlet UIView *viewContainer;
+@property (strong, nonatomic) UILabel *labelBottomDonut;
+@property (strong, nonatomic) UILabel *labelCenterDonut;
 @property (strong, nonatomic) NSDictionary* dataX;
 @property (strong, nonatomic) NSMutableArray* dataXLine;
 @property (strong, nonatomic) NSString* typeOfChart;

@@ -10,19 +10,19 @@
 
 @implementation BarChartDataSource
 {
-	NSMutableArray* _sales;
+	NSMutableArray* _dataX;
 }
 
 - (id)initWithData:(NSMutableArray *)dataX  {
 	if(self = [super init]) {
-		_sales = dataX;
+		_dataX = dataX;
 	}
 	return self;
 }
 
 - (NSMutableArray*)dataForYear {
 	
-	NSMutableArray* salesForYear = _sales;//_sales[@"NOV"];
+	NSMutableArray* salesForYear = _dataX;//_sales[@"NOV"];
 	return salesForYear;
 }
 
@@ -35,17 +35,25 @@
 -(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
 	SChartColumnSeries *columnSeries = [[SChartColumnSeries alloc] init];
 	columnSeries.crosshairEnabled=YES;
-	columnSeries.selectionMode = SChartSelectionSeries;
+	columnSeries.animationEnabled = YES;
+	columnSeries.selectionMode = SChartSelectionPoint;
 
+	
+	columnSeries.selectedStyle.showArea=TRUE;
+	columnSeries.selectedStyle.areaColor = [UIColor redColor];
+	columnSeries.selectedStyle.areaColorGradient= [UIColor redColor];
+	
 	SChartColumnSeriesStyle *styleBar = [[SChartColumnSeriesStyle alloc] init];
 	styleBar.areaColor = [UIColor colorWithRed:88.0/255
 										 green:152.0/255
 										  blue:254.0/255
 										 alpha:0.95 ];
 	
-
 	styleBar.showAreaWithGradient= false;
 	[columnSeries setStyle:styleBar];
+	
+	
+	
 	
 	return columnSeries;
 }
@@ -65,7 +73,7 @@
 	
 	return datapoint;*/
 
-	return _sales[dataIndex];
+	return _dataX[dataIndex];
 }
 
 - (void)supplementStyleFromStyle:(SChartTitleStyle *)style{

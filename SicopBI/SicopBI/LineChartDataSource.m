@@ -29,13 +29,14 @@
 -(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
 	SChartLineSeries *lineSeries = [[SChartLineSeries alloc] init];
 	lineSeries.crosshairEnabled=YES;
-	
+	lineSeries.style.lineWidth=@(5.0);  //@(2.0); [NSNumber numberWithInt:];
 	SChartLineSeriesStyle *styleBar = [[SChartLineSeriesStyle alloc] init];
 	styleBar.lineColor = [UIColor colorWithRed:88.0/255
 										 green:152.0/255
 										  blue:254.0/255
 										 alpha:0.95 ];
 	
+	styleBar.lineWidth=@(3.0);
 	[lineSeries setStyle:styleBar];
 
 	

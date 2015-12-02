@@ -12,16 +12,17 @@
 #import "BarChartDataSource.h"
 #import "PropiedadesGraficas.h"
 #import "PanelGrafica.h"
-#import "DBManager.h"
 #import "DateManager.h"
+#import "DimDate.h"
+#import "SqlSentenceManager.h"
 
-@interface TableroMasterViewController : UIViewController{
+@interface TableroMasterViewController : UIViewController<SChartCrosshair>{
 
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
 @property (strong, nonatomic) NSString* titleView;
-@property (strong, nonatomic) DBManager *dbManager;
+
 //+(void)setClassForStoryBoard:(NSString *)classString;
 
 @end

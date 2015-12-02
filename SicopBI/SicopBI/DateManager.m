@@ -9,10 +9,6 @@
 #import "DateManager.h"
 
 @implementation DateManager{
-	
-	
-	
-	
 }
 
 NSString* currentDate;
@@ -21,62 +17,61 @@ NSString* dayOfDate;
 NSString* monthOfDate;
 
 
-@synthesize currentDate;
+/*@synthesize currentDate;
 @synthesize yearOfDate;
 @synthesize dayOfDate;
-@synthesize monthOfDate;
+@synthesize monthOfDate;*/
 @synthesize dateFormat;
 
 - (instancetype)init
 {
 	self = [super init];
-	
 	if (self) {
 		if (self.dateFormat == nil){
 			self.dateFormat=@"yyy-MM-dd";
 		}
-		currentDate = [self stringFromDate];
+		currentDate = [self stringFromDate:[NSDate date]];
 		[self setYearDayMonthFromDate];
 	}
 	return self;
 }
 
-- (instancetype)initWithDate: (NSDate*) date;
+- (instancetype)initWithDate: (NSDate*) date
 {
 	self = [super init];
 	
 	if (self) {
-
 		if (self.dateFormat == nil){
 			self.dateFormat=@"yyy-MM-dd";
 		}
-
-		  currentDate = [self stringFromDate:date];
-
-		
+		currentDate = [self stringFromDate:date];
 		[self setYearDayMonthFromDate];
-
 	}
 	return self;
 }
 
+-(void) setDate:(NSString*)date{
+	NSDate *dateParameter=[self dateFromString:date];
+	currentDate = [self stringFromDate:dateParameter];
+	[self setYearDayMonthFromDate];
+}
 
 -(NSString*) getDate{
-	self.currentDate = currentDate;
-	return self.currentDate;
+	//self.currentDate = currentDate;
+	return  currentDate;
 }
 
 -(NSString*) getYear{
-	self.yearOfDate=yearOfDate;
-	return self.yearOfDate;
+	//self.yearOfDate=yearOfDate;
+	return yearOfDate;
 }
 -(NSString*) getDay{
-	self.dayOfDate = dayOfDate;
-	return self.dayOfDate;
+	//self.dayOfDate = dayOfDate;
+	return dayOfDate;
 }
 -(NSString*) getMonth{
-	self.monthOfDate = monthOfDate;
-	return self.monthOfDate;
+	//self.monthOfDate = monthOfDate;
+	return monthOfDate;
 }
 
 /*
@@ -91,6 +86,7 @@ NSString* monthOfDate;
 	NSDate *sevenDaysAgo = [date dateByAddingTimeInterval:days*24*60*60];
 	return [self stringFromDate:sevenDaysAgo];
 }
+
 -(void) setYearDayMonthFromDate{
 	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self dateFromString:currentDate]];
 	
@@ -101,14 +97,15 @@ NSString* monthOfDate;
 	yearOfDate= [NSString stringWithFormat: @"%ld", (long)year];
 	dayOfDate= [NSString stringWithFormat: @"%ld", (long)day];
 	monthOfDate= [NSString stringWithFormat: @"%ld", (long)month];
-	
 }
+
 -(NSDate*)dateFromString:(NSString*)date{
 	NSDateFormatter *dateFormatter;
 	if (!dateFormatter) {
 		dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateFormat:self.dateFormat];
 	}
+	//NSDate *datep =[dateFormatter dateFromString:date];
 	return [dateFormatter dateFromString:date];
 }
 
@@ -119,7 +116,7 @@ NSString* monthOfDate;
 	return [dateFormatter stringFromDate:[NSDate date]];
 }
 
-- (NSString*) stringFromDate:(NSDate*) date; {
+- (NSString*) stringFromDate:(NSDate*) date {
 	NSDateFormatter *dateFormatter;
 	dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:self.dateFormat];

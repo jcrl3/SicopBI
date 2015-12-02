@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiCharts/ShinobiCharts.h>
 #import "TakePhoto.h"
+#import "GridViewController.h"
 
 @interface ExpandGraphViewController : UIViewController {
 	
 }
 @property ShinobiChart* chart;
+@property (nonatomic,strong) NSArray* data;
 @end

@@ -36,9 +36,13 @@
 		88466C461BEF9EF200AF7638 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 88466C451BEF9EF200AF7638 /* Plist.m */; };
 		884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */; };
 		8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */; };
+		88865E851C0B51630044C338 /* DimDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88865E841C0B51630044C338 /* DimDate.m */; };
 		888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90831BF3CD1900D48CC2 /* TakePhoto.m */; };
 		888B908A1BF4135200D48CC2 /* LineChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90891BF4135200D48CC2 /* LineChartDataSource.m */; };
 		888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */; };
+		88B11CBB1C0CB35E00A49615 /* SqlSentenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B11CBA1C0CB35E00A49615 /* SqlSentenceManager.m */; };
+		88B11CC21C0ECC8700A49615 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B11CC11C0ECC8700A49615 /* GridViewController.m */; };
+		88B11CC41C0ECF2400A49615 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */; };
 		88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */; };
 		88E217561C07E0690064F20A /* Kpis.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E217551C07E0690064F20A /* Kpis.m */; };
 		88E217581C07E9030064F20A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E217571C07E9030064F20A /* libsqlite3.tbd */; };
@@ -115,12 +119,20 @@
 		884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroIndicadoresViewController.m; sourceTree = "<group>"; };
 		8853AEAD1BEFC5F30024E8B4 /* TableroCallCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroCallCenterViewController.h; sourceTree = "<group>"; };
 		8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroCallCenterViewController.m; sourceTree = "<group>"; };
+		88865E831C0B51630044C338 /* DimDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimDate.h; sourceTree = "<group>"; };
+		88865E841C0B51630044C338 /* DimDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimDate.m; sourceTree = "<group>"; };
 		888B90821BF3CD1900D48CC2 /* TakePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhoto.h; sourceTree = "<group>"; };
 		888B90831BF3CD1900D48CC2 /* TakePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhoto.m; sourceTree = "<group>"; };
 		888B90881BF4135200D48CC2 /* LineChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataSource.h; sourceTree = "<group>"; };
 		888B90891BF4135200D48CC2 /* LineChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataSource.m; sourceTree = "<group>"; };
 		888B908B1BF4150300D48CC2 /* ColumnChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnChartDataSource.h; sourceTree = "<group>"; };
 		888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnChartDataSource.m; sourceTree = "<group>"; };
+		88B11CB91C0CB35E00A49615 /* SqlSentenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlSentenceManager.h; sourceTree = "<group>"; };
+		88B11CBA1C0CB35E00A49615 /* SqlSentenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlSentenceManager.m; sourceTree = "<group>"; };
+		88B11CBE1C0ECA2900A49615 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = Library/Frameworks/ShinobiGrids.framework; sourceTree = DEVELOPER_DIR; };
+		88B11CC01C0ECC8700A49615 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		88B11CC11C0ECC8700A49615 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiGrids.framework; sourceTree = "<group>"; };
 		88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropiedadesGraficas.h; sourceTree = "<group>"; };
 		88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropiedadesGraficas.m; sourceTree = "<group>"; };
 		88E217541C07E0690064F20A /* Kpis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kpis.h; sourceTree = "<group>"; };
@@ -142,6 +154,7 @@
 				8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */,
 				8845CE931BEBF234006543DE /* QuartzCore.framework in Frameworks */,
 				8845CE911BEBF22A006543DE /* Security.framework in Frameworks */,
+				88B11CC41C0ECF2400A49615 /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +212,8 @@
 				8845CE421BEBB847006543DE /* LaunchScreen.storyboard */,
 				88E2175E1C07ED280064F20A /* Database */,
 				8845CE401BEBB847006543DE /* Assets.xcassets */,
+				88B11CC01C0ECC8700A49615 /* GridViewController.h */,
+				88B11CC11C0ECC8700A49615 /* GridViewController.m */,
 				88E217591C07E9280064F20A /* DBManager.h */,
 				88E2175A1C07E9280064F20A /* DBManager.m */,
 				8845CE371BEBB847006543DE /* AppDelegate.h */,
@@ -243,6 +258,10 @@
 				8814B3A51C08DB64009FD41E /* WebServicesManager.m */,
 				8814B3AE1C08E541009FD41E /* DateManager.h */,
 				8814B3AF1C08E541009FD41E /* DateManager.m */,
+				88865E831C0B51630044C338 /* DimDate.h */,
+				88865E841C0B51630044C338 /* DimDate.m */,
+				88B11CB91C0CB35E00A49615 /* SqlSentenceManager.h */,
+				88B11CBA1C0CB35E00A49615 /* SqlSentenceManager.m */,
 			);
 			path = SicopBI;
 			sourceTree = "<group>";
@@ -279,6 +298,8 @@
 				88E217571C07E9030064F20A /* libsqlite3.tbd */,
 				8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */,
 				8845CE981BEBF25B006543DE /* libc++.tbd */,
+				88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */,
+				88B11CBE1C0ECA2900A49615 /* ShinobiGrids.framework */,
 				8845CE961BEBF248006543DE /* CoreText.framework */,
 				8845CE941BEBF23E006543DE /* OpenGLES.framework */,
 				8845CE921BEBF234006543DE /* QuartzCore.framework */,
@@ -432,6 +453,7 @@
 				8814B3A61C08DB64009FD41E /* WebServicesManager.m in Sources */,
 				8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */,
 				8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */,
+				88865E851C0B51630044C338 /* DimDate.m in Sources */,
 				888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */,
 				8814B3B01C08E541009FD41E /* DateManager.m in Sources */,
 				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
@@ -440,6 +462,7 @@
 				8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */,
 				88466C461BEF9EF200AF7638 /* Plist.m in Sources */,
 				881E02311C03ABB800BFE143 /* ResumeView.m in Sources */,
+				88B11CBB1C0CB35E00A49615 /* SqlSentenceManager.m in Sources */,
 				8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */,
 				884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */,
 				8845CE391BEBB847006543DE /* AppDelegate.m in Sources */,
@@ -448,6 +471,7 @@
 				88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */,
 				8845CE691BEBC841006543DE /* TablerosViewController.m in Sources */,
 				88E217561C07E0690064F20A /* Kpis.m in Sources */,
+				88B11CC21C0ECC8700A49615 /* GridViewController.m in Sources */,
 				8845CE361BEBB847006543DE /* main.m in Sources */,
 				88E2175B1C07E9280064F20A /* DBManager.m in Sources */,
 			);

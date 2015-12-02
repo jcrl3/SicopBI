@@ -14,7 +14,9 @@
 @interface TablerosViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingTableView;
 
+@property (weak, nonatomic) IBOutlet UIView *UViewMenu;
 @end
 
 @implementation TablerosViewController
@@ -32,6 +34,12 @@
 	descripcionTableros= [[NSArray alloc] initWithObjects:
 					@"Este tablero te permite visualizar los indicadores de prospección y ventas, permitiendote determinar si alcanzarás tus metas",
 					@"Este tablero te permite visualizar la calidad de cartera registrada por los ejecutivos de venta",	 nil];
+	
+	CGRect frm = _UViewMenu.frame;
+	frm.size.width = 400;
+	_UViewMenu.frame = frm;
+	
+
 }
 
 -(void) viewDidAppear:(BOOL)animated{

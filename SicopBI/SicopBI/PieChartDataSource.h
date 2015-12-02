@@ -11,7 +11,7 @@
 
 @interface PieChartDataSource : NSObject <SChartDatasource>
 
-- initWithData:(NSDictionary*)ejecutivos displayYear:(NSString*)year;
+- initWithData:(NSMutableArray*)ejecutivos displayYear:(NSString*)year;
 
 @property NSString* displayYear;
 
