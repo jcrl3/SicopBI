@@ -14,6 +14,8 @@
 		8817AC6A1BF27DFB00C59412 /* PanelGrafica.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC691BF27DFB00C59412 /* PanelGrafica.m */; };
 		8817AC6D1BF2FB5400C59412 /* ExpandGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */; };
 		881E02311C03ABB800BFE143 /* ResumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E02301C03ABB700BFE143 /* ResumeView.m */; };
+		88220AE91C0FA95500E10D23 /* Imagen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88220AE81C0FA95500E10D23 /* Imagen.jpg */; };
+		88220AEC1C0FBE8900E10D23 /* ResultDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 88220AEB1C0FBE8900E10D23 /* ResultDataObject.m */; };
 		8845CE361BEBB847006543DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE351BEBB847006543DE /* main.m */; };
 		8845CE391BEBB847006543DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE381BEBB847006543DE /* AppDelegate.m */; };
 		8845CE3C1BEBB847006543DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE3B1BEBB847006543DE /* ViewController.m */; };
@@ -81,6 +83,9 @@
 		8817AC6C1BF2FB5400C59412 /* ExpandGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandGraphViewController.m; sourceTree = "<group>"; };
 		881E022F1C03ABB700BFE143 /* ResumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeView.h; sourceTree = "<group>"; };
 		881E02301C03ABB700BFE143 /* ResumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeView.m; sourceTree = "<group>"; };
+		88220AE81C0FA95500E10D23 /* Imagen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagen.jpg; sourceTree = "<group>"; };
+		88220AEA1C0FBE8900E10D23 /* ResultDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDataObject.h; sourceTree = "<group>"; };
+		88220AEB1C0FBE8900E10D23 /* ResultDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDataObject.m; sourceTree = "<group>"; };
 		8845CE311BEBB847006543DE /* SicopBI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SicopBI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8845CE351BEBB847006543DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8845CE371BEBB847006543DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +217,8 @@
 				8845CE421BEBB847006543DE /* LaunchScreen.storyboard */,
 				88E2175E1C07ED280064F20A /* Database */,
 				8845CE401BEBB847006543DE /* Assets.xcassets */,
+				88220AEA1C0FBE8900E10D23 /* ResultDataObject.h */,
+				88220AEB1C0FBE8900E10D23 /* ResultDataObject.m */,
 				88B11CC01C0ECC8700A49615 /* GridViewController.h */,
 				88B11CC11C0ECC8700A49615 /* GridViewController.m */,
 				88E217591C07E9280064F20A /* DBManager.h */,
@@ -311,6 +318,7 @@
 		88E2175E1C07ED280064F20A /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				88220AE81C0FA95500E10D23 /* Imagen.jpg */,
 				8814B3B11C08F9E7009FD41E /* SicopBIDatabase.db */,
 			);
 			name = Database;
@@ -422,6 +430,7 @@
 			files = (
 				8845CE441BEBB847006543DE /* LaunchScreen.storyboard in Resources */,
 				8845CE411BEBB847006543DE /* Assets.xcassets in Resources */,
+				88220AE91C0FA95500E10D23 /* Imagen.jpg in Resources */,
 				8814B3B21C08F9E7009FD41E /* SicopBIDatabase.db in Resources */,
 				880650AF1BEF889E005520BA /* InfoGraphics.plist in Resources */,
 				8845CE3F1BEBB847006543DE /* Main.storyboard in Resources */,
@@ -456,6 +465,7 @@
 				88865E851C0B51630044C338 /* DimDate.m in Sources */,
 				888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */,
 				8814B3B01C08E541009FD41E /* DateManager.m in Sources */,
+				88220AEC1C0FBE8900E10D23 /* ResultDataObject.m in Sources */,
 				8845CE6C1BEBCD33006543DE /* TableroTableViewCell.m in Sources */,
 				888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */,
 				8845CE3C1BEBB847006543DE /* ViewController.m in Sources */,

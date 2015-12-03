@@ -10,7 +10,7 @@
 #import <ShinobiGrids/ShinobiGrids.h>
 #import "PropiedadesGraficas.h"
 
-@interface GridViewController : UIViewController <SDataGridDataSource>{
+@interface GridViewController : UIViewController <SDataGridDataSource, SDataGridDelegate>{
 
 }
 @property (strong, nonatomic) NSArray *data;

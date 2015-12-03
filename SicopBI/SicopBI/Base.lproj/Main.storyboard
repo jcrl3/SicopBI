@@ -207,7 +207,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-w9-jRB">
                                 <rect key="frame" x="324" y="0.0" width="276" height="600"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.74117647060000003" green="0.73725490199999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -347,10 +347,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-QV-hhC">
                                 <rect key="frame" x="0.0" y="0.0" width="572" height="206"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="M0B-tT-NgO">
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="M0B-tT-NgO">
                                         <rect key="frame" x="542" y="8" width="22" height="22"/>
                                         <animations/>
-                                        <state key="normal" backgroundImage="Expand"/>
+                                        <state key="normal" backgroundImage="Grid"/>
                                         <connections>
                                             <segue destination="cZh-YA-qXE" kind="show" identifier="ShowDataGrid" id="Y2t-pX-MwS"/>
                                         </connections>
@@ -405,7 +405,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seK-5U-IuE">
-                                <rect key="frame" x="0.0" y="-5" width="572" height="255"/>
+                                <rect key="frame" x="0.0" y="5" width="572" height="245"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -413,10 +413,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="seK-5U-IuE" firstAttribute="bottom" secondItem="bFb-rg-UgD" secondAttribute="top" id="0ia-IJ-rdz"/>
-                            <constraint firstItem="seK-5U-IuE" firstAttribute="leading" secondItem="9gC-Yz-dYZ" secondAttribute="leading" id="3pI-jO-kpK"/>
-                            <constraint firstAttribute="trailing" secondItem="seK-5U-IuE" secondAttribute="trailing" id="5mC-8u-Jx8"/>
-                            <constraint firstItem="seK-5U-IuE" firstAttribute="top" secondItem="9gC-Yz-dYZ" secondAttribute="topMargin" constant="-5" id="EMA-w6-5AQ"/>
+                            <constraint firstItem="seK-5U-IuE" firstAttribute="leading" secondItem="9gC-Yz-dYZ" secondAttribute="leading" id="710-Nd-9iB"/>
+                            <constraint firstItem="bFb-rg-UgD" firstAttribute="top" secondItem="seK-5U-IuE" secondAttribute="bottom" id="9DL-Fi-7ed"/>
+                            <constraint firstAttribute="trailing" secondItem="seK-5U-IuE" secondAttribute="trailing" id="aRN-IP-Ivq"/>
+                            <constraint firstItem="seK-5U-IuE" firstAttribute="top" secondItem="9gC-Yz-dYZ" secondAttribute="top" constant="5" id="o0e-dN-6rq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -700,6 +700,7 @@
     <resources>
         <image name="Close" width="22" height="22"/>
         <image name="Expand" width="22" height="22"/>
+        <image name="Grid" width="22" height="22"/>
         <image name="ImagenTablero" width="109" height="109"/>
         <image name="SplashScreen" width="428" height="640"/>
     </resources>

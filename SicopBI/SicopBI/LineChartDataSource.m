@@ -36,6 +36,7 @@
 										  blue:254.0/255
 										 alpha:0.95 ];
 	
+	lineSeries.animationEnabled = YES;
 	styleBar.lineWidth=@(3.0);
 	[lineSeries setStyle:styleBar];
 
