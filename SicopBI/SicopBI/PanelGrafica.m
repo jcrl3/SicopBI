@@ -89,8 +89,9 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	}
 
 	//adding the chart to subview
-	//[self.view addSubview:_chart];
 	[self.viewContainer addSubview:self._chart];
+    _chart.translatesAutoresizingMaskIntoConstraints=YES;
+	[self setChartConstraints];
 	_chart.delegate=self.viewDelegate;
 
 	[self.spin stopAnimating];
@@ -102,10 +103,10 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 
 -(void) cofigureChart{
 	//Set the font
+///	UIColor *darkGrayColor = [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];
 	 fontName= [PropiedadesGraficas getFontName];
 	
 	_chart = [[ShinobiChart alloc] initWithFrame:[self getFrame]];
-	_chart.licenseKey = [PropiedadesGraficas getLicence];
 	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
 	_chart.animateBoxGesture=YES;
 
@@ -114,41 +115,48 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	_chart.canvasAreaBackgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
 	_chart.borderColor = [UIColor whiteColor];
 	_chart.plotAreaBackgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0]; //[UIColor whiteColor];
-	_chart.plotAreaBorderColor = [UIColor redColor];
+	_chart.plotAreaBorderColor = [UIColor clearColor];
 	_chart.borderThickness = @0.f;
-	_chart.opaque=NO;
+	_chart.opaque=YES;
 	
 	//Configure legends properties
 	_chart.legend.hidden = self.hideLegend;
 	_chart.legend.backgroundColor =  [UIColor whiteColor];
 	_chart.legend.style.font=[UIFont fontWithName:fontName size:8.f];
 	_chart.legend.style.borderColor=[UIColor clearColor];
+	_chart.legend.style.titleFontColor = [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];
+	_chart.legend.style.fontColor= [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];
+	_chart.legend.style.borderWidth = 0;
+	_chart.legend.style.textAlignment=NSTextAlignmentRight;
 	_chart.titlePosition = SChartTitlePositionBottomOrLeft;
-	
 	
 	//Set the title properties
 	_chart.title = self.titleGraph;
-//	_chart.titleLabel.font=[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-	_chart.titleLabel.font =  [UIFont fontWithName:fontName size:14.f];
-	_chart.titleLabel.textColor = [UIColor colorWithRed:104/255
-												  green:104/255
-												   blue:104/255
-												  alpha:0.90 ];
+	_chart.titleLabel.font =  [UIFont fontWithName:fontName size:16.f];
+	_chart.titleLabel.textColor = [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];  //dr
+	_chart.crosshair = self.viewDelegate;
 
-	_chart.crosshair = self.viewDelegate;;
 
+	//Set crosshair style
+	SChartCrosshairStyle *styleCrossHair = [[SChartCrosshairStyle alloc]init];
+	styleCrossHair.defaultBackgroundColor = [UIColor blackColor];
+	styleCrossHair.defaultTextColor = [UIColor whiteColor];
+	styleCrossHair.defaultCornerRadius = @10.0;
+	styleCrossHair.defaultFont =[UIFont fontWithName:fontName size:18.f];
+	SChartCrosshair *customCrosshair =[[SChartCrosshair alloc] initWithChart:_chart];
+	customCrosshair.style= styleCrossHair;
+	_chart.crosshair = customCrosshair;
+	
 	//Set the gestures
 	_chart.gestureDoubleTapEnabled = self.gestDoubleTapEnabled;
 
 }
 
 -(CGRect) getFrame{
-	//CGFloat margin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 20.0 : 50.0;
-	//return CGRectMake(1.0, margin, self.viewContainer.bounds.size.width-3.0, self.view.bounds.size.height-margin);
-	
-	
-	return CGRectMake(self.viewContainer.bounds.origin.x+10, self.viewContainer.bounds.origin.y+10, self.viewContainer.bounds.size.width-20, self.viewContainer.bounds.size.height-20);
-
+	return CGRectMake(self.viewContainer.bounds.origin.x+10,
+					  self.viewContainer.bounds.origin.y+10,
+					  self.viewContainer.bounds.size.width-20,
+					  self.viewContainer.bounds.size.height-20);
 }
 
 #pragma mark -
@@ -169,41 +177,153 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	
 }
 
+-(void) setChartConstraints{
+//Top
+	NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:_chart
+																  attribute:NSLayoutAttributeTop
+																  relatedBy:NSLayoutRelationEqual
+																	 toItem:self.viewContainer
+																  attribute:NSLayoutAttributeTop multiplier:1.0f constant:1.f];
+	
+	[self.viewContainer addConstraint:constraint];
+	
+	
+//Bottom
+	 constraint = [NSLayoutConstraint constraintWithItem:_chart
+																  attribute:NSLayoutAttributeBottom
+																  relatedBy:NSLayoutRelationEqual
+																	 toItem:self.viewContainer
+																  attribute:NSLayoutAttributeBottom multiplier:1.0f constant:-1.f];
+	
+	[self.viewContainer addConstraint:constraint];
+	
+	
+//Left margin
+	constraint = [NSLayoutConstraint constraintWithItem:_chart
+											  attribute:NSLayoutAttributeLeft
+											  relatedBy:NSLayoutRelationEqual
+												 toItem:self.viewContainer
+											  attribute:NSLayoutAttributeLeft multiplier:1.0f constant:1.f];
+	
+	[self.viewContainer addConstraint:constraint];
+	
+	
+//rigth margin
+	constraint = [NSLayoutConstraint constraintWithItem:_chart
+											  attribute:NSLayoutAttributeRight
+											  relatedBy:NSLayoutRelationEqual
+												 toItem:self.viewContainer
+											  attribute:NSLayoutAttributeRight multiplier:1.0f constant:-1.f];
+	
+	[self.viewContainer addConstraint:constraint];
+	
+	
+
+}
 
 #pragma mark -
 #pragma mark - Grafica de Pie
 
 - (void)createPieChart{
 	
-	//Add an indication of selected OS to our donut
-	//donutLabel = [[UILabel alloc] initWithFrame:CGRectMake(160.f, 220, 220, 35)];
-	labelBottomDonut = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, _chart.bounds.size.height+10, _chart.bounds.size.width, 35)];
-	labelBottomDonut.font = [UIFont fontWithName:fontName size:12.f];
-	labelBottomDonut.textColor = [UIColor darkTextColor];
-	labelBottomDonut.backgroundColor = [UIColor clearColor];
-	labelBottomDonut.textAlignment=NSTextAlignmentCenter;
-	labelBottomDonut.text = @"";
-	labelBottomDonut.adjustsFontSizeToFitWidth = YES;
+	CGRect plotChart = [_chart chartFrame];
 	
-	[_chart addSubview:labelBottomDonut];
+	///label for titles
+    self.labelBottomDonut = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, plotChart.size.height-20, plotChart.size.width/2, 10)];
+	self.labelBottomDonut.font = [UIFont fontWithName:fontName size:8.f];
+	self.labelBottomDonut.textColor = [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];
+	self.labelBottomDonut.backgroundColor = [UIColor clearColor];
+	self.labelBottomDonut.textAlignment=NSTextAlignmentLeft;
+	self.labelBottomDonut.text = @"";
+	self.labelBottomDonut.adjustsFontSizeToFitWidth = YES;
+	self.labelBottomDonut.tag = 1;
+	self.labelBottomDonut.translatesAutoresizingMaskIntoConstraints=NO;
+	[_chart addSubview:self.labelBottomDonut];
 	
+	NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.labelBottomDonut
+									attribute:NSLayoutAttributeBottom
+									relatedBy:NSLayoutRelationEqual
+									toItem:_chart
+									attribute:NSLayoutAttributeBottom multiplier:1.0f constant:-10.f];
 	
-	labelCenterDonut = [[UILabel alloc] initWithFrame:CGRectMake(145.0f, _chart.bounds.size.height/2+25, 50, 35)];
-	labelCenterDonut.font = [UIFont fontWithName:fontName size:14.f];
-	labelCenterDonut.textColor = [UIColor darkTextColor];
-	labelCenterDonut.backgroundColor = [UIColor clearColor];
-	labelCenterDonut.textAlignment=NSTextAlignmentCenter;
-	labelCenterDonut.text = @"";
-	labelCenterDonut.adjustsFontSizeToFitWidth = YES;
-	
-	[_chart addSubview:labelCenterDonut];
-	
-	
+	[_chart addConstraint:constraint];
 
-	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
+	constraint = [NSLayoutConstraint constraintWithItem:self.labelBottomDonut
+											  attribute:NSLayoutAttributeLeft
+											  relatedBy:NSLayoutRelationEqual
+												 toItem:_chart
+											  attribute:NSLayoutAttributeLeft multiplier:1.0f constant:10.f];
+	
+	[_chart addConstraint:constraint];
+
+	///label for numbers
+	self.labelCenterDonut = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, plotChart.size.height-30, plotChart.size.width/2, 10)];
+	self.labelCenterDonut.font = [UIFont fontWithName:fontName size:8.f];
+	self.labelCenterDonut.textColor = [UIColor colorWithRed:83.0/255 green:96.0/255 blue:107.0/255 alpha:1];
+	self.labelCenterDonut.backgroundColor = [UIColor clearColor];
+	self.labelCenterDonut.textAlignment=NSTextAlignmentLeft;
+	self.labelCenterDonut.text = @"";
+	self.labelCenterDonut.adjustsFontSizeToFitWidth = YES;
+	self.labelCenterDonut.tag = 2;
+
+	self.labelCenterDonut.translatesAutoresizingMaskIntoConstraints=NO;
+	
+//	[self.viewContainer addSubview:self.labelCenterDonut];
+	[_chart addSubview:self.labelCenterDonut];
+	
+	
+	constraint = [NSLayoutConstraint constraintWithItem:self.labelCenterDonut
+											  attribute:NSLayoutAttributeBottom
+											  relatedBy:NSLayoutRelationEqual
+												 toItem:_chart
+											  attribute:NSLayoutAttributeBottom multiplier:1.0f constant:-20.f];
+	
+	[_chart addConstraint:constraint];
+	
+	constraint = [NSLayoutConstraint constraintWithItem:self.labelCenterDonut
+											  attribute:NSLayoutAttributeLeft
+											  relatedBy:NSLayoutRelationEqual
+												 toItem:_chart
+											  attribute:NSLayoutAttributeLeft multiplier:1.0f constant:10.f];
+	
+	[_chart addConstraint:constraint];
+	
+	
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(legendClick:)];
+	[_chart.legend addGestureRecognizer:tap];
+
+//	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
 	_chart.datasource = _pieChartDataSource;
 }
 
+- (void)legendClick:(UITapGestureRecognizer*)sender {
+	
+	CGPoint tapPoint = [sender locationInView:_chart.legend];
+	SChartPieSeries *series = [_chart series][0];
+	
+	int selectedIndex = -1;
+	
+	// Find the item (if any) that we hit in the legend click
+	for (int i=0; i < _chart.legend.symbols.count; i++) {
+		
+		CGRect symbolFrame = [_chart.legend.symbols[i] frame];
+		CGRect legendFrame = [_chart.legend.labels[i] frame];
+		
+		if (CGRectContainsPoint(symbolFrame , tapPoint) || CGRectContainsPoint(legendFrame, tapPoint)) {
+			selectedIndex = i;
+			break;
+		}
+	}
+	
+	if (selectedIndex != -1) {
+		// Find the datapoint corresponding to the selected legend item
+		SChartDataPoint *dp = series.dataSeries.dataPoints[selectedIndex];
+		BOOL selected = !dp.selected;
+		
+		// Animate the slice selection
+		[series setSlice:selectedIndex asSelected:selected];
+	}
+}
 #pragma mark -
 #pragma mark - Grafica de columnas
 
@@ -329,22 +449,9 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 
 #pragma mark -
 #pragma mark - Procedimiento que expande la gtrafica
-- (void)expandGraph:(id)sender {
-/*
-	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-	ExpandGraphViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"GraficaExpandida"];
-	vc.chart = self._chart.getChart;
-	UIView *viewBtn = [vc.chart viewWithTag:1];
-	viewBtn.hidden=YES;
-	[self  presentViewController:vc animated:YES completion:nil];
-	*/
-	
-	
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"ExpandGraph"]){
-//		NSString* titleNextView = [listaTableros objectAtIndex:[selectedRowIndex row]];
 		ExpandGraphViewController *vc = [segue destinationViewController];
 		vc.chart = self._chart.getChart;
 		vc.data = [self.dataXLine copy];
@@ -364,6 +471,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	}
 	return [dateFormatter dateFromString:date];
 }
+
 
 
 @end

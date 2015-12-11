@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 @interface AppDelegate ()
 
 @end
@@ -46,4 +45,16 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+//	if ([self.window.rootViewController.presentedViewController isKindOfClass: [TableroMasterViewController class]])
+//	if ([self.window.rootViewController.presentedViewController respondsToSelector:@selector(canRotate)]==YES){
+	if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"vcActive"] isEqualToString:@"TableroMasterViewController"]){
+		return UIInterfaceOrientationMaskPortrait;
+	 }else{
+
+     	return UIInterfaceOrientationMaskAll;
+
+  }
+}
 @end

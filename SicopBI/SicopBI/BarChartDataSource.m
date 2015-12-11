@@ -38,7 +38,6 @@
 	columnSeries.animationEnabled = YES;
 	columnSeries.selectionMode = SChartSelectionPoint;
 
-	
 	columnSeries.selectedStyle.showArea=TRUE;
 	columnSeries.selectedStyle.areaColor = [UIColor redColor];
 	columnSeries.selectedStyle.areaColorGradient= [UIColor redColor];
@@ -53,26 +52,33 @@
 	[columnSeries setStyle:styleBar];
 	
 	
+	/*
+	 SChartDataPointLabelOrientationHorizontal,
+	 SChartDataPointLabelOrientationVertical,
+	 SChartDataPointLabelOrientationHorizontalReversed,
+	 SChartDataPointLabelOrientationVerticalReversed
+	 */
+	columnSeries.style.dataPointLabelStyle.textOrientation=SChartDataPointLabelOrientationVertical;
 	
 	
 	return columnSeries;
 }
 
 - (NSInteger)sChart:(ShinobiChart *)chart numberOfDataPointsForSeriesAtIndex:(NSInteger)seriesIndex {
-//	return _sales.count;
+	//	return _sales.count;
 	
 	NSLog(@"Numero de puntos %ld",[self dataForYear].count);
 	return [self dataForYear].count;
-
+	
 }
 
 - (id<SChartData>)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex {
 	/*SChartDataPoint *datapoint = [[SChartDataPoint alloc] init];
-	datapoint = _sales[dataIndex];
-	datapoint.xValue=[NSString stringWithFormat:@"%ld", (long)dataIndex+1];
+	 datapoint = _sales[dataIndex];
+	 datapoint.xValue=[NSString stringWithFormat:@"%ld", (long)dataIndex+1];
+	 
+	 return datapoint;*/
 	
-	return datapoint;*/
-
 	return _dataX[dataIndex];
 }
 

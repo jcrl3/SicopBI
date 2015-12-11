@@ -9,7 +9,6 @@
 #import "ExpandGraphViewController.h"
 
 @interface ExpandGraphViewController ()
-@property (weak, nonatomic) IBOutlet UIView *viewContainer;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *showGrid;
 
 @end
@@ -17,23 +16,25 @@
 @implementation ExpandGraphViewController
 @synthesize chart;
 @synthesize data;
+@synthesize viewContainer;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
+	// Do any additional setup after loading the view.
+	[self.view addGestureRecognizer:self.leftSwipe];
+	
 	self.chart.frame = CGRectMake(self.viewContainer.bounds.origin.x+10, self.viewContainer.bounds.origin.y+10, self.viewContainer.bounds.size.width-20, self.viewContainer.bounds.size.height-20);
 	
-   [self.viewContainer addSubview:self.chart];
+	[self.viewContainer addSubview:self.chart];
 	self.chart.hidden=YES;
-}
 
+}
 -(void) viewDidAppear:(BOOL)animated{
-	//[super viewDidAppear:YES];
+	[super viewDidAppear:YES];
 	self.chart.hidden=NO;
 	[self.chart reloadData];
 	[self.chart redrawChart];
-	
-	
+	[[NSUserDefaults standardUserDefaults] setObject:@"ExpandGraphViewController" forKey:@"vcActive"];
 }
 - (IBAction)CloseView:(id)sender {
 	[self dismissViewControllerAnimated: YES completion:nil];
@@ -41,8 +42,8 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 
 - (IBAction)sendGraph:(id)sender {
@@ -72,7 +73,7 @@
 	
 	
 	[self presentViewController:ac animated:YES
-									 completion:nil];
+					 completion:nil];
 }
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController
@@ -103,9 +104,12 @@
 		GridViewController *vc = [segue destinationViewController];
 		vc.data = [data copy];
 	}
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	// Get the new view controller using [segue destinationViewController].
+	// Pass the selected object to the new view controller.
 }
 
+- (IBAction)goBackSwipe:(id)sender {
+	
+}
 
 @end

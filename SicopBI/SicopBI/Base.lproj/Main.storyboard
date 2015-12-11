@@ -134,15 +134,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fwr-PB-QpF">
-                                <rect key="frame" x="0.0" y="0.0" width="324" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableroCell" rowHeight="98" id="frq-eB-uXV" customClass="TableroTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="324" height="98"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="frq-eB-uXV" id="L9o-sW-Laq">
-                                            <rect key="frame" x="0.0" y="0.0" width="291" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagenTablero" translatesAutoresizingMaskIntoConstraints="NO" id="oz6-Ba-YVd">
@@ -152,7 +152,7 @@
                                                         <constraint firstAttribute="width" constant="87" id="1fY-Pc-EHa"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Indicadores de ventas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-Mv-fii">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicadores de ventas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-Mv-fii">
                                                     <rect key="frame" x="103" y="8" width="489" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -163,14 +163,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este tablero te permite visualizar los indiocadores de prospección y ventas, permitiendote determinar si alcanzarás tus metas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6i-le-IME">
-                                                    <rect key="frame" x="103" y="37" width="290" height="52"/>
+                                                    <rect key="frame" x="103" y="37" width="456" height="52"/>
                                                     <animations/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" adjustable="YES"/>
                                                         <bool key="isElement" value="NO"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="290" id="0zs-Vw-rbD"/>
+                                                        <constraint firstAttribute="width" constant="456" id="0zs-Vw-rbD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,31 +204,19 @@
                                     <outlet property="delegate" destination="MMN-sa-ec2" id="uDN-6O-TpU"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-w9-jRB">
-                                <rect key="frame" x="324" y="0.0" width="276" height="600"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.74117647060000003" green="0.73725490199999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ztb-w9-jRB" firstAttribute="leading" secondItem="Fwr-PB-QpF" secondAttribute="trailing" id="0Fe-tg-xEI"/>
-                            <constraint firstAttribute="trailing" secondItem="Ztb-w9-jRB" secondAttribute="trailing" id="WdB-we-7Qi"/>
-                            <constraint firstItem="Ztb-w9-jRB" firstAttribute="leading" secondItem="Fwr-PB-QpF" secondAttribute="trailing" id="bho-8n-V7B"/>
-                            <constraint firstItem="Ztb-w9-jRB" firstAttribute="leading" secondItem="rTa-oF-fDj" secondAttribute="leading" constant="324" id="g4D-s7-SId"/>
-                            <constraint firstItem="HnU-mR-qhh" firstAttribute="top" secondItem="Fwr-PB-QpF" secondAttribute="bottom" id="j00-Um-X3t"/>
-                            <constraint firstItem="Fwr-PB-QpF" firstAttribute="top" secondItem="rTa-oF-fDj" secondAttribute="top" id="mVr-U3-UXf"/>
-                            <constraint firstItem="Ztb-w9-jRB" firstAttribute="top" secondItem="Fwr-PB-QpF" secondAttribute="top" id="nxn-XP-xFt"/>
-                            <constraint firstItem="Ztb-w9-jRB" firstAttribute="bottom" secondItem="HnU-mR-qhh" secondAttribute="top" id="uMF-Sm-9p2"/>
-                            <constraint firstItem="Fwr-PB-QpF" firstAttribute="leading" secondItem="rTa-oF-fDj" secondAttribute="leading" id="yBC-vS-gYh"/>
+                            <constraint firstItem="Fwr-PB-QpF" firstAttribute="top" secondItem="rTa-oF-fDj" secondAttribute="top" id="Ay7-Rg-amv"/>
+                            <constraint firstItem="Fwr-PB-QpF" firstAttribute="leading" secondItem="rTa-oF-fDj" secondAttribute="leading" id="EcV-of-M8e"/>
+                            <constraint firstAttribute="trailing" secondItem="Fwr-PB-QpF" secondAttribute="trailing" id="mox-Po-Prp"/>
+                            <constraint firstItem="HnU-mR-qhh" firstAttribute="top" secondItem="Fwr-PB-QpF" secondAttribute="bottom" id="sjd-tJ-TeD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fWM-34-EbR"/>
                     <connections>
-                        <outlet property="UViewMenu" destination="Ztb-w9-jRB" id="nw2-Oq-tB1"/>
                         <outlet property="tableView" destination="Fwr-PB-QpF" id="Ms3-l4-OcW"/>
-                        <outlet property="trailingTableView" destination="bho-8n-V7B" id="Sc7-ch-m2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5io-51-z58" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,13 +297,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cuI-a1-aDG" secondAttribute="trailing" constant="-10" id="1yH-xh-f7X"/>
-                            <constraint firstItem="WpK-Wc-XN2" firstAttribute="leading" secondItem="gkm-kB-G1C" secondAttribute="leadingMargin" constant="-20" id="4TZ-mL-Slg"/>
-                            <constraint firstItem="WpK-Wc-XN2" firstAttribute="top" secondItem="LCc-qL-rWS" secondAttribute="bottom" id="5Oq-Ly-t17"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WpK-Wc-XN2" secondAttribute="trailing" constant="-20" id="9r8-np-Jma"/>
+                            <constraint firstAttribute="trailing" secondItem="WpK-Wc-XN2" secondAttribute="trailing" id="Deq-ND-StJ"/>
                             <constraint firstItem="SjU-Jy-yS1" firstAttribute="centerX" secondItem="gkm-kB-G1C" secondAttribute="centerX" id="HFE-wx-sYZ"/>
-                            <constraint firstItem="EKv-s6-J3Z" firstAttribute="top" secondItem="WpK-Wc-XN2" secondAttribute="bottom" id="QAG-ao-WeE"/>
                             <constraint firstItem="SjU-Jy-yS1" firstAttribute="centerY" secondItem="gkm-kB-G1C" secondAttribute="centerY" id="QLA-UZ-uA7"/>
+                            <constraint firstItem="EKv-s6-J3Z" firstAttribute="top" secondItem="WpK-Wc-XN2" secondAttribute="bottom" id="eoG-1h-M1w"/>
+                            <constraint firstItem="WpK-Wc-XN2" firstAttribute="top" secondItem="LCc-qL-rWS" secondAttribute="bottom" id="gOy-Jr-vh0"/>
                             <constraint firstItem="cuI-a1-aDG" firstAttribute="top" secondItem="LCc-qL-rWS" secondAttribute="bottom" constant="8" id="nUR-mE-k8O"/>
+                            <constraint firstItem="WpK-Wc-XN2" firstAttribute="leading" secondItem="gkm-kB-G1C" secondAttribute="leading" id="ogr-YV-sVL"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -358,10 +346,14 @@
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="M0B-tT-NgO" firstAttribute="top" secondItem="dL6-QV-hhC" secondAttribute="topMargin" id="CgW-QB-I0M"/>
                                     <constraint firstItem="M0B-tT-NgO" firstAttribute="trailing" secondItem="dL6-QV-hhC" secondAttribute="trailingMargin" id="U94-yA-Dgc"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zee-WO-aVw" appends="YES" id="8E4-sQ-QN7"/>
+                                </connections>
                             </view>
                         </subviews>
                         <animations/>
@@ -373,9 +365,7 @@
                             <constraint firstItem="dL6-QV-hhC" firstAttribute="leading" secondItem="LDO-dV-Fvw" secondAttribute="leadingMargin" constant="-20" id="ekN-mb-I6U"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem image="Close" id="6nb-Cq-jFR"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="F9E-KN-wck">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Ne3-RL-cP0">
                             <connections>
@@ -385,10 +375,16 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
-                        <outlet property="viewContainer" destination="dL6-QV-hhC" id="ubU-sJ-oxa"/>
+                        <outlet property="leftSwipe" destination="zee-WO-aVw" id="8Sz-TS-6au"/>
+                        <outlet property="viewContainer" destination="dL6-QV-hhC" id="6vc-Rf-4Za"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aoe-Ay-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="zee-WO-aVw">
+                    <connections>
+                        <action selector="goBackSwipe:" destination="CRN-Qr-mvT" id="epB-Jo-2pZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3544" y="591"/>
         </scene>
@@ -408,6 +404,10 @@
                                 <rect key="frame" x="0.0" y="5" width="572" height="245"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Phd-ym-bCz" appends="YES" id="jvA-9a-wX8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <animations/>
@@ -421,10 +421,16 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="leftSwipe" destination="Phd-ym-bCz" id="5zM-3N-t8Z"/>
                         <outlet property="viewGridContainer" destination="seK-5U-IuE" id="Hx9-dg-90D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvX-8h-sRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Phd-ym-bCz">
+                    <connections>
+                        <action selector="goBackSwipe:" destination="cZh-YA-qXE" id="fHt-ii-YGr"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4168" y="607"/>
         </scene>
@@ -698,7 +704,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Close" width="22" height="22"/>
         <image name="Expand" width="22" height="22"/>
         <image name="Grid" width="22" height="22"/>
         <image name="ImagenTablero" width="109" height="109"/>

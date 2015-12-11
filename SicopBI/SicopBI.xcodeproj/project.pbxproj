@@ -32,7 +32,6 @@
 		8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE941BEBF23E006543DE /* OpenGLES.framework */; };
 		8845CE971BEBF248006543DE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE961BEBF248006543DE /* CoreText.framework */; };
 		8845CE991BEBF25B006543DE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE981BEBF25B006543DE /* libc++.tbd */; };
-		8845CE9B1BEBF2CC006543DE /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */; };
 		8845CE9E1BEC13FA006543DE /* PieChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */; };
 		8845CEA11BEC1899006543DE /* BarChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845CEA01BEC1899006543DE /* BarChartDataSource.m */; };
 		88466C461BEF9EF200AF7638 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 88466C451BEF9EF200AF7638 /* Plist.m */; };
@@ -44,11 +43,12 @@
 		888B908D1BF4150300D48CC2 /* ColumnChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */; };
 		88B11CBB1C0CB35E00A49615 /* SqlSentenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B11CBA1C0CB35E00A49615 /* SqlSentenceManager.m */; };
 		88B11CC21C0ECC8700A49615 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B11CC11C0ECC8700A49615 /* GridViewController.m */; };
-		88B11CC41C0ECF2400A49615 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */; };
 		88CAB8591BEF8FCE00DEB526 /* PropiedadesGraficas.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */; };
 		88E217561C07E0690064F20A /* Kpis.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E217551C07E0690064F20A /* Kpis.m */; };
 		88E217581C07E9030064F20A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E217571C07E9030064F20A /* libsqlite3.tbd */; };
 		88E2175B1C07E9280064F20A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E2175A1C07E9280064F20A /* DBManager.m */; };
+		88F0C2101C124E1200FE7DA0 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F0C20F1C124E1200FE7DA0 /* ShinobiCharts.framework */; };
+		88F0C2121C124E1C00FE7DA0 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F0C2111C124E1C00FE7DA0 /* ShinobiGrids.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,6 @@
 		8845CE941BEBF23E006543DE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8845CE961BEBF248006543DE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		8845CE981BEBF25B006543DE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = Library/Frameworks/ShinobiCharts.framework; sourceTree = DEVELOPER_DIR; };
 		8845CE9C1BEC13FA006543DE /* PieChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDataSource.h; sourceTree = "<group>"; };
 		8845CE9D1BEC13FA006543DE /* PieChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDataSource.m; sourceTree = "<group>"; };
 		8845CE9F1BEC1899006543DE /* BarChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartDataSource.h; sourceTree = "<group>"; };
@@ -134,10 +133,8 @@
 		888B908C1BF4150300D48CC2 /* ColumnChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnChartDataSource.m; sourceTree = "<group>"; };
 		88B11CB91C0CB35E00A49615 /* SqlSentenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlSentenceManager.h; sourceTree = "<group>"; };
 		88B11CBA1C0CB35E00A49615 /* SqlSentenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlSentenceManager.m; sourceTree = "<group>"; };
-		88B11CBE1C0ECA2900A49615 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = Library/Frameworks/ShinobiGrids.framework; sourceTree = DEVELOPER_DIR; };
 		88B11CC01C0ECC8700A49615 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
 		88B11CC11C0ECC8700A49615 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
-		88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiGrids.framework; sourceTree = "<group>"; };
 		88CAB8571BEF8FCE00DEB526 /* PropiedadesGraficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropiedadesGraficas.h; sourceTree = "<group>"; };
 		88CAB8581BEF8FCE00DEB526 /* PropiedadesGraficas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropiedadesGraficas.m; sourceTree = "<group>"; };
 		88E217541C07E0690064F20A /* Kpis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kpis.h; sourceTree = "<group>"; };
@@ -145,6 +142,8 @@
 		88E217571C07E9030064F20A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		88E217591C07E9280064F20A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		88E2175A1C07E9280064F20A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		88F0C20F1C124E1200FE7DA0 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
+		88F0C2111C124E1C00FE7DA0 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiGrids.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,13 +152,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				88E217581C07E9030064F20A /* libsqlite3.tbd in Frameworks */,
-				8845CE9B1BEBF2CC006543DE /* ShinobiCharts.framework in Frameworks */,
 				8845CE991BEBF25B006543DE /* libc++.tbd in Frameworks */,
 				8845CE971BEBF248006543DE /* CoreText.framework in Frameworks */,
 				8845CE951BEBF23E006543DE /* OpenGLES.framework in Frameworks */,
+				88F0C2101C124E1200FE7DA0 /* ShinobiCharts.framework in Frameworks */,
 				8845CE931BEBF234006543DE /* QuartzCore.framework in Frameworks */,
 				8845CE911BEBF22A006543DE /* Security.framework in Frameworks */,
-				88B11CC41C0ECF2400A49615 /* ShinobiGrids.framework in Frameworks */,
+				88F0C2121C124E1C00FE7DA0 /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +302,9 @@
 			isa = PBXGroup;
 			children = (
 				88E217571C07E9030064F20A /* libsqlite3.tbd */,
-				8845CE9A1BEBF2CC006543DE /* ShinobiCharts.framework */,
 				8845CE981BEBF25B006543DE /* libc++.tbd */,
-				88B11CC31C0ECF2400A49615 /* ShinobiGrids.framework */,
-				88B11CBE1C0ECA2900A49615 /* ShinobiGrids.framework */,
+				88F0C2111C124E1C00FE7DA0 /* ShinobiGrids.framework */,
+				88F0C20F1C124E1200FE7DA0 /* ShinobiCharts.framework */,
 				8845CE961BEBF248006543DE /* CoreText.framework */,
 				8845CE941BEBF23E006543DE /* OpenGLES.framework */,
 				8845CE921BEBF234006543DE /* QuartzCore.framework */,

@@ -18,8 +18,6 @@
 {
 	NSDictionary* _sales;
 	NSDictionary* _ejecutivos;
-	
-	
 	NSMutableArray* _timeSeries;
 	NSArray* _datos;
 	
@@ -41,9 +39,8 @@ NSString* queryDate;
 NSString* queryYear;
 NSString* queryDay;
 NSString* queryMonth;
-//Manager of database
+//Database manager
 DateManager *dateManager;
-//Manager de la base de datos
 AppDelegate *SicopBIDelegate;
 
 //esta variable va a controlar la clase que se tiene que cargar al story board
@@ -66,7 +63,7 @@ static NSString* classForStoryBoard;
 	dateManager = [[DateManager alloc] init];
 	
 	//quitar esto
-	[dateManager setDate:[dateManager addOrLessDaysToDate:-93]];
+	[dateManager setDate:[dateManager addOrLessDaysToDate:-101]]; //7 dic
 	
 	//Get today
 	NSString *idDateTo = [DimDate getIdFecha:dateManager.getDay month:dateManager.getMonth year:dateManager.getYear];
@@ -145,7 +142,6 @@ static NSString* classForStoryBoard;
 	((PanelGrafica*)childViewBar).gestDoubleTapEnabled=NO;
 	((PanelGrafica*)childViewBar).viewDelegate = self;
 
-	
 	[self addChartToView:childViewBar];
 	
 	
@@ -187,9 +183,12 @@ static NSString* classForStoryBoard;
 	[self addChartToView:childViewColumn];
 
 
-	
 	self.navigationController.navigationBar.topItem.title = @"";
 	[self.view addGestureRecognizer:self.leftSwipe];
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+	[[NSUserDefaults standardUserDefaults] setObject:@"TableroMasterViewController" forKey:@"vcActive"];
 }
 
 #pragma mark -
@@ -240,8 +239,6 @@ static NSString* classForStoryBoard;
 	((PanelGrafica*)childViewPie).labelCenterDonut.text = [NSString stringWithFormat:@"%@ de 58  %d%@", dataPoint.value, ([dataPoint.value intValue]/58*100),@"%"];
 
 	
-//	[chart reloadData];
-//	[chart redrawChart];
 }
 
 -(void)sChart:(ShinobiChart *)chart radialSeriesDidEndDecelerating:(SChartRadialSeries *)radialSeries {
@@ -271,19 +268,11 @@ static NSString* classForStoryBoard;
 #pragma mark -
 #pragma mark Crosshair delegate
 - (void)moveToPoint:(CGPoint)pointInChart inChart:(ShinobiChart *)chart{
-	style = [[SChartCrosshairStyle alloc]init];
-	style.defaultBackgroundColor = [UIColor blueColor];
-	style.defaultTextColor = [UIColor whiteColor];
-	
- NSLog(@"Entre a crosshair moveponint");
+   NSLog(@"Entre a crosshair moveponint");
 }
 
 - (void)showAtPoint:(CGPoint)pointInChart inChart:(ShinobiChart *)chart{
-	style = [[SChartCrosshairStyle alloc]init];
-	style.defaultBackgroundColor = [UIColor blueColor];
-	style.defaultTextColor = [UIColor whiteColor];
-	
-NSLog(@"Entre a crosshair showAtPoint");
+  NSLog(@"Entre a crosshair showAtPoint");
 }
 
 - (void)hide{
@@ -299,6 +288,7 @@ NSLog(@"Entre a crosshair showAtPoint");
 	}
 	return [dateFormatter dateFromString:date];
 }
+
 
 
 @end

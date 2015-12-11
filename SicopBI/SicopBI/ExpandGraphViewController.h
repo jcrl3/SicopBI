@@ -10,10 +10,14 @@
 #import <ShinobiCharts/ShinobiCharts.h>
 #import "TakePhoto.h"
 #import "GridViewController.h"
+#import "PanelGrafica.h"
 
 @interface ExpandGraphViewController : UIViewController {
 	
 }
 @property ShinobiChart* chart;
 @property (nonatomic,strong) NSArray* data;
+@property (weak, nonatomic) IBOutlet UIView *viewContainer;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
+
 @end

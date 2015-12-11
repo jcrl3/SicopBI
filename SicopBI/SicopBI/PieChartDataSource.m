@@ -7,7 +7,7 @@
 //
 
 #import "PieChartDataSource.h"
-
+#import "PropiedadesGraficas.h"
 @implementation PieChartDataSource
 {
     NSMutableArray* _dataX;
@@ -32,8 +32,9 @@
 	series.selectedStyle.protrusion = 3.f;
 	series.selectedPosition = [NSNumber numberWithFloat:(float)(-M_PI/1.f)];
 	series.style.chartEffect=SChartRadialChartEffectFlat;//SChartRadialChartEffectRoundedLight; //SChartRadialChartEffectFlat;
-	series.style.showLabels=FALSE;
+	series.style.showLabels=true;
     series.labelFormatString = @"%.0f";
+
 	//Define lines that connect de chart to labels
 	series.style.spokeStyle.showSpokes = NO;
 	series.selectedStyle.spokeStyle.showSpokes = NO;
@@ -41,27 +42,20 @@
 	series.animationEnabled = YES;
 	series.gesturePanningEnabled = YES;
 
-	//Other properties
-	//series.outerRadius = 65.f; //105.f;
-	//series.innerRadius = 45.f; //65.f;
-	//series.rotation = 10.0f;
-    //series.rotationFriction= 10.0f;
-    //series.outerRadius = 10.0f;
-	
-	//Set label fonts
-	series.style.labelBackgroundColor =[UIColor colorWithRed:104/255       ///Black tenue
+	//Set label fonts and label colors
+/*	series.style.labelBackgroundColor =[UIColor colorWithRed:104/255       ///Black tenue
 													   green:104/255
 												  blue:104/255
-													   alpha:1.0 ];
-	
+													   alpha:1.0 ];*/
+
+	series.style.labelBackgroundColor =[UIColor clearColor];
 	series.style.labelFontColor =[UIColor whiteColor];
-	series.style.labelFont = chart.legend.style.font;
+	series.style.labelFont = [UIFont fontWithName:[PropiedadesGraficas getFontName] size:10.0];
+	
 
 	///Set labels configuration
 	chart.legend.position = SChartLegendPositionMiddleRight;
 	chart.legend.maxSeriesPerLine = 1;
-	
-
 
 	return series;
 }

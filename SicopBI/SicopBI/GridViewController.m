@@ -16,16 +16,16 @@
 @end
 
 @implementation GridViewController{
-  ShinobiDataGrid* _shinobiDataGrid;
-
+	ShinobiDataGrid* _shinobiDataGrid;
+	
 }
 @synthesize data;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
+	// Do any additional setup after loading the view.
 	NSMutableArray *results = [[NSMutableArray alloc] init];
-
+	
 	for (NSArray *record in self.data) {
 		ResultDataObject *result = [[ResultDataObject alloc]init];
 		result.fieldtoGroup=[record objectAtIndex:0];
@@ -38,32 +38,32 @@
 	
 	self.viewGridContainer.bounds = self.view.bounds;
 	
-	[ShinobiGrids setLicenseKey:[PropiedadesGraficas getLicence]]; // TODO: add your trial licence key here!
+	//[ShinobiGrids setLicenseKey:[PropiedadesGraficas getLicence]]; // TODO: add your trial licence key here!
 	
 	//Create the grid
 	_shinobiDataGrid = [[ShinobiDataGrid alloc] initWithFrame:CGRectMake(self.viewGridContainer.bounds.origin.x+20.0,
 																		 self.viewGridContainer.bounds.origin.y+25.0,
 																		 self.viewGridContainer.bounds.size.width-35.0,
 																		 self.viewGridContainer.bounds.size.height-35.0)];
-
-
-_shinobiDataGrid.singleTapEventMask = SDataGridEventNone;
-_shinobiDataGrid.doubleTapEventMask = SDataGridEventNone;
-
-
+	
+	
+	_shinobiDataGrid.singleTapEventMask = SDataGridEventNone;
+	_shinobiDataGrid.doubleTapEventMask = SDataGridEventNone;
+	
+	
 	_shinobiDataGrid.defaultGridLineStyle.width = 1.0f;
 	//Interlineada
 	_shinobiDataGrid.defaultGridLineStyle.color=[UIColor grayColor];  /*[UIColor colorWithRed:189/255
-					green:188/255
-					 blue:194/255
-					alpha:0.8];*/
-
-
+																	   green:188/255
+																	   blue:194/255
+																	   alpha:0.8];*/
+	
+	
 	_shinobiDataGrid.defaultSectionHeaderStyle.backgroundColor=[UIColor colorWithRed:189/255
-																green:188/255
-																 blue:194/255
-																alpha:1.0 ];
-
+																			   green:188/255
+																				blue:194/255
+																			   alpha:1.0 ];
+	
 	// add a fieldtogroup column
 	SDataGridColumn* nameColumn = [[SDataGridColumn alloc] initWithTitle:@"EJECUTIVO"];
 	nameColumn.width = @210;
@@ -85,14 +85,20 @@ _shinobiDataGrid.doubleTapEventMask = SDataGridEventNone;
 	
 	// add to the view
 	[self.viewGridContainer addSubview:_shinobiDataGrid];
-
+	
 	_shinobiDataGrid.delegate = self;
 	_shinobiDataGrid.dataSource = self;
+	
+	
+	[self.view addGestureRecognizer:self.leftSwipe];
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+	[[NSUserDefaults standardUserDefaults] setObject:@"GridViewController" forKey:@"vcActive"];
+}
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 
 
@@ -111,15 +117,15 @@ _shinobiDataGrid.doubleTapEventMask = SDataGridEventNone;
 	NSString *fieldtoGroup = currentRecord.fieldtoGroup;
 	NSString *fieldtoCount = currentRecord.fieldtoCount;
 	
-	 textCell.textField.font=[UIFont fontWithName: [PropiedadesGraficas getFontName] size:10.f];
-  	 textCell.backgroundColor = [UIColor clearColor];
-
+	textCell.textField.font=[UIFont fontWithName: [PropiedadesGraficas getFontName] size:10.f];
+	textCell.backgroundColor = [UIColor clearColor];
+	
 	// determine which column this cell belongs to
 	if ([cell.coordinate.column.title isEqualToString:@"EJECUTIVO"])
 	 {
 		// render the name in the 'name' column
 		textCell.textField.text = fieldtoGroup;
-
+		
 		
 	 }
 	if ([cell.coordinate.column.title isEqualToString:@"VENTAS"])
@@ -165,15 +171,18 @@ _shinobiDataGrid.doubleTapEventMask = SDataGridEventNone;
 	NSLog(@"Reordering");
 }
 
+- (IBAction)goBackSwipe:(id)sender {
+	
+}
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
