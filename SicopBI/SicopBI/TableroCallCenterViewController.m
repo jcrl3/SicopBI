@@ -71,7 +71,7 @@
 		SChartTheme *chartTheme = [SChartLightTheme new];
 		[_chart applyTheme: chartTheme];
 		
-		_chart.gestureDoubleTapEnabled = NO;
+		_chart.gestureManager.doubleTapEnabled=NO;
 		_chart.autoresizingMask =  ~UIViewAutoresizingNone;
 		
 		_chart.licenseKey = [PropiedadesGraficas getLicence]; // TODO: add your trial licence key here!

@@ -14,9 +14,6 @@
 	LineChartDataSource* _lineChartDataSource;
 	ColumnChartDataSource* _columnChartDataSource;
 	NSString *fontName;
-
-
-	
 }
 
 @synthesize dataX;
@@ -108,7 +105,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	
 	_chart = [[ShinobiChart alloc] initWithFrame:[self getFrame]];
 	_chart.autoresizingMask =  ~UIViewAutoresizingNone;
-	_chart.animateBoxGesture=YES;
+	_chart.gestureManager.animateBoxGesture=YES;
 
 	//Set area colors properties
 	_chart.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
@@ -148,7 +145,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 	_chart.crosshair = customCrosshair;
 	
 	//Set the gestures
-	_chart.gestureDoubleTapEnabled = self.gestDoubleTapEnabled;
+	_chart.gestureManager.doubleTapEnabled = self.gestDoubleTapEnabled;
 
 }
 
@@ -299,7 +296,7 @@ NSString * const FORMAT_STRING=@"FORMAT_STRING";
 - (void)legendClick:(UITapGestureRecognizer*)sender {
 	
 	CGPoint tapPoint = [sender locationInView:_chart.legend];
-	SChartPieSeries *series = [_chart series][0];
+	SChartPieSeries *series = (SChartPieSeries*)[_chart series][0];
 	
 	int selectedIndex = -1;
 	

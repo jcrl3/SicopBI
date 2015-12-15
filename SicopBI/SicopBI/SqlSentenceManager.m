@@ -30,11 +30,12 @@
 						WHERE \
 						  IdFecha BETWEEN %@ and  %@  %@\
 						GROUP BY \
-						   %@ \
-						ORDER BY  \
-						   %@", fieldToGroup, fieldToCount, fromIdDate, toIdDate, aditionalCondition, fieldToGroupAfterFrom, fieldToOrder];
+						   %@ ",fieldToGroup, fieldToCount, fromIdDate, toIdDate, aditionalCondition, fieldToGroupAfterFrom];
 
-	
+						if (fieldToOrder!=nil) {
+		querySn = [querySn stringByAppendingString:[NSString stringWithFormat:@" ORDER BY %@",fieldToOrder]];
+	}
+
 	
     return querySn;
 }

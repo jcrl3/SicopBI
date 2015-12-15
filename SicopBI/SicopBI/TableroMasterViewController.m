@@ -8,7 +8,7 @@
 
 #import "TableroMasterViewController.h"
 #import "AppDelegate.h"
-
+#import "ResumeView.h"
 @interface TableroMasterViewController ()<SChartDelegate>
 
 @end
@@ -23,6 +23,8 @@
 	
 	//Nuevos
 	NSMutableArray* _sellers;
+	NSMutableArray* _principalKpis;
+	
 	
 	///Views de las graficas a mostrar
 	UIViewController *childViewBar;
@@ -49,6 +51,7 @@ static NSString* classForStoryBoard;
 @synthesize scrollView;
 @synthesize tooltip;
 @synthesize style;
+@synthesize conentView;
 
 #pragma mark -
 #pragma mark - controlamos la clase que se va a utilizar para controlar el tablero que se va a mostrar
@@ -56,14 +59,14 @@ static NSString* classForStoryBoard;
 	[super viewDidLoad];
 	
 	self.title = self.titleView;
-   //get the appdelegate
-    SicopBIDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	//get the appdelegate
+	SicopBIDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	//alloc DateManager
 	dateManager = [[DateManager alloc] init];
 	
-	//quitar esto
-	[dateManager setDate:[dateManager addOrLessDaysToDate:-101]]; //7 dic
+	//get off this
+	[dateManager setDate:[dateManager addOrLessDaysToDate:-109]]; //7 dic
 	
 	//Get today
 	NSString *idDateTo = [DimDate getIdFecha:dateManager.getDay month:dateManager.getMonth year:dateManager.getYear];
@@ -71,9 +74,9 @@ static NSString* classForStoryBoard;
 	//Set Date firstDayOfMonth
 	[dateManager setDate:[NSString stringWithFormat:@"%@-%@-01",  dateManager.getYear, dateManager.getMonth]];
 	NSString *idDateFrom = [DimDate getIdFecha:dateManager.getDay month:dateManager.getMonth year:dateManager.getYear];
-
+	
 	NSLog(@"Id's dateFrom is %@  and until  %@", idDateFrom, idDateTo);
-
+	
 	//Create the sentence to retrieve data from KPIs Table
 	NSString *querySn=[SqlSentenceManager
 					   getSentenceForKpi:@"SUM(PROSPECTOS)"
@@ -84,10 +87,10 @@ static NSString* classForStoryBoard;
 					   fieldToOrder:@"Fecha"
 					   aditionalCondition:@""];
 	NSLog(@"Query prospectos%@", querySn);
-
+	
 	//Get data from KPIs table Prospectos
 	_datos = [SicopBIDelegate.dbManager loadDataFromDB:querySn];
-
+	
 	//Creamos los datos para la grafica de lineas
 	_timeSeries = [NSMutableArray new];
 	for (NSArray* dato in _datos) {
@@ -104,17 +107,110 @@ static NSString* classForStoryBoard;
 	
 	//Create the sentence to retrieve data from sales
 	querySn=[SqlSentenceManager
-					   getSentenceForKpi:@"SUM(VentasEntregadas)"
-					   fieldToGroup:@"Ejecutivo"
-					   fromIdDate:idDateFrom
-					   toIdDate:idDateTo
-					   fieldToGroupAfterFrom:@"Ejecutivo"
-					   fieldToOrder:@"VentasEntregadas"
-			           aditionalCondition:@" AND VentasEntregadas>0 "];
+			 getSentenceForKpi:@"SUM(VentasEntregadas)"
+			 fieldToGroup:@"Ejecutivo"
+			 fromIdDate:idDateFrom
+			 toIdDate:idDateTo
+			 fieldToGroupAfterFrom:@"Ejecutivo"
+			 fieldToOrder:@"VentasEntregadas"
+			 aditionalCondition:@" AND VentasEntregadas>0 "];
 	NSLog(@"Query %@", querySn);
-   _sellers =[[SicopBIDelegate.dbManager loadDataFromDB:querySn] copy];
-
+	_sellers =[[SicopBIDelegate.dbManager loadDataFromDB:querySn] copy];
 	
+	
+	//sentences for principal Prospectos
+	querySn=[SqlSentenceManager
+			 getSentenceForKpi:@"sum(Prospectos)"
+			 fieldToGroup:@"'Prospectos'"
+			 fromIdDate:idDateFrom
+			 toIdDate:idDateTo
+			 fieldToGroupAfterFrom:@"'Prospectos'"
+			 fieldToOrder:nil
+			 aditionalCondition:@""];
+	
+	///ObjetivoProspectos
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(Prospectos)*1.20"
+											   fieldToGroup:@"'ObjetivoProspectos'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'ObjetivoProspectos'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//Demostraciones
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(Demostraciones)"
+											   fieldToGroup:@"'Demostraciones'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'Demostraciones'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//Objetivo demostraciones
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(Prospectos)*.60"
+											   fieldToGroup:@"'ObjetivoDemostraciones'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'ObjetivoDemostraciones'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	
+	//Cotizaciones
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(cotizaciones)"
+											   fieldToGroup:@"'Cotizaciones'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'Cotizaciones'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//ObjetivoCotizaciones
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(Prospectos)*.80"
+											   fieldToGroup:@"'ObjetivoCotizaciones'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'ObjetivoCotizaciones'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//VentasEntregadas
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(VentasEntregadas)"
+											   fieldToGroup:@"'VentasEntregadas'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'VentasEntregadas'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//ObjetivoVentas
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(Prospectos)*.15"
+											   fieldToGroup:@"'ObjetivoVentas'"
+											   fromIdDate:idDateFrom
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'ObjetivoVentas'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	//ProspectosInactivos
+	querySn= [querySn stringByAppendingString:@"\n UNION ALL \n"];
+	querySn= [querySn stringByAppendingString:[SqlSentenceManager
+											   getSentenceForKpi:@"sum(ProspectosInactivos)"
+											   fieldToGroup:@"'ProspectosInactivos'"
+											   fromIdDate:idDateTo
+											   toIdDate:idDateTo
+											   fieldToGroupAfterFrom:@"'ProspectosInactivos'"
+											   fieldToOrder:nil
+											   aditionalCondition:@""]];
+	NSLog(@"Query de union \n %@", querySn);
+	_principalKpis =[[SicopBIDelegate.dbManager loadDataFromDB:querySn] copy];
 	
 	
 	
@@ -132,7 +228,7 @@ static NSString* classForStoryBoard;
 	//Creamos el panel de grafica de barras
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 	childViewBar = [mainStoryboard instantiateViewControllerWithIdentifier:@"PanelGrafica"];
-	childViewBar.view.frame = CGRectMake(0.0, 212.0, self.scrollView.bounds.size.width-1.0, 250.0);
+	childViewBar.view.frame = CGRectMake(0.0, 286.0, self.scrollView.bounds.size.width-1.0, 250.0);
 	((PanelGrafica*)childViewBar).dataXLine= _timeSeries;
 	((PanelGrafica*)childViewBar).typeOfChart= BAR_CHART;
 	((PanelGrafica*)childViewBar).xFormatString = FORMAT_DATE;
@@ -141,7 +237,7 @@ static NSString* classForStoryBoard;
 	((PanelGrafica*)childViewBar).titleGraph= @"Captación";
 	((PanelGrafica*)childViewBar).gestDoubleTapEnabled=NO;
 	((PanelGrafica*)childViewBar).viewDelegate = self;
-
+	
 	[self addChartToView:childViewBar];
 	
 	
@@ -168,7 +264,7 @@ static NSString* classForStoryBoard;
 	((PanelGrafica*)childViewLine).formatString = @"dd MMM";
 	((PanelGrafica*)childViewLine).hideLegend= YES;
 	((PanelGrafica*)childViewLine).typeOfChart=LINE_CHART;
-
+	
 	[self addChartToView:childViewLine];
 	
 	
@@ -181,10 +277,27 @@ static NSString* classForStoryBoard;
 	((PanelGrafica*)childViewColumn).hideLegend= YES;
 	((PanelGrafica*)childViewColumn).typeOfChart=COLUMN_CHART;
 	[self addChartToView:childViewColumn];
-
-
+	
+	
+	//load contentview
+	UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	ResumeView *rv = [storyboard instantiateViewControllerWithIdentifier:@"ResumenKpis"];
+	NSMutableArray  *columns = [[NSMutableArray alloc] initWithCapacity: 2];
+	[columns insertObject: [NSArray arrayWithObjects: @"INDICADOR", @"TOTAL", nil] atIndex: 0];
+	[columns insertObject: [NSArray arrayWithObjects: @150, @130, nil] atIndex: 1];
+	rv.columns = [columns copy];
+	rv.data = [_principalKpis copy];
+	rv.view.frame = self.conentView.bounds;
+	[self.conentView addSubview:rv.view];
+	[self addChildViewController:rv];
+	[rv didMoveToParentViewController:self];
+	
+	
 	self.navigationController.navigationBar.topItem.title = @"";
 	[self.view addGestureRecognizer:self.leftSwipe];
+	
+	
+	
 }
 
 -(void) viewDidAppear:(BOOL)animated{
@@ -209,7 +322,7 @@ static NSString* classForStoryBoard;
 	_localchart.title = [NSString stringWithFormat:@"Ventas del día %@", dataPoint.xValue];
 	[_localchart reloadData];
 	[_localchart redrawChart];
-
+	
 }
 
 
@@ -237,7 +350,7 @@ static NSString* classForStoryBoard;
 	//series.selected=YES;
 	((PanelGrafica*)childViewPie).labelBottomDonut.text = [NSString stringWithFormat:@"%@", dataPoint.name];
 	((PanelGrafica*)childViewPie).labelCenterDonut.text = [NSString stringWithFormat:@"%@ de 58  %d%@", dataPoint.value, ([dataPoint.value intValue]/58*100),@"%"];
-
+	
 	
 }
 
@@ -268,11 +381,11 @@ static NSString* classForStoryBoard;
 #pragma mark -
 #pragma mark Crosshair delegate
 - (void)moveToPoint:(CGPoint)pointInChart inChart:(ShinobiChart *)chart{
-   NSLog(@"Entre a crosshair moveponint");
+	NSLog(@"Entre a crosshair moveponint");
 }
 
 - (void)showAtPoint:(CGPoint)pointInChart inChart:(ShinobiChart *)chart{
-  NSLog(@"Entre a crosshair showAtPoint");
+	NSLog(@"Entre a crosshair showAtPoint");
 }
 
 - (void)hide{
@@ -287,6 +400,23 @@ static NSString* classForStoryBoard;
 		[dateFormatter setDateFormat:@"dd-MM-yyyy"];
 	}
 	return [dateFormatter dateFromString:date];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	
+	NSLog(@"Segue %@", segue.identifier);
+	if ([segue.identifier isEqualToString:@"ResumenKpis"]){
+		ResumeView *rv = [segue destinationViewController];
+	 
+		NSMutableArray  *columns = [[NSMutableArray alloc] initWithCapacity: 2];
+		[columns insertObject: [NSArray arrayWithObjects: @"INDICADOR", @"TOTAL", nil] atIndex: 0];
+		[columns insertObject: [NSArray arrayWithObjects: @210, @130, nil] atIndex: 1];
+	 
+		rv.columns = [columns copy];
+		rv.data = [_principalKpis copy];
+	}
+
 }
 
 

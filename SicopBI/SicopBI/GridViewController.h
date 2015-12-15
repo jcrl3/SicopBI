@@ -10,10 +10,11 @@
 #import <ShinobiGrids/ShinobiGrids.h>
 #import "PropiedadesGraficas.h"
 
-@interface GridViewController : UIViewController <SDataGridDataSource, SDataGridDelegate>{
+@interface GridViewController : UIViewController <SDataGridDelegate>{
 
 }
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSMutableArray *columns;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
 
 @end

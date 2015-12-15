@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ShinobiGrids/ShinobiGrids.h>
 
-@interface ResumeView : UIViewController
+@interface ResumeView : UIViewController <SDataGridDelegate>
+
+@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSMutableArray *columns;
+@property (weak, nonatomic) IBOutlet UIView *viewGridContainer;
+@property (weak, nonatomic) IBOutlet UILabel *resumenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *disciplinaLabel;
 
 @end

@@ -37,6 +37,7 @@
 		88466C461BEF9EF200AF7638 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 88466C451BEF9EF200AF7638 /* Plist.m */; };
 		884F776F1BEFCE5C00306B65 /* TableroIndicadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */; };
 		8853AEAF1BEFC5F30024E8B4 /* TableroCallCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */; };
+		8858E0E51C1B828B001AE279 /* GridDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858E0E41C1B828B001AE279 /* GridDataSource.m */; };
 		88865E851C0B51630044C338 /* DimDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88865E841C0B51630044C338 /* DimDate.m */; };
 		888B90841BF3CD1A00D48CC2 /* TakePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90831BF3CD1900D48CC2 /* TakePhoto.m */; };
 		888B908A1BF4135200D48CC2 /* LineChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B90891BF4135200D48CC2 /* LineChartDataSource.m */; };
@@ -123,6 +124,8 @@
 		884F776E1BEFCE5C00306B65 /* TableroIndicadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroIndicadoresViewController.m; sourceTree = "<group>"; };
 		8853AEAD1BEFC5F30024E8B4 /* TableroCallCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableroCallCenterViewController.h; sourceTree = "<group>"; };
 		8853AEAE1BEFC5F30024E8B4 /* TableroCallCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableroCallCenterViewController.m; sourceTree = "<group>"; };
+		8858E0E31C1B828B001AE279 /* GridDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridDataSource.h; sourceTree = "<group>"; };
+		8858E0E41C1B828B001AE279 /* GridDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridDataSource.m; sourceTree = "<group>"; };
 		88865E831C0B51630044C338 /* DimDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimDate.h; sourceTree = "<group>"; };
 		88865E841C0B51630044C338 /* DimDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimDate.m; sourceTree = "<group>"; };
 		888B90821BF3CD1900D48CC2 /* TakePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhoto.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				88220AEB1C0FBE8900E10D23 /* ResultDataObject.m */,
 				88B11CC01C0ECC8700A49615 /* GridViewController.h */,
 				88B11CC11C0ECC8700A49615 /* GridViewController.m */,
+				8858E0E31C1B828B001AE279 /* GridDataSource.h */,
+				8858E0E41C1B828B001AE279 /* GridDataSource.m */,
 				88E217591C07E9280064F20A /* DBManager.h */,
 				88E2175A1C07E9280064F20A /* DBManager.m */,
 				8845CE371BEBB847006543DE /* AppDelegate.h */,
@@ -481,6 +486,7 @@
 				88E217561C07E0690064F20A /* Kpis.m in Sources */,
 				88B11CC21C0ECC8700A49615 /* GridViewController.m in Sources */,
 				8845CE361BEBB847006543DE /* main.m in Sources */,
+				8858E0E51C1B828B001AE279 /* GridDataSource.m in Sources */,
 				88E2175B1C07E9280064F20A /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

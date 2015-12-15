@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
 @property (strong, nonatomic) NSString* titleView;
+@property (weak, nonatomic) IBOutlet UIView *conentView;
 
 //+(void)setClassForStoryBoard:(NSString *)classString;
 

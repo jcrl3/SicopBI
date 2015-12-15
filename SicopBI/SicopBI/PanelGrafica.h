@@ -48,5 +48,4 @@ extern NSString * const FORMAT_STRING;
 @property (weak, nonatomic) id viewDelegate;
 @property (strong, nonatomic) ShinobiChart* _chart;
 
-//-(SChartCategoryAxis*)setDataXSeries:(NSString*) pTitle interSeriesPadding:(NSNumber*)pinterSeriesPadding;
 @end

@@ -102,10 +102,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"ShowDataGrid"]){
 		GridViewController *vc = [segue destinationViewController];
+
+		NSMutableArray  *columns = [[NSMutableArray alloc] initWithCapacity: 2];
+		[columns insertObject: [NSArray arrayWithObjects: @"EJECUTIVO", @"VENTAS", nil] atIndex: 0];
+		[columns insertObject: [NSArray arrayWithObjects: @210, @130, nil] atIndex: 1];
+
+		vc.columns = [columns copy];
 		vc.data = [data copy];
 	}
-	// Get the new view controller using [segue destinationViewController].
-	// Pass the selected object to the new view controller.
 }
 
 - (IBAction)goBackSwipe:(id)sender {
